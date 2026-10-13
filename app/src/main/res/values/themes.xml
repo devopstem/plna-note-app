@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.NoteMap" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/plna_accent</item>
+        <item name="colorPrimaryVariant">@color/plna_purple_deep</item>
+        <item name="colorOnPrimary">@color/plna_bg</item>
+        <item name="colorSecondary">@color/plna_purple</item>
+        <item name="colorSecondaryVariant">@color/plna_purple_deep</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor">@color/plna_bg</item>
+        <item name="android:navigationBarColor">@color/plna_bg</item>
+        <item name="android:windowBackground">@color/plna_bg</item>
+        <item name="android:colorBackground">@color/plna_bg</item>
+        <item name="colorSurface">@color/plna_surface</item>
+        <item name="colorOnSurface">@color/plna_text</item>
+        <item name="colorError">@color/plna_danger</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Theme.NoteMap.Splash" parent="Theme.NoteMap">
+        <item name="android:windowBackground">@color/plna_splash_bg</item>
+    </style>
+
+    <style name="Plna.Card" parent="">
+        <item name="android:background">@drawable/bg_card</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="Plna.Title" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textColor">@color/plna_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="Plna.Section" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textColor">@color/plna_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+</resources>

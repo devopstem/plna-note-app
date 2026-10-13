@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "457007292084",
+    "project_id": "plna-note-map",
+    "storage_bucket": "plna-note-map.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457007292084:android:896ec196b2a9a24b8d41e1",
+        "android_client_info": {
+          "package_name": "by.smartplanogram.plnanote"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "YOUR_ANDROID_API_KEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

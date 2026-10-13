@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Light (default) -->
+<resources>
+    <color name="plna_bg">#FFF4F6FA</color>
+    <color name="plna_surface">#FFFFFFFF</color>
+    <color name="plna_surface_elevated">#FFFFFFFF</color>
+    <color name="plna_accent">#FF1A8A9A</color>
+    <color name="plna_accent_soft">#FF3A9EAE</color>
+    <color name="plna_purple">#FF7B5FC7</color>
+    <color name="plna_purple_deep">#FF5E45A0</color>
+    <color name="plna_text">#FF121826</color>
+    <color name="plna_text_secondary">#FF5B6475</color>
+    <color name="plna_text_muted">#FF8A93A3</color>
+    <color name="plna_danger">#FFD32F2F</color>
+    <color name="plna_nav_inactive">#FF8A93A3</color>
+    <color name="plna_stroke">#FFE2E6EE</color>
+    <color name="plna_map_grid">#FF9BB8BE</color>
+    <color name="plna_map_path">#FF1A8A9A</color>
+    <color name="plna_splash_bg">#FF0A1020</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

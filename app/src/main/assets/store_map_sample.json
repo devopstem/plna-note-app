@@ -1,0 +1,949 @@
+{
+  "_comment": "Sanitized sample store_maps blob for PLNA core tests (no users/PII)",
+  "layout": {
+    "bearingDegrees": 0,
+    "cashCount": 8,
+    "cashSide": "south",
+    "entranceOffsetM": 15,
+    "entranceSide": "north",
+    "entranceWidthM": 5,
+    "gridSizeCm": 50,
+    "hasCashRegisters": true,
+    "heightMeters": 25,
+    "origin": "sw",
+    "widthMeters": 30
+  },
+  "walls": [
+    {
+      "endX": 30,
+      "endY": 0,
+      "startX": 0,
+      "startY": 0,
+      "wallType": "wall"
+    },
+    {
+      "endX": 15,
+      "endY": 25,
+      "startX": 0,
+      "startY": 25,
+      "wallType": "wall"
+    },
+    {
+      "endX": 20,
+      "endY": 25,
+      "startX": 15,
+      "startY": 25,
+      "wallType": "door"
+    },
+    {
+      "endX": 30,
+      "endY": 25,
+      "startX": 20,
+      "startY": 25,
+      "wallType": "wall"
+    },
+    {
+      "endX": 0,
+      "endY": 25,
+      "startX": 0,
+      "startY": 0,
+      "wallType": "wall"
+    },
+    {
+      "endX": 30,
+      "endY": 25,
+      "startX": 30,
+      "startY": 0,
+      "wallType": "wall"
+    }
+  ],
+  "racks": [
+    {
+      "direction": "V",
+      "displayName": "Квас 1",
+      "equipmentType": "rack",
+      "heightMeters": 1.6,
+      "id": "KW-01",
+      "lengthMeters": 0.7,
+      "levels": [
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0,
+          "levelNumber": 1
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0.4,
+          "levelNumber": 2
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0.8,
+          "levelNumber": 3
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 1.2,
+          "levelNumber": 4
+        }
+      ],
+      "posX": 2,
+      "posY": 10,
+      "rotation": 0,
+      "rx": 2,
+      "ry": 10,
+      "segments": [
+        {
+          "code": "KW",
+          "position": 1,
+          "side": "LEFT"
+        }
+      ],
+      "shelfCount": 4,
+      "widthMeters": 1.2,
+      "zoneCode": "KW",
+      "zoneColor": "#6366F1"
+    },
+    {
+      "direction": "V",
+      "displayName": "Снеки 1",
+      "equipmentType": "rack",
+      "heightMeters": 1.8,
+      "id": "SN-01",
+      "lengthMeters": 0.6,
+      "levels": [
+        {
+          "capacityMeters": 0.3,
+          "heightFromFloorMeters": 0,
+          "levelNumber": 1
+        },
+        {
+          "capacityMeters": 0.3,
+          "heightFromFloorMeters": 0.3,
+          "levelNumber": 2
+        },
+        {
+          "capacityMeters": 0.3,
+          "heightFromFloorMeters": 0.6,
+          "levelNumber": 3
+        },
+        {
+          "capacityMeters": 0.3,
+          "heightFromFloorMeters": 0.9,
+          "levelNumber": 4
+        },
+        {
+          "capacityMeters": 0.3,
+          "heightFromFloorMeters": 1.2,
+          "levelNumber": 5
+        },
+        {
+          "capacityMeters": 0.3,
+          "heightFromFloorMeters": 1.5,
+          "levelNumber": 6
+        }
+      ],
+      "posX": 2,
+      "posY": 15,
+      "rotation": 0,
+      "rx": 2,
+      "ry": 15,
+      "segments": [
+        {
+          "code": "SN",
+          "position": 1,
+          "side": "LEFT"
+        }
+      ],
+      "shelfCount": 6,
+      "widthMeters": 1.5,
+      "zoneCode": "SN",
+      "zoneColor": "#6366F1"
+    },
+    {
+      "direction": "V",
+      "displayName": "Вода и Колы 1",
+      "equipmentType": "rack",
+      "heightMeters": 1.6,
+      "id": "WC-01",
+      "lengthMeters": 0.7,
+      "levels": [
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0,
+          "levelNumber": 1
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0.32,
+          "levelNumber": 2
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0.64,
+          "levelNumber": 3
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0.96,
+          "levelNumber": 4
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 1.28,
+          "levelNumber": 5
+        }
+      ],
+      "posX": 2,
+      "posY": 5,
+      "rotation": 0,
+      "rx": 2,
+      "ry": 5,
+      "segments": [
+        {
+          "code": "WC",
+          "position": 1,
+          "side": "LEFT"
+        }
+      ],
+      "shelfCount": 5,
+      "widthMeters": 1.5,
+      "zoneCode": "WC",
+      "zoneColor": "#6366F1"
+    },
+    {
+      "direction": "V",
+      "displayName": "Квас 2",
+      "equipmentType": "rack",
+      "heightMeters": 1.6,
+      "id": "KW-02",
+      "lengthMeters": 0.7,
+      "levels": [
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0,
+          "levelNumber": 1
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0.4,
+          "levelNumber": 2
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0.8,
+          "levelNumber": 3
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 1.2,
+          "levelNumber": 4
+        }
+      ],
+      "posX": 5,
+      "posY": 10,
+      "rotation": 0,
+      "rx": 5,
+      "ry": 10,
+      "segments": [
+        {
+          "code": "KW",
+          "position": 1,
+          "side": "LEFT"
+        }
+      ],
+      "shelfCount": 4,
+      "widthMeters": 1.2,
+      "zoneCode": "KW",
+      "zoneColor": "#6366F1"
+    },
+    {
+      "direction": "V",
+      "displayName": "Снеки 2",
+      "equipmentType": "rack",
+      "heightMeters": 1.8,
+      "id": "SN-02",
+      "lengthMeters": 0.6,
+      "levels": [
+        {
+          "capacityMeters": 0.3,
+          "heightFromFloorMeters": 0,
+          "levelNumber": 1
+        },
+        {
+          "capacityMeters": 0.3,
+          "heightFromFloorMeters": 0.3,
+          "levelNumber": 2
+        },
+        {
+          "capacityMeters": 0.3,
+          "heightFromFloorMeters": 0.6,
+          "levelNumber": 3
+        },
+        {
+          "capacityMeters": 0.3,
+          "heightFromFloorMeters": 0.9,
+          "levelNumber": 4
+        },
+        {
+          "capacityMeters": 0.3,
+          "heightFromFloorMeters": 1.2,
+          "levelNumber": 5
+        },
+        {
+          "capacityMeters": 0.3,
+          "heightFromFloorMeters": 1.5,
+          "levelNumber": 6
+        }
+      ],
+      "posX": 5,
+      "posY": 15,
+      "rotation": 0,
+      "rx": 5,
+      "ry": 15,
+      "segments": [
+        {
+          "code": "SN",
+          "position": 1,
+          "side": "LEFT"
+        }
+      ],
+      "shelfCount": 6,
+      "widthMeters": 1.5,
+      "zoneCode": "SN",
+      "zoneColor": "#6366F1"
+    },
+    {
+      "direction": "V",
+      "displayName": "Вода и Колы 2",
+      "equipmentType": "rack",
+      "heightMeters": 1.6,
+      "id": "WC-02",
+      "lengthMeters": 0.7,
+      "levels": [
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0,
+          "levelNumber": 1
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0.32,
+          "levelNumber": 2
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0.64,
+          "levelNumber": 3
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0.96,
+          "levelNumber": 4
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 1.28,
+          "levelNumber": 5
+        }
+      ],
+      "posX": 5,
+      "posY": 5,
+      "rotation": 0,
+      "rx": 5,
+      "ry": 5,
+      "segments": [
+        {
+          "code": "WC",
+          "position": 1,
+          "side": "LEFT"
+        }
+      ],
+      "shelfCount": 5,
+      "widthMeters": 1.5,
+      "zoneCode": "WC",
+      "zoneColor": "#6366F1"
+    },
+    {
+      "direction": "V",
+      "displayName": "Квас 3",
+      "equipmentType": "rack",
+      "heightMeters": 1.6,
+      "id": "KW-03",
+      "lengthMeters": 0.7,
+      "levels": [
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0,
+          "levelNumber": 1
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0.4,
+          "levelNumber": 2
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0.8,
+          "levelNumber": 3
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 1.2,
+          "levelNumber": 4
+        }
+      ],
+      "posX": 8,
+      "posY": 10,
+      "rotation": 0,
+      "rx": 8,
+      "ry": 10,
+      "segments": [
+        {
+          "code": "KW",
+          "position": 1,
+          "side": "LEFT"
+        }
+      ],
+      "shelfCount": 4,
+      "widthMeters": 1.2,
+      "zoneCode": "KW",
+      "zoneColor": "#6366F1"
+    },
+    {
+      "direction": "V",
+      "displayName": "Вода и Колы 3",
+      "equipmentType": "rack",
+      "heightMeters": 1.6,
+      "id": "WC-03",
+      "lengthMeters": 0.7,
+      "levels": [
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0,
+          "levelNumber": 1
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0.32,
+          "levelNumber": 2
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0.64,
+          "levelNumber": 3
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0.96,
+          "levelNumber": 4
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 1.28,
+          "levelNumber": 5
+        }
+      ],
+      "posX": 8,
+      "posY": 5,
+      "rotation": 0,
+      "rx": 8,
+      "ry": 5,
+      "segments": [
+        {
+          "code": "WC",
+          "position": 1,
+          "side": "LEFT"
+        }
+      ],
+      "shelfCount": 5,
+      "widthMeters": 1.5,
+      "zoneCode": "WC",
+      "zoneColor": "#6366F1"
+    },
+    {
+      "direction": "V",
+      "displayName": "Вода и Колы 4",
+      "equipmentType": "rack",
+      "heightMeters": 1.6,
+      "id": "WC-04",
+      "lengthMeters": 0.7,
+      "levels": [
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0,
+          "levelNumber": 1
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0.32,
+          "levelNumber": 2
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0.64,
+          "levelNumber": 3
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0.96,
+          "levelNumber": 4
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 1.28,
+          "levelNumber": 5
+        }
+      ],
+      "posX": 11,
+      "posY": 5,
+      "rotation": 0,
+      "rx": 11,
+      "ry": 5,
+      "segments": [
+        {
+          "code": "WC",
+          "position": 1,
+          "side": "LEFT"
+        }
+      ],
+      "shelfCount": 5,
+      "widthMeters": 1.5,
+      "zoneCode": "WC",
+      "zoneColor": "#6366F1"
+    },
+    {
+      "direction": "V",
+      "displayName": "Вода и Колы 5",
+      "equipmentType": "rack",
+      "heightMeters": 1.6,
+      "id": "WC-05",
+      "lengthMeters": 0.7,
+      "levels": [
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0,
+          "levelNumber": 1
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0.32,
+          "levelNumber": 2
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0.64,
+          "levelNumber": 3
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 0.96,
+          "levelNumber": 4
+        },
+        {
+          "capacityMeters": 0.32,
+          "heightFromFloorMeters": 1.28,
+          "levelNumber": 5
+        }
+      ],
+      "posX": 14,
+      "posY": 5,
+      "rotation": 0,
+      "rx": 14,
+      "ry": 5,
+      "segments": [
+        {
+          "code": "WC",
+          "position": 1,
+          "side": "LEFT"
+        }
+      ],
+      "shelfCount": 5,
+      "widthMeters": 1.5,
+      "zoneCode": "WC",
+      "zoneColor": "#6366F1"
+    }
+  ],
+  "coolers": [
+    {
+      "displayName": "Холодильник молочный 1",
+      "doorCount": 2,
+      "equipmentType": "cooler",
+      "heightMeters": 2,
+      "id": "DF-C01",
+      "lengthMeters": 0.8,
+      "levels": [
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0,
+          "levelNumber": 1
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0.4,
+          "levelNumber": 2
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0.8,
+          "levelNumber": 3
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 1.2,
+          "levelNumber": 4
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 1.6,
+          "levelNumber": 5
+        }
+      ],
+      "posX": 20,
+      "posY": 5,
+      "rotation": 0,
+      "rx": 20,
+      "ry": 5,
+      "shelfCount": 5,
+      "temperatureZone": "chilled",
+      "widthMeters": 1.2,
+      "zoneCode": "DF",
+      "zoneColor": "#6366F1"
+    },
+    {
+      "displayName": "Морозильник мороженое",
+      "doorCount": 3,
+      "equipmentType": "cooler",
+      "heightMeters": 2,
+      "id": "IC-C01",
+      "lengthMeters": 0.8,
+      "levels": [
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0,
+          "levelNumber": 1
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0.4,
+          "levelNumber": 2
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0.8,
+          "levelNumber": 3
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 1.2,
+          "levelNumber": 4
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 1.6,
+          "levelNumber": 5
+        }
+      ],
+      "posX": 26,
+      "posY": 5,
+      "rotation": 0,
+      "rx": 26,
+      "ry": 5,
+      "shelfCount": 5,
+      "temperatureZone": "frozen",
+      "widthMeters": 1.8,
+      "zoneCode": "IC",
+      "zoneColor": "#6366F1"
+    },
+    {
+      "displayName": "Холодильник молочный 2",
+      "doorCount": 2,
+      "equipmentType": "cooler",
+      "heightMeters": 2,
+      "id": "DF-C02",
+      "lengthMeters": 0.8,
+      "levels": [
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0,
+          "levelNumber": 1
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0.4,
+          "levelNumber": 2
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0.8,
+          "levelNumber": 3
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 1.2,
+          "levelNumber": 4
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 1.6,
+          "levelNumber": 5
+        }
+      ],
+      "posX": 23,
+      "posY": 5,
+      "rotation": 0,
+      "rx": 23,
+      "ry": 5,
+      "shelfCount": 5,
+      "temperatureZone": "chilled",
+      "widthMeters": 1.2,
+      "zoneCode": "DF",
+      "zoneColor": "#6366F1"
+    }
+  ],
+  "stands": [
+    {
+      "displayName": "Стойка промо 1",
+      "equipmentType": "stand",
+      "hasBack": false,
+      "heightMeters": 1.6,
+      "id": "ST-01",
+      "lengthMeters": 0.8,
+      "levels": [
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0,
+          "levelNumber": 1
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0.4,
+          "levelNumber": 2
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0.8,
+          "levelNumber": 3
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 1.2,
+          "levelNumber": 4
+        }
+      ],
+      "posX": 2,
+      "posY": 20,
+      "rotation": 0,
+      "rx": 2,
+      "ry": 20,
+      "shelfCount": 4,
+      "standType": "endcap",
+      "widthMeters": 0.8,
+      "zoneCode": "SN",
+      "zoneColor": "#6366F1"
+    },
+    {
+      "displayName": "Стойка промо 2",
+      "equipmentType": "stand",
+      "hasBack": false,
+      "heightMeters": 1.6,
+      "id": "ST-02",
+      "lengthMeters": 0.8,
+      "levels": [
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0,
+          "levelNumber": 1
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0.4,
+          "levelNumber": 2
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 0.8,
+          "levelNumber": 3
+        },
+        {
+          "capacityMeters": 0.4,
+          "heightFromFloorMeters": 1.2,
+          "levelNumber": 4
+        }
+      ],
+      "posX": 5,
+      "posY": 20,
+      "rotation": 0,
+      "rx": 5,
+      "ry": 20,
+      "shelfCount": 4,
+      "standType": "island",
+      "widthMeters": 0.8,
+      "zoneCode": "SN",
+      "zoneColor": "#6366F1"
+    },
+    {
+      "displayName": "Стойка у кассы",
+      "equipmentType": "stand",
+      "hasBack": true,
+      "heightMeters": 1.4,
+      "id": "ST-03",
+      "lengthMeters": 0.6,
+      "levels": [
+        {
+          "capacityMeters": 0.466,
+          "heightFromFloorMeters": 0,
+          "levelNumber": 1
+        },
+        {
+          "capacityMeters": 0.466,
+          "heightFromFloorMeters": 0.466,
+          "levelNumber": 2
+        },
+        {
+          "capacityMeters": 0.468,
+          "heightFromFloorMeters": 0.932,
+          "levelNumber": 3
+        }
+      ],
+      "posX": 10,
+      "posY": 20,
+      "rotation": 0,
+      "rx": 10,
+      "ry": 20,
+      "shelfCount": 3,
+      "standType": "gondola",
+      "widthMeters": 0.6,
+      "zoneCode": "SN",
+      "zoneColor": "#6366F1"
+    }
+  ],
+  "markers": [
+    {
+      "code": "CR-01",
+      "color": "#eab308",
+      "depthMeters": 0.8,
+      "id": "CR-01",
+      "posX": 8.8,
+      "posY": 0.3,
+      "rotation": 0,
+      "type": "cash_register",
+      "widthMeters": 1.2
+    },
+    {
+      "code": "CR-02",
+      "color": "#eab308",
+      "depthMeters": 0.8,
+      "id": "CR-02",
+      "posX": 10.4,
+      "posY": 0.3,
+      "rotation": 0,
+      "type": "cash_register",
+      "widthMeters": 1.2
+    },
+    {
+      "code": "CR-03",
+      "color": "#eab308",
+      "depthMeters": 0.8,
+      "id": "CR-03",
+      "posX": 12,
+      "posY": 0.3,
+      "rotation": 0,
+      "type": "cash_register",
+      "widthMeters": 1.2
+    },
+    {
+      "code": "CR-04",
+      "color": "#eab308",
+      "depthMeters": 0.8,
+      "id": "CR-04",
+      "posX": 13.6,
+      "posY": 0.3,
+      "rotation": 0,
+      "type": "cash_register",
+      "widthMeters": 1.2
+    },
+    {
+      "code": "CR-05",
+      "color": "#eab308",
+      "depthMeters": 0.8,
+      "id": "CR-05",
+      "posX": 15.2,
+      "posY": 0.3,
+      "rotation": 0,
+      "type": "cash_register",
+      "widthMeters": 1.2
+    },
+    {
+      "code": "CR-06",
+      "color": "#eab308",
+      "depthMeters": 0.8,
+      "id": "CR-06",
+      "posX": 16.8,
+      "posY": 0.3,
+      "rotation": 0,
+      "type": "cash_register",
+      "widthMeters": 1.2
+    },
+    {
+      "code": "CR-07",
+      "color": "#eab308",
+      "depthMeters": 0.8,
+      "id": "CR-07",
+      "posX": 18.4,
+      "posY": 0.3,
+      "rotation": 0,
+      "type": "cash_register",
+      "widthMeters": 1.2
+    },
+    {
+      "code": "CR-08",
+      "color": "#eab308",
+      "depthMeters": 0.8,
+      "id": "CR-08",
+      "posX": 20,
+      "posY": 0.3,
+      "rotation": 0,
+      "type": "cash_register",
+      "widthMeters": 1.2
+    },
+    {
+      "code": "IN-01",
+      "color": "#22c55e",
+      "depthMeters": 0.6,
+      "id": "IN-01",
+      "posX": 15,
+      "posY": 24.4,
+      "rotation": 180,
+      "type": "entrance",
+      "widthMeters": 5
+    }
+  ],
+  "zones": [
+    {
+      "code": "AIR",
+      "color": "#6366F1",
+      "name": "Освежители"
+    },
+    {
+      "code": "BF",
+      "color": "#6366F1",
+      "name": "Детское питание"
+    },
+    {
+      "code": "BK",
+      "color": "#6366F1",
+      "name": "Булочки и Сдоба"
+    },
+    {
+      "code": "BL",
+      "color": "#6366F1",
+      "name": "Блины и Оладьи"
+    },
+    {
+      "code": "BR",
+      "color": "#6366F1",
+      "name": "Хлеб"
+    }
+  ]
+}

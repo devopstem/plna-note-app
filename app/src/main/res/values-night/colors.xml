@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="plna_bg">#FF0B1220</color>
+    <color name="plna_surface">#FF151E2E</color>
+    <color name="plna_surface_elevated">#FF1B2638</color>
+    <color name="plna_accent">#FF5EC8D8</color>
+    <color name="plna_accent_soft">#FF3A9EAE</color>
+    <color name="plna_purple">#FF9B7EDE</color>
+    <color name="plna_purple_deep">#FF7B5FC7</color>
+    <color name="plna_text">#FFFFFFFF</color>
+    <color name="plna_text_secondary">#FF9AA3B2</color>
+    <color name="plna_text_muted">#FF6B7385</color>
+    <color name="plna_danger">#FFE57373</color>
+    <color name="plna_nav_inactive">#FF8A93A3</color>
+    <color name="plna_stroke">#FF2A3548</color>
+    <color name="plna_map_grid">#FF2A6B75</color>
+    <color name="plna_map_path">#FF5EC8D8</color>
+    <color name="plna_splash_bg">#FF0A1020</color>
+</resources>

@@ -1,0 +1,4137 @@
+{
+  "catalog": {
+    "tenants": {
+      "01a04dc9-99cc-7115-a107-8c3c4e204173": {
+        "metadata": {
+          "count": 67,
+          "tenant_id": "01a04dc9-99cc-7115-a107-8c3c4e204173",
+          "updatedAt": "2026-08-30 18:58"
+        },
+        "products": {
+          "4810014018641": {
+            "barcode": "4810014018641",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Старажытны Бачкавы темный 1.4 л"
+          },
+          "4810014018658": {
+            "barcode": "4810014018658",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас светлый Старажытны"
+          },
+          "4810014020750": {
+            "barcode": "4810014020750",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Цемны Старажытны"
+          },
+          "4810014020903": {
+            "barcode": "4810014020903",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Бачкавы 0.45 л"
+          },
+          "4810074000150": {
+            "barcode": "4810074000150",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская минеральная 2 л"
+          },
+          "4810074000167": {
+            "barcode": "4810074000167",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская-4 минеральная 1.5 л"
+          },
+          "4810074000174": {
+            "barcode": "4810074000174",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская-4 газ 1 л"
+          },
+          "4810074000181": {
+            "barcode": "4810074000181",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская-4 газ 0.5 л"
+          },
+          "4810074000600": {
+            "barcode": "4810074000600",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская не газ 0.5 л"
+          },
+          "4810074001294": {
+            "barcode": "4810074001294",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская не газ 1 л"
+          },
+          "4810074007098": {
+            "barcode": "4810074007098",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская газ 0.5 л"
+          },
+          "4810074007104": {
+            "barcode": "4810074007104",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская газ 1 л"
+          },
+          "4810074007883": {
+            "barcode": "4810074007883",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская Вода негаз 1.5 л"
+          },
+          "4810074009559": {
+            "barcode": "4810074009559",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская 5 л"
+          },
+          "4810074009788": {
+            "barcode": "4810074009788",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская лимон 1 л"
+          },
+          "4810074009795": {
+            "barcode": "4810074009795",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская лимон 2 л"
+          },
+          "4810074011408": {
+            "barcode": "4810074011408",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская черная смородина 1 л"
+          },
+          "4810074011491": {
+            "barcode": "4810074011491",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская пайнберри 1 л"
+          },
+          "4810074011729": {
+            "barcode": "4810074011729",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская пайнберри 0.5 л"
+          },
+          "4810112014491": {
+            "barcode": "4810112014491",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Напиток безалкогольный квас Даридыч светлый пастеризованный 1.5 л"
+          },
+          "4810112014507": {
+            "barcode": "4810112014507",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Напиток безалкогольный квас Даридыч светлый пастеризованный 1.5 л"
+          },
+          "4810285004008": {
+            "barcode": "4810285004008",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский хлебный 1.5 л ПЭТ"
+          },
+          "4810285004015": {
+            "barcode": "4810285004015",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский хлебный 2 л ПЭТ"
+          },
+          "4810285006743": {
+            "barcode": "4810285006743",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский темный 1.5 л ПЭТ"
+          },
+          "4810285007559": {
+            "barcode": "4810285007559",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA не газ 0.5 л"
+          },
+          "4810285007566": {
+            "barcode": "4810285007566",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA не газ 1 л"
+          },
+          "4810285007573": {
+            "barcode": "4810285007573",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA не газ 1.5 л"
+          },
+          "4810285007580": {
+            "barcode": "4810285007580",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA не газ 5 л"
+          },
+          "4810285008402": {
+            "barcode": "4810285008402",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский хлебный 1 л ПЭТ"
+          },
+          "4810285008419": {
+            "barcode": "4810285008419",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский темный 1 л ПЭТ"
+          },
+          "4810285009027": {
+            "barcode": "4810285009027",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский темный 2 л ПЭТ"
+          },
+          "4810285009447": {
+            "barcode": "4810285009447",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA газ 0.5 л"
+          },
+          "4810285009454": {
+            "barcode": "4810285009454",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA газ 1 л"
+          },
+          "4810285009461": {
+            "barcode": "4810285009461",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA газ 1.5 л"
+          },
+          "4810285011327": {
+            "barcode": "4810285011327",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский Темный 0.45 л ПЭТ"
+          },
+          "4810285012027": {
+            "barcode": "4810285012027",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский Хлебный 0.45 л",
+            "package_type": "ПЭТ",
+            "volume_ml": 450
+          },
+          "4810285015769": {
+            "barcode": "4810285015769",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Лимонад Chillz Chilli 0.45 л ж/б"
+          },
+          "4810285016032": {
+            "barcode": "4810285016032",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Напиток газированный таинственный Chillz Chilli 0.45 л ж/б"
+          },
+          "4810285016599": {
+            "barcode": "4810285016599",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Напиток газированный десертный Chillz Chilli 0.45 л ж/б"
+          },
+          "4810285016735": {
+            "barcode": "4810285016735",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Напиток газированный Chillz Chilli 0.45 л ж/б"
+          },
+          "4810285016995": {
+            "barcode": "4810285016995",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Напиток безалкогольный газированный CHIILZ анимейшн 0.45 л ж/б"
+          },
+          "4810392007527": {
+            "barcode": "4810392007527",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас деревенский на хлебной корочке 1.5 л ПЭТ"
+          },
+          "4811222003962": {
+            "barcode": "4811222003962",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Хатни спрауны 0.9 л ПЭТ"
+          },
+          "4811222003979": {
+            "barcode": "4811222003979",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Хатни спрауны 1.4 л ПЭТ"
+          },
+          "4811222003986": {
+            "barcode": "4811222003986",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Хатни спрауны 1.9 л ПЭТ"
+          },
+          "4811222005393": {
+            "barcode": "4811222005393",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Хатни темный 0.9 л ПЭТ"
+          },
+          "4811222005409": {
+            "barcode": "4811222005409",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Хатни темный 1.4 л ПЭТ"
+          },
+          "4811222005416": {
+            "barcode": "4811222005416",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Хатни темный 1.9 л ПЭТ"
+          },
+          "4816138700042": {
+            "barcode": "4816138700042",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас белорусский оригинальный фильтрованный пастеризованный"
+          },
+          "4816138700134": {
+            "barcode": "4816138700134",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас белорусский оригинальный 1.5 л Белая Хатка"
+          },
+          "4816138700141": {
+            "barcode": "4816138700141",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас белорусский фильтрованный пастеризованный"
+          },
+          "5449000000286": {
+            "barcode": "5449000000286",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола 2.0 л ПЭТ"
+          },
+          "5449000000439": {
+            "barcode": "5449000000439",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола 1.5 л ПЭТ"
+          },
+          "5449000000996": {
+            "barcode": "5449000000996",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола 0.33 л ж/б"
+          },
+          "5449000014535": {
+            "barcode": "5449000014535",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Спрайт 0.33 л ж/б"
+          },
+          "5449000054227": {
+            "barcode": "5449000054227",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола 1.0 л ПЭТ"
+          },
+          "5449000098917": {
+            "barcode": "5449000098917",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола ваниль 0.33 л ж/б"
+          },
+          "5449000131805": {
+            "barcode": "5449000131805",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 0.33 л ж/б"
+          },
+          "5449000131836": {
+            "barcode": "5449000131836",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 0.5 л ПЭТ"
+          },
+          "5449000131843": {
+            "barcode": "5449000131843",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 2.0 л ПЭТ"
+          },
+          "5449000133328": {
+            "barcode": "5449000133328",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 1.0 л ПЭТ"
+          },
+          "5449000133335": {
+            "barcode": "5449000133335",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 1.5 л ПЭТ"
+          },
+          "5449000214805": {
+            "barcode": "5449000214805",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Фанта Апельсин 0.33 л ж/б"
+          },
+          "5449000214829": {
+            "barcode": "5449000214829",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Фанта лимон 0.33 л ж/б"
+          },
+          "5449000231178": {
+            "barcode": "5449000231178",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Фанта виноград 0.33 л ж/б"
+          },
+          "5449000250964": {
+            "barcode": "5449000250964",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола 0.5 л ПЭТ"
+          },
+          "5449000338709": {
+            "barcode": "5449000338709",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола без сахара лимон 0.33 л ж/б"
+          }
+        }
+      },
+      "01a05448-87bd-727e-b14d-98a45186eeac": {
+        "metadata": {
+          "count": 67,
+          "tenant_id": "01a05448-87bd-727e-b14d-98a45186eeac",
+          "updatedAt": "2026-08-31 04:59"
+        },
+        "products": {
+          "4810014018641": {
+            "barcode": "4810014018641",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Старажытны Бачкавы темный 1.4 л"
+          },
+          "4810014018658": {
+            "barcode": "4810014018658",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас светлый Старажытны"
+          },
+          "4810014020750": {
+            "barcode": "4810014020750",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Цемны Старажытны"
+          },
+          "4810014020903": {
+            "barcode": "4810014020903",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Бачкавы 0.45 л"
+          },
+          "4810074000150": {
+            "barcode": "4810074000150",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская минеральная 2 л"
+          },
+          "4810074000167": {
+            "barcode": "4810074000167",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская-4 минеральная 1.5 л"
+          },
+          "4810074000174": {
+            "barcode": "4810074000174",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская-4 газ 1 л"
+          },
+          "4810074000181": {
+            "barcode": "4810074000181",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская-4 газ 0.5 л"
+          },
+          "4810074000600": {
+            "barcode": "4810074000600",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская не газ 0.5 л"
+          },
+          "4810074001294": {
+            "barcode": "4810074001294",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская не газ 1 л"
+          },
+          "4810074007098": {
+            "barcode": "4810074007098",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская газ 0.5 л"
+          },
+          "4810074007104": {
+            "barcode": "4810074007104",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская газ 1 л"
+          },
+          "4810074007883": {
+            "barcode": "4810074007883",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская Вода негаз 1.5 л"
+          },
+          "4810074009559": {
+            "barcode": "4810074009559",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская 5 л"
+          },
+          "4810074009788": {
+            "barcode": "4810074009788",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская лимон 1 л"
+          },
+          "4810074009795": {
+            "barcode": "4810074009795",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская лимон 2 л"
+          },
+          "4810074011408": {
+            "barcode": "4810074011408",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская черная смородина 1 л"
+          },
+          "4810074011491": {
+            "barcode": "4810074011491",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская пайнберри 1 л"
+          },
+          "4810074011729": {
+            "barcode": "4810074011729",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская пайнберри 0.5 л"
+          },
+          "4810112014491": {
+            "barcode": "4810112014491",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Напиток безалкогольный квас Даридыч светлый пастеризованный 1.5 л"
+          },
+          "4810112014507": {
+            "barcode": "4810112014507",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Напиток безалкогольный квас Даридыч светлый пастеризованный 1.5 л"
+          },
+          "4810285004008": {
+            "barcode": "4810285004008",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский хлебный 1.5 л ПЭТ"
+          },
+          "4810285004015": {
+            "barcode": "4810285004015",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский хлебный 2 л ПЭТ"
+          },
+          "4810285006743": {
+            "barcode": "4810285006743",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский темный 1.5 л ПЭТ"
+          },
+          "4810285007559": {
+            "barcode": "4810285007559",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA не газ 0.5 л"
+          },
+          "4810285007566": {
+            "barcode": "4810285007566",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA не газ 1 л"
+          },
+          "4810285007573": {
+            "barcode": "4810285007573",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA не газ 1.5 л"
+          },
+          "4810285007580": {
+            "barcode": "4810285007580",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA не газ 5 л",
+            "package_type": "Бутылка"
+          },
+          "4810285008402": {
+            "barcode": "4810285008402",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский хлебный 1 л ПЭТ"
+          },
+          "4810285008419": {
+            "barcode": "4810285008419",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский темный 1 л ПЭТ"
+          },
+          "4810285009027": {
+            "barcode": "4810285009027",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский темный 2 л ПЭТ",
+            "package_type": "ПЭТ",
+            "volume_ml": 2000
+          },
+          "4810285009447": {
+            "barcode": "4810285009447",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA газ 0.5 л"
+          },
+          "4810285009454": {
+            "barcode": "4810285009454",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA газ 1 л"
+          },
+          "4810285009461": {
+            "barcode": "4810285009461",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA газ 1.5 л"
+          },
+          "4810285011327": {
+            "barcode": "4810285011327",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский Темный 0.45 л ПЭТ"
+          },
+          "4810285012027": {
+            "barcode": "4810285012027",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский Хлебный 0.45 л"
+          },
+          "4810285015769": {
+            "barcode": "4810285015769",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Лимонад Chillz Chilli 0.45 л ж/б"
+          },
+          "4810285016032": {
+            "barcode": "4810285016032",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Напиток газированный таинственный Chillz Chilli 0.45 л ж/б"
+          },
+          "4810285016599": {
+            "barcode": "4810285016599",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Напиток газированный десертный Chillz Chilli 0.45 л ж/б"
+          },
+          "4810285016735": {
+            "barcode": "4810285016735",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Напиток газированный Chillz Chilli 0.45 л ж/б"
+          },
+          "4810285016995": {
+            "barcode": "4810285016995",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Напиток безалкогольный газированный CHIILZ анимейшн 0.45 л ж/б"
+          },
+          "4810392007527": {
+            "barcode": "4810392007527",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас деревенский на хлебной корочке 1.5 л ПЭТ"
+          },
+          "4811222003962": {
+            "barcode": "4811222003962",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Хатни спрауны 0.9 л ПЭТ"
+          },
+          "4811222003979": {
+            "barcode": "4811222003979",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Хатни спрауны 1.4 л ПЭТ"
+          },
+          "4811222003986": {
+            "barcode": "4811222003986",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Хатни спрауны 1.9 л ПЭТ"
+          },
+          "4811222005393": {
+            "barcode": "4811222005393",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Хатни темный 0.9 л ПЭТ"
+          },
+          "4811222005409": {
+            "barcode": "4811222005409",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Хатни темный 1.4 л ПЭТ"
+          },
+          "4811222005416": {
+            "barcode": "4811222005416",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Хатни темный 1.9 л ПЭТ"
+          },
+          "4816138700042": {
+            "barcode": "4816138700042",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас белорусский оригинальный фильтрованный пастеризованный"
+          },
+          "4816138700134": {
+            "barcode": "4816138700134",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас белорусский оригинальный 1.5 л Белая Хатка"
+          },
+          "4816138700141": {
+            "barcode": "4816138700141",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас белорусский фильтрованный пастеризованный"
+          },
+          "5449000000286": {
+            "barcode": "5449000000286",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола 2.0 л ПЭТ"
+          },
+          "5449000000439": {
+            "barcode": "5449000000439",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола 1.5 л ПЭТ"
+          },
+          "5449000000996": {
+            "barcode": "5449000000996",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола 0.33 л ж/б",
+            "package_type": "Другое",
+            "volume_ml": 330
+          },
+          "5449000014535": {
+            "barcode": "5449000014535",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Спрайт 0.33 л ж/б",
+            "package_type": "Банка",
+            "volume_ml": 330
+          },
+          "5449000054227": {
+            "barcode": "5449000054227",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола 1.0 л ПЭТ",
+            "package_type": "Бутылка",
+            "volume_ml": 1000
+          },
+          "5449000098917": {
+            "barcode": "5449000098917",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола ваниль 0.33 л ж/б",
+            "package_type": "Банка",
+            "volume_ml": 330
+          },
+          "5449000131805": {
+            "barcode": "5449000131805",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 0.33 л ж/б",
+            "package_type": "Банка",
+            "volume_ml": 330
+          },
+          "5449000131836": {
+            "barcode": "5449000131836",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 0.5 л ПЭТ"
+          },
+          "5449000131843": {
+            "barcode": "5449000131843",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 2.0 л ПЭТ"
+          },
+          "5449000133328": {
+            "barcode": "5449000133328",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 1.0 л ПЭТ"
+          },
+          "5449000133335": {
+            "barcode": "5449000133335",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 1.5 л ПЭТ"
+          },
+          "5449000214805": {
+            "barcode": "5449000214805",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Фанта Апельсин 0.33 л ж/б"
+          },
+          "5449000214829": {
+            "barcode": "5449000214829",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Фанта лимон 0.33 л ж/б"
+          },
+          "5449000231178": {
+            "barcode": "5449000231178",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Фанта виноград 0.33 л ж/б"
+          },
+          "5449000250964": {
+            "barcode": "5449000250964",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола 0.5 л ПЭТ"
+          },
+          "5449000338709": {
+            "barcode": "5449000338709",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола без сахара лимон 0.33 л ж/б"
+          }
+        }
+      },
+      "01a05682-5643-70fa-87d9-00ece0338327": {
+        "metadata": {
+          "count": 67,
+          "tenant_id": "01a05682-5643-70fa-87d9-00ece0338327",
+          "updatedAt": "2026-08-31 06:31"
+        },
+        "products": {
+          "4810014018641": {
+            "barcode": "4810014018641",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас Старажытны Бачкавы темный 1.4 л"
+          },
+          "4810014018658": {
+            "barcode": "4810014018658",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас светлый Старажытны"
+          },
+          "4810014020750": {
+            "barcode": "4810014020750",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас Цемны Старажытны"
+          },
+          "4810014020903": {
+            "barcode": "4810014020903",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас Бачкавы 0.45 л"
+          },
+          "4810074000150": {
+            "barcode": "4810074000150",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "Минская минеральная 2 л"
+          },
+          "4810074000167": {
+            "barcode": "4810074000167",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "Минская-4 минеральная 1.5 л"
+          },
+          "4810074000174": {
+            "barcode": "4810074000174",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "Минская-4 газ 1 л"
+          },
+          "4810074000181": {
+            "barcode": "4810074000181",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "Минская-4 газ 0.5 л"
+          },
+          "4810074000600": {
+            "barcode": "4810074000600",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "Минская не газ 0.5 л"
+          },
+          "4810074001294": {
+            "barcode": "4810074001294",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "Минская не газ 1 л"
+          },
+          "4810074007098": {
+            "barcode": "4810074007098",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "Минская газ 0.5 л"
+          },
+          "4810074007104": {
+            "barcode": "4810074007104",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "Минская газ 1 л"
+          },
+          "4810074007883": {
+            "barcode": "4810074007883",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "Минская Вода негаз 1.5 л"
+          },
+          "4810074009559": {
+            "barcode": "4810074009559",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "Минская 5 л"
+          },
+          "4810074009788": {
+            "barcode": "4810074009788",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "Минская лимон 1 л"
+          },
+          "4810074009795": {
+            "barcode": "4810074009795",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "Минская лимон 2 л"
+          },
+          "4810074011408": {
+            "barcode": "4810074011408",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "Минская черная смородина 1 л"
+          },
+          "4810074011491": {
+            "barcode": "4810074011491",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "Минская пайнберри 1 л"
+          },
+          "4810074011729": {
+            "barcode": "4810074011729",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "Минская пайнберри 0.5 л"
+          },
+          "4810112014491": {
+            "barcode": "4810112014491",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Напиток безалкогольный квас Даридыч светлый пастеризованный 1.5 л"
+          },
+          "4810112014507": {
+            "barcode": "4810112014507",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Напиток безалкогольный квас Даридыч светлый пастеризованный 1.5 л"
+          },
+          "4810285004008": {
+            "barcode": "4810285004008",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас Лидский хлебный 1.5 л ПЭТ"
+          },
+          "4810285004015": {
+            "barcode": "4810285004015",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас Лидский хлебный 2 л ПЭТ"
+          },
+          "4810285006743": {
+            "barcode": "4810285006743",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас Лидский темный 1.5 л ПЭТ"
+          },
+          "4810285007559": {
+            "barcode": "4810285007559",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "AURA не газ 0.5 л"
+          },
+          "4810285007566": {
+            "barcode": "4810285007566",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "AURA не газ 1 л"
+          },
+          "4810285007573": {
+            "barcode": "4810285007573",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "AURA не газ 1.5 л"
+          },
+          "4810285007580": {
+            "barcode": "4810285007580",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "AURA не газ 5 л"
+          },
+          "4810285008402": {
+            "barcode": "4810285008402",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас Лидский хлебный 1 л ПЭТ"
+          },
+          "4810285008419": {
+            "barcode": "4810285008419",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас Лидский темный 1 л ПЭТ"
+          },
+          "4810285009027": {
+            "barcode": "4810285009027",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас Лидский темный 2 л ПЭТ"
+          },
+          "4810285009447": {
+            "barcode": "4810285009447",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "AURA газ 0.5 л"
+          },
+          "4810285009454": {
+            "barcode": "4810285009454",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "AURA газ 1 л"
+          },
+          "4810285009461": {
+            "barcode": "4810285009461",
+            "category": "Вода Минская",
+            "checked": false,
+            "is_private": false,
+            "name": "AURA газ 1.5 л"
+          },
+          "4810285011327": {
+            "barcode": "4810285011327",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас Лидский Темный 0.45 л ПЭТ"
+          },
+          "4810285012027": {
+            "barcode": "4810285012027",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас Лидский Хлебный 0.45 л"
+          },
+          "4810285015769": {
+            "barcode": "4810285015769",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Лимонад Chillz Chilli 0.45 л ж/б"
+          },
+          "4810285016032": {
+            "barcode": "4810285016032",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Напиток газированный таинственный Chillz Chilli 0.45 л ж/б"
+          },
+          "4810285016599": {
+            "barcode": "4810285016599",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Напиток газированный десертный Chillz Chilli 0.45 л ж/б"
+          },
+          "4810285016735": {
+            "barcode": "4810285016735",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Напиток газированный Chillz Chilli 0.45 л ж/б"
+          },
+          "4810285016995": {
+            "barcode": "4810285016995",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Напиток безалкогольный газированный CHIILZ анимейшн 0.45 л ж/б"
+          },
+          "4810392007527": {
+            "barcode": "4810392007527",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас деревенский на хлебной корочке 1.5 л ПЭТ"
+          },
+          "4811222003962": {
+            "barcode": "4811222003962",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас Хатни спрауны 0.9 л ПЭТ"
+          },
+          "4811222003979": {
+            "barcode": "4811222003979",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас Хатни спрауны 1.4 л ПЭТ"
+          },
+          "4811222003986": {
+            "barcode": "4811222003986",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас Хатни спрауны 1.9 л ПЭТ"
+          },
+          "4811222005393": {
+            "barcode": "4811222005393",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас Хатни темный 0.9 л ПЭТ"
+          },
+          "4811222005409": {
+            "barcode": "4811222005409",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас Хатни темный 1.4 л ПЭТ"
+          },
+          "4811222005416": {
+            "barcode": "4811222005416",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас Хатни темный 1.9 л ПЭТ"
+          },
+          "4816138700042": {
+            "barcode": "4816138700042",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас белорусский оригинальный фильтрованный пастеризованный"
+          },
+          "4816138700134": {
+            "barcode": "4816138700134",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас белорусский оригинальный 1.5 л Белая Хатка"
+          },
+          "4816138700141": {
+            "barcode": "4816138700141",
+            "category": "Квас Белорусский",
+            "checked": false,
+            "is_private": false,
+            "name": "Квас белорусский фильтрованный пастеризованный"
+          },
+          "5449000000286": {
+            "barcode": "5449000000286",
+            "category": "Напитки",
+            "checked": false,
+            "is_private": false,
+            "name": "Кока-Кола 2.0 л ПЭТ"
+          },
+          "5449000000439": {
+            "barcode": "5449000000439",
+            "category": "Напитки",
+            "checked": false,
+            "is_private": false,
+            "name": "Кока-Кола 1.5 л ПЭТ"
+          },
+          "5449000000996": {
+            "barcode": "5449000000996",
+            "category": "Напитки",
+            "checked": false,
+            "is_private": false,
+            "name": "Кока-Кола 0.33 л ж/б"
+          },
+          "5449000014535": {
+            "barcode": "5449000014535",
+            "category": "Напитки",
+            "checked": false,
+            "is_private": false,
+            "name": "Спрайт 0.33 л ж/б"
+          },
+          "5449000054227": {
+            "barcode": "5449000054227",
+            "category": "Напитки",
+            "checked": false,
+            "is_private": false,
+            "name": "Кока-Кола 1.0 л ПЭТ"
+          },
+          "5449000098917": {
+            "barcode": "5449000098917",
+            "category": "Напитки",
+            "checked": false,
+            "is_private": false,
+            "name": "Кока-Кола ваниль 0.33 л ж/б"
+          },
+          "5449000131805": {
+            "barcode": "5449000131805",
+            "category": "Напитки",
+            "checked": false,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 0.33 л ж/б"
+          },
+          "5449000131836": {
+            "barcode": "5449000131836",
+            "category": "Напитки",
+            "checked": false,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 0.5 л ПЭТ"
+          },
+          "5449000131843": {
+            "barcode": "5449000131843",
+            "category": "Напитки",
+            "checked": false,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 2.0 л ПЭТ"
+          },
+          "5449000133328": {
+            "barcode": "5449000133328",
+            "category": "Напитки",
+            "checked": false,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 1.0 л ПЭТ"
+          },
+          "5449000133335": {
+            "barcode": "5449000133335",
+            "category": "Напитки",
+            "checked": false,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 1.5 л ПЭТ"
+          },
+          "5449000214805": {
+            "barcode": "5449000214805",
+            "category": "Напитки",
+            "checked": false,
+            "is_private": false,
+            "name": "Фанта Апельсин 0.33 л ж/б"
+          },
+          "5449000214829": {
+            "barcode": "5449000214829",
+            "category": "Напитки",
+            "checked": false,
+            "is_private": false,
+            "name": "Фанта лимон 0.33 л ж/б"
+          },
+          "5449000231178": {
+            "barcode": "5449000231178",
+            "category": "Напитки",
+            "checked": false,
+            "is_private": false,
+            "name": "Фанта виноград 0.33 л ж/б"
+          },
+          "5449000250964": {
+            "barcode": "5449000250964",
+            "category": "Напитки",
+            "checked": false,
+            "is_private": false,
+            "name": "Кока-Кола 0.5 л ПЭТ"
+          },
+          "5449000338709": {
+            "barcode": "5449000338709",
+            "category": "Напитки",
+            "checked": false,
+            "is_private": false,
+            "name": "Кока-Кола без сахара лимон 0.33 л ж/б"
+          }
+        }
+      },
+      "01a056ab-a33b-717f-8cc6-e4834a2cdbc3": {
+        "metadata": {
+          "count": 67,
+          "tenant_id": "01a056ab-a33b-717f-8cc6-e4834a2cdbc3",
+          "updatedAt": "2026-09-07 21:02"
+        },
+        "products": {
+          "4810014018641": {
+            "barcode": "4810014018641",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Старажытны Бачкавы темный 1.4 л"
+          },
+          "4810014018658": {
+            "barcode": "4810014018658",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас светлый Старажытны"
+          },
+          "4810014020750": {
+            "barcode": "4810014020750",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Цемны Старажытны"
+          },
+          "4810014020903": {
+            "barcode": "4810014020903",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Бачкавы 0.45 л"
+          },
+          "4810074000150": {
+            "barcode": "4810074000150",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская минеральная 2 л",
+            "package_type": "ПЭТ"
+          },
+          "4810074000167": {
+            "barcode": "4810074000167",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская-4 минеральная 1.5 л"
+          },
+          "4810074000174": {
+            "barcode": "4810074000174",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская-4 газ 1 л"
+          },
+          "4810074000181": {
+            "barcode": "4810074000181",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская-4 газ 0.5 л"
+          },
+          "4810074000600": {
+            "barcode": "4810074000600",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская не газ 0.5 л"
+          },
+          "4810074001294": {
+            "barcode": "4810074001294",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская не газ 1 л"
+          },
+          "4810074007098": {
+            "barcode": "4810074007098",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская газ 0.5 л"
+          },
+          "4810074007104": {
+            "barcode": "4810074007104",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская газ 1 л"
+          },
+          "4810074007883": {
+            "barcode": "4810074007883",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская Вода негаз 1.5 л"
+          },
+          "4810074009559": {
+            "barcode": "4810074009559",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская 5 л",
+            "package_type": "ПЭТ"
+          },
+          "4810074009788": {
+            "barcode": "4810074009788",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская лимон 1 л"
+          },
+          "4810074009795": {
+            "barcode": "4810074009795",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская лимон 2 л"
+          },
+          "4810074011408": {
+            "barcode": "4810074011408",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская черная смородина 1 л"
+          },
+          "4810074011491": {
+            "barcode": "4810074011491",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская пайнберри 1 л"
+          },
+          "4810074011729": {
+            "barcode": "4810074011729",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "Минская пайнберри 0.5 л"
+          },
+          "4810112014491": {
+            "barcode": "4810112014491",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Напиток безалкогольный квас Даридыч светлый пастеризованный 1.5 л"
+          },
+          "4810112014507": {
+            "barcode": "4810112014507",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Напиток безалкогольный квас Даридыч светлый пастеризованный 1.5 л"
+          },
+          "4810285004008": {
+            "barcode": "4810285004008",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский хлебный 1.5 л ПЭТ",
+            "package_type": "ПЭТ"
+          },
+          "4810285004015": {
+            "barcode": "4810285004015",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский хлебный 2 л ПЭТ"
+          },
+          "4810285006743": {
+            "barcode": "4810285006743",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский темный 1.5 л ПЭТ"
+          },
+          "4810285007559": {
+            "barcode": "4810285007559",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA не газ 0.5 л"
+          },
+          "4810285007566": {
+            "barcode": "4810285007566",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA не газ 1 л"
+          },
+          "4810285007573": {
+            "barcode": "4810285007573",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA не газ 1.5 л"
+          },
+          "4810285007580": {
+            "barcode": "4810285007580",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA не газ 5 л"
+          },
+          "4810285008402": {
+            "barcode": "4810285008402",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский хлебный 1 л ПЭТ"
+          },
+          "4810285008419": {
+            "barcode": "4810285008419",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский темный 1 л ПЭТ"
+          },
+          "4810285009027": {
+            "barcode": "4810285009027",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский темный 2 л ПЭТ",
+            "package_type": "ПЭТ",
+            "volume_ml": 2000
+          },
+          "4810285009447": {
+            "barcode": "4810285009447",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA газ 0.5 л"
+          },
+          "4810285009454": {
+            "barcode": "4810285009454",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA газ 1 л"
+          },
+          "4810285009461": {
+            "barcode": "4810285009461",
+            "category": "Вода Минская",
+            "checked": true,
+            "is_private": false,
+            "name": "AURA газ 1.5 л"
+          },
+          "4810285011327": {
+            "barcode": "4810285011327",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский Темный 0.45 л ПЭТ"
+          },
+          "4810285012027": {
+            "barcode": "4810285012027",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Лидский Хлебный 0.45 л",
+            "package_type": "ПЭТ",
+            "volume_ml": 450
+          },
+          "4810285015769": {
+            "barcode": "4810285015769",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Лимонад Chillz Chilli 0.45 л ж/б"
+          },
+          "4810285016032": {
+            "barcode": "4810285016032",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Напиток газированный таинственный Chillz Chilli 0.45 л ж/б"
+          },
+          "4810285016599": {
+            "barcode": "4810285016599",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Напиток газированный десертный Chillz Chilli 0.45 л ж/б"
+          },
+          "4810285016735": {
+            "barcode": "4810285016735",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Напиток газированный Chillz Chilli 0.45 л ж/б"
+          },
+          "4810285016995": {
+            "barcode": "4810285016995",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Напиток безалкогольный газированный CHIILZ анимейшн 0.45 л ж/б"
+          },
+          "4810392007527": {
+            "barcode": "4810392007527",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас деревенский на хлебной корочке 1.5 л ПЭТ"
+          },
+          "4811222003962": {
+            "barcode": "4811222003962",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Хатни спрауны 0.9 л ПЭТ"
+          },
+          "4811222003979": {
+            "barcode": "4811222003979",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Хатни спрауны 1.4 л ПЭТ"
+          },
+          "4811222003986": {
+            "barcode": "4811222003986",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Хатни спрауны 1.9 л ПЭТ"
+          },
+          "4811222005393": {
+            "barcode": "4811222005393",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Хатни темный 0.9 л ПЭТ"
+          },
+          "4811222005409": {
+            "barcode": "4811222005409",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Хатни темный 1.4 л ПЭТ"
+          },
+          "4811222005416": {
+            "barcode": "4811222005416",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас Хатни темный 1.9 л ПЭТ"
+          },
+          "4816138700042": {
+            "barcode": "4816138700042",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас белорусский оригинальный фильтрованный пастеризованный"
+          },
+          "4816138700134": {
+            "barcode": "4816138700134",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас белорусский оригинальный 1.5 л Белая Хатка"
+          },
+          "4816138700141": {
+            "barcode": "4816138700141",
+            "category": "Квас Белорусский",
+            "checked": true,
+            "is_private": false,
+            "name": "Квас белорусский фильтрованный пастеризованный"
+          },
+          "5449000000286": {
+            "barcode": "5449000000286",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола 2.0 л ПЭТ",
+            "package_type": "ПЭТ",
+            "volume_ml": 2000
+          },
+          "5449000000439": {
+            "barcode": "5449000000439",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола 1.5 л ПЭТ",
+            "package_type": "Бутылка",
+            "volume_ml": 1500
+          },
+          "5449000000996": {
+            "barcode": "5449000000996",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола 0.33 л ж/б"
+          },
+          "5449000014535": {
+            "barcode": "5449000014535",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Спрайт 0.33 л ж/б",
+            "package_type": "Банка",
+            "volume_ml": 330
+          },
+          "5449000054227": {
+            "barcode": "5449000054227",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола 1.0 л ПЭТ"
+          },
+          "5449000098917": {
+            "barcode": "5449000098917",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола ваниль 0.33 л ж/б",
+            "package_type": "Банка",
+            "volume_ml": 330
+          },
+          "5449000131805": {
+            "barcode": "5449000131805",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 0.33 л ж/б",
+            "package_type": "Банка",
+            "volume_ml": 330
+          },
+          "5449000131836": {
+            "barcode": "5449000131836",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 0.5 л ПЭТ"
+          },
+          "5449000131843": {
+            "barcode": "5449000131843",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 2.0 л ПЭТ",
+            "package_type": "Бутылка",
+            "volume_ml": 2000
+          },
+          "5449000133328": {
+            "barcode": "5449000133328",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 1.0 л ПЭТ",
+            "package_type": "Бутылка",
+            "volume_ml": 1000
+          },
+          "5449000133335": {
+            "barcode": "5449000133335",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола без сахара 1.5 л ПЭТ",
+            "package_type": "ПЭТ",
+            "volume_ml": 1500
+          },
+          "5449000214805": {
+            "barcode": "5449000214805",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Фанта Апельсин 0.33 л ж/б"
+          },
+          "5449000214829": {
+            "barcode": "5449000214829",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Фанта лимон 0.33 л ж/б",
+            "package_type": "Банка",
+            "volume_ml": 330
+          },
+          "5449000231178": {
+            "barcode": "5449000231178",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Фанта виноград 0.33 л ж/б"
+          },
+          "5449000250964": {
+            "barcode": "5449000250964",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола 0.5 л ПЭТ"
+          },
+          "5449000338709": {
+            "barcode": "5449000338709",
+            "category": "Напитки",
+            "checked": true,
+            "is_private": false,
+            "name": "Кока-Кола без сахара лимон 0.33 л ж/б"
+          }
+        }
+      }
+    }
+  },
+  "stores": {
+    "gippo-momo-01a0544a": {
+      "metadata": {
+        "updatedAt": "2026-08-31 05:23"
+      },
+      "store_maps": {
+        "gippo-momo-01a0544a": {
+          "wallPoints": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "zoneColors": {
+            "WE": "#CCCCCC",
+            "WJ": "#CCCCCC"
+          },
+          "zoneDictionary": {
+            "WE": "Вода и Колы",
+            "WJ": "Соки и Нектары"
+          },
+          "zones": [
+            {
+              "code": "WE",
+              "color": "#CCCCCC",
+              "name": "Вода и Колы"
+            },
+            {
+              "code": "WJ",
+              "color": "#CCCCCC",
+              "name": "Соки и Нектары"
+            }
+          ]
+        }
+      },
+      "stores_index": {
+        "gippo-momo-01a0544a": {
+          "address": "партизанский проспект. 150а",
+          "city": "Минск",
+          "latitude": 53.8599337,
+          "longitude": 27.673879,
+          "name": "Гиппо МОМО",
+          "radiusMeters": 100
+        }
+      }
+    },
+    "gippo-momo-01a05683": {
+      "metadata": {
+        "updatedAt": "2026-08-31 06:35"
+      },
+      "store_maps": {
+        "gippo-momo-01a05683": {
+          "coolers": [
+            {
+              "displayName": "Холодильник молочный 1",
+              "doorCount": 2,
+              "equipmentType": "cooler",
+              "heightMeters": 2,
+              "id": "DF-C01",
+              "lengthMeters": 0.8,
+              "levels": [
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0,
+                  "levelNumber": 1
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0.4,
+                  "levelNumber": 2
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0.8,
+                  "levelNumber": 3
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 1.2,
+                  "levelNumber": 4
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 1.6,
+                  "levelNumber": 5
+                }
+              ],
+              "posX": 20,
+              "posY": 5,
+              "rotation": 0,
+              "rx": 20,
+              "ry": 5,
+              "shelfCount": 5,
+              "temperatureZone": "chilled",
+              "widthMeters": 1.2,
+              "zoneCode": "DF",
+              "zoneColor": "#6366F1"
+            },
+            {
+              "displayName": "Морозильник мороженое",
+              "doorCount": 3,
+              "equipmentType": "cooler",
+              "heightMeters": 2,
+              "id": "IC-C01",
+              "lengthMeters": 0.8,
+              "levels": [
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0,
+                  "levelNumber": 1
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0.4,
+                  "levelNumber": 2
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0.8,
+                  "levelNumber": 3
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 1.2,
+                  "levelNumber": 4
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 1.6,
+                  "levelNumber": 5
+                }
+              ],
+              "posX": 26,
+              "posY": 5,
+              "rotation": 0,
+              "rx": 26,
+              "ry": 5,
+              "shelfCount": 5,
+              "temperatureZone": "frozen",
+              "widthMeters": 1.8,
+              "zoneCode": "IC",
+              "zoneColor": "#6366F1"
+            },
+            {
+              "displayName": "Холодильник молочный 2",
+              "doorCount": 2,
+              "equipmentType": "cooler",
+              "heightMeters": 2,
+              "id": "DF-C02",
+              "lengthMeters": 0.8,
+              "levels": [
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0,
+                  "levelNumber": 1
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0.4,
+                  "levelNumber": 2
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0.8,
+                  "levelNumber": 3
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 1.2,
+                  "levelNumber": 4
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 1.6,
+                  "levelNumber": 5
+                }
+              ],
+              "posX": 23,
+              "posY": 5,
+              "rotation": 0,
+              "rx": 23,
+              "ry": 5,
+              "shelfCount": 5,
+              "temperatureZone": "chilled",
+              "widthMeters": 1.2,
+              "zoneCode": "DF",
+              "zoneColor": "#6366F1"
+            }
+          ],
+          "layout": {
+            "bearingDegrees": 0,
+            "cashCount": 8,
+            "cashSide": "south",
+            "entranceOffsetM": 15,
+            "entranceSide": "north",
+            "entranceWidthM": 5,
+            "gridSizeCm": 50,
+            "hasCashRegisters": true,
+            "heightMeters": 25,
+            "origin": "sw",
+            "widthMeters": 30
+          },
+          "markers": [
+            {
+              "code": "CR-01",
+              "color": "#eab308",
+              "depthMeters": 0.8,
+              "id": "CR-01",
+              "posX": 8.8,
+              "posY": 0.3,
+              "rotation": 0,
+              "type": "cash_register",
+              "widthMeters": 1.2
+            },
+            {
+              "code": "CR-02",
+              "color": "#eab308",
+              "depthMeters": 0.8,
+              "id": "CR-02",
+              "posX": 10.4,
+              "posY": 0.3,
+              "rotation": 0,
+              "type": "cash_register",
+              "widthMeters": 1.2
+            },
+            {
+              "code": "CR-03",
+              "color": "#eab308",
+              "depthMeters": 0.8,
+              "id": "CR-03",
+              "posX": 12,
+              "posY": 0.3,
+              "rotation": 0,
+              "type": "cash_register",
+              "widthMeters": 1.2
+            },
+            {
+              "code": "CR-04",
+              "color": "#eab308",
+              "depthMeters": 0.8,
+              "id": "CR-04",
+              "posX": 13.6,
+              "posY": 0.3,
+              "rotation": 0,
+              "type": "cash_register",
+              "widthMeters": 1.2
+            },
+            {
+              "code": "CR-05",
+              "color": "#eab308",
+              "depthMeters": 0.8,
+              "id": "CR-05",
+              "posX": 15.2,
+              "posY": 0.3,
+              "rotation": 0,
+              "type": "cash_register",
+              "widthMeters": 1.2
+            },
+            {
+              "code": "CR-06",
+              "color": "#eab308",
+              "depthMeters": 0.8,
+              "id": "CR-06",
+              "posX": 16.8,
+              "posY": 0.3,
+              "rotation": 0,
+              "type": "cash_register",
+              "widthMeters": 1.2
+            },
+            {
+              "code": "CR-07",
+              "color": "#eab308",
+              "depthMeters": 0.8,
+              "id": "CR-07",
+              "posX": 18.4,
+              "posY": 0.3,
+              "rotation": 0,
+              "type": "cash_register",
+              "widthMeters": 1.2
+            },
+            {
+              "code": "CR-08",
+              "color": "#eab308",
+              "depthMeters": 0.8,
+              "id": "CR-08",
+              "posX": 20,
+              "posY": 0.3,
+              "rotation": 0,
+              "type": "cash_register",
+              "widthMeters": 1.2
+            },
+            {
+              "code": "IN-01",
+              "color": "#22c55e",
+              "depthMeters": 0.6,
+              "id": "IN-01",
+              "posX": 15,
+              "posY": 24.4,
+              "rotation": 180,
+              "type": "entrance",
+              "widthMeters": 5
+            }
+          ],
+          "racks": [
+            {
+              "direction": "V",
+              "displayName": "Квас 1",
+              "equipmentType": "rack",
+              "heightMeters": 1.6,
+              "id": "KW-01",
+              "lengthMeters": 0.7,
+              "levels": [
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0,
+                  "levelNumber": 1
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0.4,
+                  "levelNumber": 2
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0.8,
+                  "levelNumber": 3
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 1.2,
+                  "levelNumber": 4
+                }
+              ],
+              "posX": 2,
+              "posY": 10,
+              "rotation": 0,
+              "rx": 2,
+              "ry": 10,
+              "segments": [
+                {
+                  "code": "KW",
+                  "position": 1,
+                  "side": "LEFT"
+                }
+              ],
+              "shelfCount": 4,
+              "widthMeters": 1.2,
+              "zoneCode": "KW",
+              "zoneColor": "#6366F1"
+            },
+            {
+              "direction": "V",
+              "displayName": "Снеки 1",
+              "equipmentType": "rack",
+              "heightMeters": 1.8,
+              "id": "SN-01",
+              "lengthMeters": 0.6,
+              "levels": [
+                {
+                  "capacityMeters": 0.3,
+                  "heightFromFloorMeters": 0,
+                  "levelNumber": 1
+                },
+                {
+                  "capacityMeters": 0.3,
+                  "heightFromFloorMeters": 0.3,
+                  "levelNumber": 2
+                },
+                {
+                  "capacityMeters": 0.3,
+                  "heightFromFloorMeters": 0.6,
+                  "levelNumber": 3
+                },
+                {
+                  "capacityMeters": 0.3,
+                  "heightFromFloorMeters": 0.9,
+                  "levelNumber": 4
+                },
+                {
+                  "capacityMeters": 0.3,
+                  "heightFromFloorMeters": 1.2,
+                  "levelNumber": 5
+                },
+                {
+                  "capacityMeters": 0.3,
+                  "heightFromFloorMeters": 1.5,
+                  "levelNumber": 6
+                }
+              ],
+              "posX": 2,
+              "posY": 15,
+              "rotation": 0,
+              "rx": 2,
+              "ry": 15,
+              "segments": [
+                {
+                  "code": "SN",
+                  "position": 1,
+                  "side": "LEFT"
+                }
+              ],
+              "shelfCount": 6,
+              "widthMeters": 1.5,
+              "zoneCode": "SN",
+              "zoneColor": "#6366F1"
+            },
+            {
+              "direction": "V",
+              "displayName": "Вода и Колы 1",
+              "equipmentType": "rack",
+              "heightMeters": 1.6,
+              "id": "WC-01",
+              "lengthMeters": 0.7,
+              "levels": [
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0,
+                  "levelNumber": 1
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0.32,
+                  "levelNumber": 2
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0.64,
+                  "levelNumber": 3
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0.96,
+                  "levelNumber": 4
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 1.28,
+                  "levelNumber": 5
+                }
+              ],
+              "posX": 2,
+              "posY": 5,
+              "rotation": 0,
+              "rx": 2,
+              "ry": 5,
+              "segments": [
+                {
+                  "code": "WC",
+                  "position": 1,
+                  "side": "LEFT"
+                }
+              ],
+              "shelfCount": 5,
+              "widthMeters": 1.5,
+              "zoneCode": "WC",
+              "zoneColor": "#6366F1"
+            },
+            {
+              "direction": "V",
+              "displayName": "Квас 2",
+              "equipmentType": "rack",
+              "heightMeters": 1.6,
+              "id": "KW-02",
+              "lengthMeters": 0.7,
+              "levels": [
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0,
+                  "levelNumber": 1
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0.4,
+                  "levelNumber": 2
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0.8,
+                  "levelNumber": 3
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 1.2,
+                  "levelNumber": 4
+                }
+              ],
+              "posX": 5,
+              "posY": 10,
+              "rotation": 0,
+              "rx": 5,
+              "ry": 10,
+              "segments": [
+                {
+                  "code": "KW",
+                  "position": 1,
+                  "side": "LEFT"
+                }
+              ],
+              "shelfCount": 4,
+              "widthMeters": 1.2,
+              "zoneCode": "KW",
+              "zoneColor": "#6366F1"
+            },
+            {
+              "direction": "V",
+              "displayName": "Снеки 2",
+              "equipmentType": "rack",
+              "heightMeters": 1.8,
+              "id": "SN-02",
+              "lengthMeters": 0.6,
+              "levels": [
+                {
+                  "capacityMeters": 0.3,
+                  "heightFromFloorMeters": 0,
+                  "levelNumber": 1
+                },
+                {
+                  "capacityMeters": 0.3,
+                  "heightFromFloorMeters": 0.3,
+                  "levelNumber": 2
+                },
+                {
+                  "capacityMeters": 0.3,
+                  "heightFromFloorMeters": 0.6,
+                  "levelNumber": 3
+                },
+                {
+                  "capacityMeters": 0.3,
+                  "heightFromFloorMeters": 0.9,
+                  "levelNumber": 4
+                },
+                {
+                  "capacityMeters": 0.3,
+                  "heightFromFloorMeters": 1.2,
+                  "levelNumber": 5
+                },
+                {
+                  "capacityMeters": 0.3,
+                  "heightFromFloorMeters": 1.5,
+                  "levelNumber": 6
+                }
+              ],
+              "posX": 5,
+              "posY": 15,
+              "rotation": 0,
+              "rx": 5,
+              "ry": 15,
+              "segments": [
+                {
+                  "code": "SN",
+                  "position": 1,
+                  "side": "LEFT"
+                }
+              ],
+              "shelfCount": 6,
+              "widthMeters": 1.5,
+              "zoneCode": "SN",
+              "zoneColor": "#6366F1"
+            },
+            {
+              "direction": "V",
+              "displayName": "Вода и Колы 2",
+              "equipmentType": "rack",
+              "heightMeters": 1.6,
+              "id": "WC-02",
+              "lengthMeters": 0.7,
+              "levels": [
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0,
+                  "levelNumber": 1
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0.32,
+                  "levelNumber": 2
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0.64,
+                  "levelNumber": 3
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0.96,
+                  "levelNumber": 4
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 1.28,
+                  "levelNumber": 5
+                }
+              ],
+              "posX": 5,
+              "posY": 5,
+              "rotation": 0,
+              "rx": 5,
+              "ry": 5,
+              "segments": [
+                {
+                  "code": "WC",
+                  "position": 1,
+                  "side": "LEFT"
+                }
+              ],
+              "shelfCount": 5,
+              "widthMeters": 1.5,
+              "zoneCode": "WC",
+              "zoneColor": "#6366F1"
+            },
+            {
+              "direction": "V",
+              "displayName": "Квас 3",
+              "equipmentType": "rack",
+              "heightMeters": 1.6,
+              "id": "KW-03",
+              "lengthMeters": 0.7,
+              "levels": [
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0,
+                  "levelNumber": 1
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0.4,
+                  "levelNumber": 2
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0.8,
+                  "levelNumber": 3
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 1.2,
+                  "levelNumber": 4
+                }
+              ],
+              "posX": 8,
+              "posY": 10,
+              "rotation": 0,
+              "rx": 8,
+              "ry": 10,
+              "segments": [
+                {
+                  "code": "KW",
+                  "position": 1,
+                  "side": "LEFT"
+                }
+              ],
+              "shelfCount": 4,
+              "widthMeters": 1.2,
+              "zoneCode": "KW",
+              "zoneColor": "#6366F1"
+            },
+            {
+              "direction": "V",
+              "displayName": "Вода и Колы 3",
+              "equipmentType": "rack",
+              "heightMeters": 1.6,
+              "id": "WC-03",
+              "lengthMeters": 0.7,
+              "levels": [
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0,
+                  "levelNumber": 1
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0.32,
+                  "levelNumber": 2
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0.64,
+                  "levelNumber": 3
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0.96,
+                  "levelNumber": 4
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 1.28,
+                  "levelNumber": 5
+                }
+              ],
+              "posX": 8,
+              "posY": 5,
+              "rotation": 0,
+              "rx": 8,
+              "ry": 5,
+              "segments": [
+                {
+                  "code": "WC",
+                  "position": 1,
+                  "side": "LEFT"
+                }
+              ],
+              "shelfCount": 5,
+              "widthMeters": 1.5,
+              "zoneCode": "WC",
+              "zoneColor": "#6366F1"
+            },
+            {
+              "direction": "V",
+              "displayName": "Вода и Колы 4",
+              "equipmentType": "rack",
+              "heightMeters": 1.6,
+              "id": "WC-04",
+              "lengthMeters": 0.7,
+              "levels": [
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0,
+                  "levelNumber": 1
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0.32,
+                  "levelNumber": 2
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0.64,
+                  "levelNumber": 3
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0.96,
+                  "levelNumber": 4
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 1.28,
+                  "levelNumber": 5
+                }
+              ],
+              "posX": 11,
+              "posY": 5,
+              "rotation": 0,
+              "rx": 11,
+              "ry": 5,
+              "segments": [
+                {
+                  "code": "WC",
+                  "position": 1,
+                  "side": "LEFT"
+                }
+              ],
+              "shelfCount": 5,
+              "widthMeters": 1.5,
+              "zoneCode": "WC",
+              "zoneColor": "#6366F1"
+            },
+            {
+              "direction": "V",
+              "displayName": "Вода и Колы 5",
+              "equipmentType": "rack",
+              "heightMeters": 1.6,
+              "id": "WC-05",
+              "lengthMeters": 0.7,
+              "levels": [
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0,
+                  "levelNumber": 1
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0.32,
+                  "levelNumber": 2
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0.64,
+                  "levelNumber": 3
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 0.96,
+                  "levelNumber": 4
+                },
+                {
+                  "capacityMeters": 0.32,
+                  "heightFromFloorMeters": 1.28,
+                  "levelNumber": 5
+                }
+              ],
+              "posX": 14,
+              "posY": 5,
+              "rotation": 0,
+              "rx": 14,
+              "ry": 5,
+              "segments": [
+                {
+                  "code": "WC",
+                  "position": 1,
+                  "side": "LEFT"
+                }
+              ],
+              "shelfCount": 5,
+              "widthMeters": 1.5,
+              "zoneCode": "WC",
+              "zoneColor": "#6366F1"
+            }
+          ],
+          "stands": [
+            {
+              "displayName": "Стойка промо 1",
+              "equipmentType": "stand",
+              "hasBack": false,
+              "heightMeters": 1.6,
+              "id": "ST-01",
+              "lengthMeters": 0.8,
+              "levels": [
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0,
+                  "levelNumber": 1
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0.4,
+                  "levelNumber": 2
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0.8,
+                  "levelNumber": 3
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 1.2,
+                  "levelNumber": 4
+                }
+              ],
+              "posX": 2,
+              "posY": 20,
+              "rotation": 0,
+              "rx": 2,
+              "ry": 20,
+              "shelfCount": 4,
+              "standType": "endcap",
+              "widthMeters": 0.8,
+              "zoneCode": "SN",
+              "zoneColor": "#6366F1"
+            },
+            {
+              "displayName": "Стойка промо 2",
+              "equipmentType": "stand",
+              "hasBack": false,
+              "heightMeters": 1.6,
+              "id": "ST-02",
+              "lengthMeters": 0.8,
+              "levels": [
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0,
+                  "levelNumber": 1
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0.4,
+                  "levelNumber": 2
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 0.8,
+                  "levelNumber": 3
+                },
+                {
+                  "capacityMeters": 0.4,
+                  "heightFromFloorMeters": 1.2,
+                  "levelNumber": 4
+                }
+              ],
+              "posX": 5,
+              "posY": 20,
+              "rotation": 0,
+              "rx": 5,
+              "ry": 20,
+              "shelfCount": 4,
+              "standType": "island",
+              "widthMeters": 0.8,
+              "zoneCode": "SN",
+              "zoneColor": "#6366F1"
+            },
+            {
+              "displayName": "Стойка у кассы",
+              "equipmentType": "stand",
+              "hasBack": true,
+              "heightMeters": 1.4,
+              "id": "ST-03",
+              "lengthMeters": 0.6,
+              "levels": [
+                {
+                  "capacityMeters": 0.466,
+                  "heightFromFloorMeters": 0,
+                  "levelNumber": 1
+                },
+                {
+                  "capacityMeters": 0.466,
+                  "heightFromFloorMeters": 0.466,
+                  "levelNumber": 2
+                },
+                {
+                  "capacityMeters": 0.468,
+                  "heightFromFloorMeters": 0.932,
+                  "levelNumber": 3
+                }
+              ],
+              "posX": 10,
+              "posY": 20,
+              "rotation": 0,
+              "rx": 10,
+              "ry": 20,
+              "shelfCount": 3,
+              "standType": "gondola",
+              "widthMeters": 0.6,
+              "zoneCode": "SN",
+              "zoneColor": "#6366F1"
+            }
+          ],
+          "wallPoints": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 30,
+              "y": 0
+            },
+            {
+              "x": 0,
+              "y": 25
+            },
+            {
+              "x": 15,
+              "y": 25
+            },
+            {
+              "x": 15,
+              "y": 25
+            },
+            {
+              "x": 20,
+              "y": 25
+            },
+            {
+              "x": 20,
+              "y": 25
+            },
+            {
+              "x": 30,
+              "y": 25
+            },
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 0,
+              "y": 25
+            },
+            {
+              "x": 30,
+              "y": 0
+            },
+            {
+              "x": 30,
+              "y": 25
+            }
+          ],
+          "walls": [
+            {
+              "endX": 30,
+              "endY": 0,
+              "startX": 0,
+              "startY": 0,
+              "wallType": "wall"
+            },
+            {
+              "endX": 15,
+              "endY": 25,
+              "startX": 0,
+              "startY": 25,
+              "wallType": "wall"
+            },
+            {
+              "endX": 20,
+              "endY": 25,
+              "startX": 15,
+              "startY": 25,
+              "wallType": "door"
+            },
+            {
+              "endX": 30,
+              "endY": 25,
+              "startX": 20,
+              "startY": 25,
+              "wallType": "wall"
+            },
+            {
+              "endX": 0,
+              "endY": 25,
+              "startX": 0,
+              "startY": 0,
+              "wallType": "wall"
+            },
+            {
+              "endX": 30,
+              "endY": 25,
+              "startX": 30,
+              "startY": 0,
+              "wallType": "wall"
+            }
+          ],
+          "zoneColors": {
+            "AIR": "#6366F1",
+            "BF": "#6366F1",
+            "BK": "#6366F1",
+            "BL": "#6366F1",
+            "BR": "#6366F1",
+            "BRY": "#6366F1",
+            "BT": "#6366F1",
+            "BW": "#6366F1",
+            "CAR": "#6366F1",
+            "CC": "#6366F1",
+            "CD": "#6366F1",
+            "CF": "#6366F1",
+            "CH": "#6366F1",
+            "CHC": "#6366F1",
+            "CHP": "#6366F1",
+            "CHS": "#6366F1",
+            "CK": "#6366F1",
+            "CLN": "#6366F1",
+            "CR": "#6366F1",
+            "CRM": "#6366F1",
+            "CS": "#6366F1",
+            "DC": "#6366F1",
+            "DF": "#6366F1",
+            "DL": "#6366F1",
+            "DN": "#6366F1",
+            "DP": "#6366F1",
+            "DS": "#6366F1",
+            "DSP": "#6366F1",
+            "FD": "#6366F1",
+            "FF": "#6366F1",
+            "FK": "#6366F1",
+            "FL": "#6366F1",
+            "FM": "#6366F1",
+            "FP": "#6366F1",
+            "FR": "#6366F1",
+            "FS": "#6366F1",
+            "FV": "#6366F1",
+            "FZ": "#6366F1",
+            "GR": "#6366F1",
+            "GRO": "#6366F1",
+            "IC": "#6366F1",
+            "KW": "#6366F1",
+            "LD": "#6366F1",
+            "MT": "#6366F1",
+            "NT": "#6366F1",
+            "OIL": "#6366F1",
+            "PC": "#6366F1",
+            "PD": "#6366F1",
+            "PF": "#6366F1",
+            "PI": "#6366F1",
+            "PL": "#6366F1",
+            "POP": "#6366F1",
+            "PS": "#6366F1",
+            "PT": "#6366F1",
+            "SA": "#6366F1",
+            "SC": "#6366F1",
+            "SF": "#6366F1",
+            "SG": "#6366F1",
+            "SGS": "#6366F1",
+            "SH": "#6366F1",
+            "SM": "#6366F1",
+            "SN": "#6366F1",
+            "SO": "#6366F1",
+            "SP": "#6366F1",
+            "SUK": "#6366F1",
+            "TE": "#6366F1",
+            "TP": "#6366F1",
+            "VG": "#6366F1",
+            "WC": "#6366F1",
+            "WE": "#6366F1",
+            "WF": "#6366F1",
+            "WI": "#6366F1",
+            "WJ": "#6366F1",
+            "WT": "#6366F1",
+            "XX": "#6366F1",
+            "YG": "#6366F1",
+            "ZP": "#6366F1"
+          },
+          "zoneDictionary": {
+            "AIR": "Освежители",
+            "BF": "Детское питание",
+            "BK": "Булочки и Сдоба",
+            "BL": "Блины и Оладьи",
+            "BR": "Хлеб",
+            "BRY": "Ягоды",
+            "BT": "Масло и Маргарин",
+            "BW": "Пиво и Вино",
+            "CAR": "Карамель и Леденцы",
+            "CC": "Какао",
+            "CD": "Конфеты",
+            "CF": "Кофе",
+            "CH": "Шампанское",
+            "CHC": "Шоколад",
+            "CHP": "Чипсы",
+            "CHS": "Сыры",
+            "CK": "Печенье и Крекеры",
+            "CLN": "Чистящие средства",
+            "CR": "Сметана и Творог",
+            "CRM": "Кремы",
+            "CS": "Консервы",
+            "DC": "Дезодоранты",
+            "DF": "Молочные продукты",
+            "DL": "Деликатесы мясные",
+            "DN": "Сухофрукты и Орехи",
+            "DP": "Подгузники",
+            "DS": "Десерты молочные",
+            "DSP": "Для посуды",
+            "FD": "Рыбные деликатесы",
+            "FF": "Фрукты замороженные",
+            "FK": "Рыбные консервы",
+            "FL": "Мука",
+            "FM": "Мясо замороженное",
+            "FP": "Полуфабрикаты",
+            "FR": "Фрукты",
+            "FS": "Рыба свежая",
+            "FV": "Овощи замороженные",
+            "FZ": "Рыба замороженная",
+            "GR": "Зелень и Салаты",
+            "GRO": "Крупы",
+            "IC": "Мороженое",
+            "KW": "Квас",
+            "LD": "Стиральные порошки",
+            "MT": "Мясо свежее",
+            "NT": "Орешки солёные",
+            "OIL": "Масло растительное",
+            "PC": "Корм для кошек",
+            "PD": "Корм для собак",
+            "PF": "Корм для животных",
+            "PI": "Пицца и Пельмени",
+            "PL": "Птица",
+            "POP": "Попкорн",
+            "PS": "Макароны",
+            "PT": "Пирожные и Торты",
+            "SA": "Крепкий Алкоголь",
+            "SC": "Соусы и Кетчупы",
+            "SF": "Морепродукты",
+            "SG": "Колбасы и Сосиски",
+            "SGS": "Сахар и Соль",
+            "SH": "Шампуни",
+            "SM": "Копчёности",
+            "SN": "Снеки",
+            "SO": "Мыло",
+            "SP": "Специи и Приправы",
+            "SUK": "Сухарики",
+            "TE": "Чай",
+            "TP": "Зубная паста",
+            "VG": "Овощи",
+            "WC": "Вода и Колы",
+            "WE": "Энергетики",
+            "WF": "Вафли",
+            "WI": "Изотоники и Витамины",
+            "WJ": "Соки и Нектары",
+            "WT": "Чай/Кофе холодные",
+            "XX": "Другое",
+            "YG": "Йогурты",
+            "ZP": "Зефир и Пастила"
+          },
+          "zones": [
+            {
+              "code": "AIR",
+              "color": "#6366F1",
+              "name": "Освежители"
+            },
+            {
+              "code": "BF",
+              "color": "#6366F1",
+              "name": "Детское питание"
+            },
+            {
+              "code": "BK",
+              "color": "#6366F1",
+              "name": "Булочки и Сдоба"
+            },
+            {
+              "code": "BL",
+              "color": "#6366F1",
+              "name": "Блины и Оладьи"
+            },
+            {
+              "code": "BR",
+              "color": "#6366F1",
+              "name": "Хлеб"
+            },
+            {
+              "code": "BRY",
+              "color": "#6366F1",
+              "name": "Ягоды"
+            },
+            {
+              "code": "BT",
+              "color": "#6366F1",
+              "name": "Масло и Маргарин"
+            },
+            {
+              "code": "BW",
+              "color": "#6366F1",
+              "name": "Пиво и Вино"
+            },
+            {
+              "code": "CAR",
+              "color": "#6366F1",
+              "name": "Карамель и Леденцы"
+            },
+            {
+              "code": "CC",
+              "color": "#6366F1",
+              "name": "Какао"
+            },
+            {
+              "code": "CD",
+              "color": "#6366F1",
+              "name": "Конфеты"
+            },
+            {
+              "code": "CF",
+              "color": "#6366F1",
+              "name": "Кофе"
+            },
+            {
+              "code": "CH",
+              "color": "#6366F1",
+              "name": "Шампанское"
+            },
+            {
+              "code": "CHC",
+              "color": "#6366F1",
+              "name": "Шоколад"
+            },
+            {
+              "code": "CHP",
+              "color": "#6366F1",
+              "name": "Чипсы"
+            },
+            {
+              "code": "CHS",
+              "color": "#6366F1",
+              "name": "Сыры"
+            },
+            {
+              "code": "CK",
+              "color": "#6366F1",
+              "name": "Печенье и Крекеры"
+            },
+            {
+              "code": "CLN",
+              "color": "#6366F1",
+              "name": "Чистящие средства"
+            },
+            {
+              "code": "CR",
+              "color": "#6366F1",
+              "name": "Сметана и Творог"
+            },
+            {
+              "code": "CRM",
+              "color": "#6366F1",
+              "name": "Кремы"
+            },
+            {
+              "code": "CS",
+              "color": "#6366F1",
+              "name": "Консервы"
+            },
+            {
+              "code": "DC",
+              "color": "#6366F1",
+              "name": "Дезодоранты"
+            },
+            {
+              "code": "DF",
+              "color": "#6366F1",
+              "name": "Молочные продукты"
+            },
+            {
+              "code": "DL",
+              "color": "#6366F1",
+              "name": "Деликатесы мясные"
+            },
+            {
+              "code": "DN",
+              "color": "#6366F1",
+              "name": "Сухофрукты и Орехи"
+            },
+            {
+              "code": "DP",
+              "color": "#6366F1",
+              "name": "Подгузники"
+            },
+            {
+              "code": "DS",
+              "color": "#6366F1",
+              "name": "Десерты молочные"
+            },
+            {
+              "code": "DSP",
+              "color": "#6366F1",
+              "name": "Для посуды"
+            },
+            {
+              "code": "FD",
+              "color": "#6366F1",
+              "name": "Рыбные деликатесы"
+            },
+            {
+              "code": "FF",
+              "color": "#6366F1",
+              "name": "Фрукты замороженные"
+            },
+            {
+              "code": "FK",
+              "color": "#6366F1",
+              "name": "Рыбные консервы"
+            },
+            {
+              "code": "FL",
+              "color": "#6366F1",
+              "name": "Мука"
+            },
+            {
+              "code": "FM",
+              "color": "#6366F1",
+              "name": "Мясо замороженное"
+            },
+            {
+              "code": "FP",
+              "color": "#6366F1",
+              "name": "Полуфабрикаты"
+            },
+            {
+              "code": "FR",
+              "color": "#6366F1",
+              "name": "Фрукты"
+            },
+            {
+              "code": "FS",
+              "color": "#6366F1",
+              "name": "Рыба свежая"
+            },
+            {
+              "code": "FV",
+              "color": "#6366F1",
+              "name": "Овощи замороженные"
+            },
+            {
+              "code": "FZ",
+              "color": "#6366F1",
+              "name": "Рыба замороженная"
+            },
+            {
+              "code": "GR",
+              "color": "#6366F1",
+              "name": "Зелень и Салаты"
+            },
+            {
+              "code": "GRO",
+              "color": "#6366F1",
+              "name": "Крупы"
+            },
+            {
+              "code": "IC",
+              "color": "#6366F1",
+              "name": "Мороженое"
+            },
+            {
+              "code": "KW",
+              "color": "#6366F1",
+              "name": "Квас"
+            },
+            {
+              "code": "LD",
+              "color": "#6366F1",
+              "name": "Стиральные порошки"
+            },
+            {
+              "code": "MT",
+              "color": "#6366F1",
+              "name": "Мясо свежее"
+            },
+            {
+              "code": "NT",
+              "color": "#6366F1",
+              "name": "Орешки солёные"
+            },
+            {
+              "code": "OIL",
+              "color": "#6366F1",
+              "name": "Масло растительное"
+            },
+            {
+              "code": "PC",
+              "color": "#6366F1",
+              "name": "Корм для кошек"
+            },
+            {
+              "code": "PD",
+              "color": "#6366F1",
+              "name": "Корм для собак"
+            },
+            {
+              "code": "PF",
+              "color": "#6366F1",
+              "name": "Корм для животных"
+            },
+            {
+              "code": "PI",
+              "color": "#6366F1",
+              "name": "Пицца и Пельмени"
+            },
+            {
+              "code": "PL",
+              "color": "#6366F1",
+              "name": "Птица"
+            },
+            {
+              "code": "POP",
+              "color": "#6366F1",
+              "name": "Попкорн"
+            },
+            {
+              "code": "PS",
+              "color": "#6366F1",
+              "name": "Макароны"
+            },
+            {
+              "code": "PT",
+              "color": "#6366F1",
+              "name": "Пирожные и Торты"
+            },
+            {
+              "code": "SA",
+              "color": "#6366F1",
+              "name": "Крепкий Алкоголь"
+            },
+            {
+              "code": "SC",
+              "color": "#6366F1",
+              "name": "Соусы и Кетчупы"
+            },
+            {
+              "code": "SF",
+              "color": "#6366F1",
+              "name": "Морепродукты"
+            },
+            {
+              "code": "SG",
+              "color": "#6366F1",
+              "name": "Колбасы и Сосиски"
+            },
+            {
+              "code": "SGS",
+              "color": "#6366F1",
+              "name": "Сахар и Соль"
+            },
+            {
+              "code": "SH",
+              "color": "#6366F1",
+              "name": "Шампуни"
+            },
+            {
+              "code": "SM",
+              "color": "#6366F1",
+              "name": "Копчёности"
+            },
+            {
+              "code": "SN",
+              "color": "#6366F1",
+              "name": "Снеки"
+            },
+            {
+              "code": "SO",
+              "color": "#6366F1",
+              "name": "Мыло"
+            },
+            {
+              "code": "SP",
+              "color": "#6366F1",
+              "name": "Специи и Приправы"
+            },
+            {
+              "code": "SUK",
+              "color": "#6366F1",
+              "name": "Сухарики"
+            },
+            {
+              "code": "TE",
+              "color": "#6366F1",
+              "name": "Чай"
+            },
+            {
+              "code": "TP",
+              "color": "#6366F1",
+              "name": "Зубная паста"
+            },
+            {
+              "code": "VG",
+              "color": "#6366F1",
+              "name": "Овощи"
+            },
+            {
+              "code": "WC",
+              "color": "#6366F1",
+              "name": "Вода и Колы"
+            },
+            {
+              "code": "WE",
+              "color": "#6366F1",
+              "name": "Энергетики"
+            },
+            {
+              "code": "WF",
+              "color": "#6366F1",
+              "name": "Вафли"
+            },
+            {
+              "code": "WI",
+              "color": "#6366F1",
+              "name": "Изотоники и Витамины"
+            },
+            {
+              "code": "WJ",
+              "color": "#6366F1",
+              "name": "Соки и Нектары"
+            },
+            {
+              "code": "WT",
+              "color": "#6366F1",
+              "name": "Чай/Кофе холодные"
+            },
+            {
+              "code": "XX",
+              "color": "#6366F1",
+              "name": "Другое"
+            },
+            {
+              "code": "YG",
+              "color": "#6366F1",
+              "name": "Йогурты"
+            },
+            {
+              "code": "ZP",
+              "color": "#6366F1",
+              "name": "Зефир и Пастила"
+            }
+          ]
+        }
+      },
+      "stores_index": {
+        "gippo-momo-01a05683": {
+          "address": "Партизанский проспект. 150а",
+          "city": "Минск",
+          "latitude": 53.8599337,
+          "longitude": 27.673879,
+          "name": "Гиппо МОМО",
+          "radiusMeters": 100
+        }
+      }
+    },
+    "gippo-momo-01a056ac": {
+      "metadata": {
+        "updatedAt": "2026-09-07 21:05"
+      },
+      "store_maps": {
+        "gippo-momo-01a056ac": {
+          "layout": {
+            "bearingDegrees": 0,
+            "cashCount": 8,
+            "cashSide": "south",
+            "entranceOffsetM": 15,
+            "entranceSide": "north",
+            "entranceWidthM": 5,
+            "gridSizeCm": 50,
+            "hasCashRegisters": true,
+            "heightMeters": 25,
+            "origin": "sw",
+            "widthMeters": 30
+          },
+          "wallPoints": [
+            {
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "zoneColors": {
+            "AIR": "#6366F1",
+            "BF": "#6366F1",
+            "BK": "#6366F1",
+            "BL": "#6366F1",
+            "BR": "#6366F1",
+            "BRY": "#6366F1",
+            "BT": "#6366F1",
+            "BW": "#6366F1",
+            "CAR": "#6366F1",
+            "CC": "#6366F1",
+            "CD": "#6366F1",
+            "CF": "#6366F1",
+            "CH": "#6366F1",
+            "CHC": "#6366F1",
+            "CHP": "#6366F1",
+            "CHS": "#6366F1",
+            "CK": "#6366F1",
+            "CLN": "#6366F1",
+            "CR": "#6366F1",
+            "CRM": "#6366F1",
+            "CS": "#6366F1",
+            "DC": "#6366F1",
+            "DF": "#6366F1",
+            "DL": "#6366F1",
+            "DN": "#6366F1",
+            "DP": "#6366F1",
+            "DS": "#6366F1",
+            "DSP": "#6366F1",
+            "FD": "#6366F1",
+            "FF": "#6366F1",
+            "FK": "#6366F1",
+            "FL": "#6366F1",
+            "FM": "#6366F1",
+            "FP": "#6366F1",
+            "FR": "#6366F1",
+            "FS": "#6366F1",
+            "FV": "#6366F1",
+            "FZ": "#6366F1",
+            "GR": "#6366F1",
+            "GRO": "#6366F1",
+            "IC": "#6366F1",
+            "KW": "#6366F1",
+            "LD": "#6366F1",
+            "MT": "#6366F1",
+            "NT": "#6366F1",
+            "OIL": "#6366F1",
+            "PC": "#6366F1",
+            "PD": "#6366F1",
+            "PF": "#6366F1",
+            "PI": "#6366F1",
+            "PL": "#6366F1",
+            "POP": "#6366F1",
+            "PS": "#6366F1",
+            "PT": "#6366F1",
+            "SA": "#6366F1",
+            "SC": "#6366F1",
+            "SF": "#6366F1",
+            "SG": "#6366F1",
+            "SGS": "#6366F1",
+            "SH": "#6366F1",
+            "SM": "#6366F1",
+            "SN": "#6366F1",
+            "SO": "#6366F1",
+            "SP": "#6366F1",
+            "SUK": "#6366F1",
+            "TE": "#6366F1",
+            "TP": "#6366F1",
+            "VG": "#6366F1",
+            "WC": "#6366F1",
+            "WE": "#6366F1",
+            "WF": "#6366F1",
+            "WI": "#6366F1",
+            "WJ": "#6366F1",
+            "WT": "#6366F1",
+            "XX": "#6366F1",
+            "YG": "#6366F1",
+            "ZP": "#6366F1"
+          },
+          "zoneDictionary": {
+            "AIR": "Освежители",
+            "BF": "Детское питание",
+            "BK": "Булочки и Сдоба",
+            "BL": "Блины и Оладьи",
+            "BR": "Хлеб",
+            "BRY": "Ягоды",
+            "BT": "Масло и Маргарин",
+            "BW": "Пиво и Вино",
+            "CAR": "Карамель и Леденцы",
+            "CC": "Какао",
+            "CD": "Конфеты",
+            "CF": "Кофе",
+            "CH": "Шампанское",
+            "CHC": "Шоколад",
+            "CHP": "Чипсы",
+            "CHS": "Сыры",
+            "CK": "Печенье и Крекеры",
+            "CLN": "Чистящие средства",
+            "CR": "Сметана и Творог",
+            "CRM": "Кремы",
+            "CS": "Консервы",
+            "DC": "Дезодоранты",
+            "DF": "Молочные продукты",
+            "DL": "Деликатесы мясные",
+            "DN": "Сухофрукты и Орехи",
+            "DP": "Подгузники",
+            "DS": "Десерты молочные",
+            "DSP": "Для посуды",
+            "FD": "Рыбные деликатесы",
+            "FF": "Фрукты замороженные",
+            "FK": "Рыбные консервы",
+            "FL": "Мука",
+            "FM": "Мясо замороженное",
+            "FP": "Полуфабрикаты",
+            "FR": "Фрукты",
+            "FS": "Рыба свежая",
+            "FV": "Овощи замороженные",
+            "FZ": "Рыба замороженная",
+            "GR": "Зелень и Салаты",
+            "GRO": "Крупы",
+            "IC": "Мороженое",
+            "KW": "Квас",
+            "LD": "Стиральные порошки",
+            "MT": "Мясо свежее",
+            "NT": "Орешки солёные",
+            "OIL": "Масло растительное",
+            "PC": "Корм для кошек",
+            "PD": "Корм для собак",
+            "PF": "Корм для животных",
+            "PI": "Пицца и Пельмени",
+            "PL": "Птица",
+            "POP": "Попкорн",
+            "PS": "Макароны",
+            "PT": "Пирожные и Торты",
+            "SA": "Крепкий Алкоголь",
+            "SC": "Соусы и Кетчупы",
+            "SF": "Морепродукты",
+            "SG": "Колбасы и Сосиски",
+            "SGS": "Сахар и Соль",
+            "SH": "Шампуни",
+            "SM": "Копчёности",
+            "SN": "Снеки",
+            "SO": "Мыло",
+            "SP": "Специи и Приправы",
+            "SUK": "Сухарики",
+            "TE": "Чай",
+            "TP": "Зубная паста",
+            "VG": "Овощи",
+            "WC": "Вода и Колы",
+            "WE": "Энергетики",
+            "WF": "Вафли",
+            "WI": "Изотоники и Витамины",
+            "WJ": "Соки и Нектары",
+            "WT": "Чай/Кофе холодные",
+            "XX": "Другое",
+            "YG": "Йогурты",
+            "ZP": "Зефир и Пастила"
+          },
+          "zones": [
+            {
+              "code": "AIR",
+              "color": "#6366F1",
+              "name": "Освежители"
+            },
+            {
+              "code": "BF",
+              "color": "#6366F1",
+              "name": "Детское питание"
+            },
+            {
+              "code": "BK",
+              "color": "#6366F1",
+              "name": "Булочки и Сдоба"
+            },
+            {
+              "code": "BL",
+              "color": "#6366F1",
+              "name": "Блины и Оладьи"
+            },
+            {
+              "code": "BR",
+              "color": "#6366F1",
+              "name": "Хлеб"
+            },
+            {
+              "code": "BRY",
+              "color": "#6366F1",
+              "name": "Ягоды"
+            },
+            {
+              "code": "BT",
+              "color": "#6366F1",
+              "name": "Масло и Маргарин"
+            },
+            {
+              "code": "BW",
+              "color": "#6366F1",
+              "name": "Пиво и Вино"
+            },
+            {
+              "code": "CAR",
+              "color": "#6366F1",
+              "name": "Карамель и Леденцы"
+            },
+            {
+              "code": "CC",
+              "color": "#6366F1",
+              "name": "Какао"
+            },
+            {
+              "code": "CD",
+              "color": "#6366F1",
+              "name": "Конфеты"
+            },
+            {
+              "code": "CF",
+              "color": "#6366F1",
+              "name": "Кофе"
+            },
+            {
+              "code": "CH",
+              "color": "#6366F1",
+              "name": "Шампанское"
+            },
+            {
+              "code": "CHC",
+              "color": "#6366F1",
+              "name": "Шоколад"
+            },
+            {
+              "code": "CHP",
+              "color": "#6366F1",
+              "name": "Чипсы"
+            },
+            {
+              "code": "CHS",
+              "color": "#6366F1",
+              "name": "Сыры"
+            },
+            {
+              "code": "CK",
+              "color": "#6366F1",
+              "name": "Печенье и Крекеры"
+            },
+            {
+              "code": "CLN",
+              "color": "#6366F1",
+              "name": "Чистящие средства"
+            },
+            {
+              "code": "CR",
+              "color": "#6366F1",
+              "name": "Сметана и Творог"
+            },
+            {
+              "code": "CRM",
+              "color": "#6366F1",
+              "name": "Кремы"
+            },
+            {
+              "code": "CS",
+              "color": "#6366F1",
+              "name": "Консервы"
+            },
+            {
+              "code": "DC",
+              "color": "#6366F1",
+              "name": "Дезодоранты"
+            },
+            {
+              "code": "DF",
+              "color": "#6366F1",
+              "name": "Молочные продукты"
+            },
+            {
+              "code": "DL",
+              "color": "#6366F1",
+              "name": "Деликатесы мясные"
+            },
+            {
+              "code": "DN",
+              "color": "#6366F1",
+              "name": "Сухофрукты и Орехи"
+            },
+            {
+              "code": "DP",
+              "color": "#6366F1",
+              "name": "Подгузники"
+            },
+            {
+              "code": "DS",
+              "color": "#6366F1",
+              "name": "Десерты молочные"
+            },
+            {
+              "code": "DSP",
+              "color": "#6366F1",
+              "name": "Для посуды"
+            },
+            {
+              "code": "FD",
+              "color": "#6366F1",
+              "name": "Рыбные деликатесы"
+            },
+            {
+              "code": "FF",
+              "color": "#6366F1",
+              "name": "Фрукты замороженные"
+            },
+            {
+              "code": "FK",
+              "color": "#6366F1",
+              "name": "Рыбные консервы"
+            },
+            {
+              "code": "FL",
+              "color": "#6366F1",
+              "name": "Мука"
+            },
+            {
+              "code": "FM",
+              "color": "#6366F1",
+              "name": "Мясо замороженное"
+            },
+            {
+              "code": "FP",
+              "color": "#6366F1",
+              "name": "Полуфабрикаты"
+            },
+            {
+              "code": "FR",
+              "color": "#6366F1",
+              "name": "Фрукты"
+            },
+            {
+              "code": "FS",
+              "color": "#6366F1",
+              "name": "Рыба свежая"
+            },
+            {
+              "code": "FV",
+              "color": "#6366F1",
+              "name": "Овощи замороженные"
+            },
+            {
+              "code": "FZ",
+              "color": "#6366F1",
+              "name": "Рыба замороженная"
+            },
+            {
+              "code": "GR",
+              "color": "#6366F1",
+              "name": "Зелень и Салаты"
+            },
+            {
+              "code": "GRO",
+              "color": "#6366F1",
+              "name": "Крупы"
+            },
+            {
+              "code": "IC",
+              "color": "#6366F1",
+              "name": "Мороженое"
+            },
+            {
+              "code": "KW",
+              "color": "#6366F1",
+              "name": "Квас"
+            },
+            {
+              "code": "LD",
+              "color": "#6366F1",
+              "name": "Стиральные порошки"
+            },
+            {
+              "code": "MT",
+              "color": "#6366F1",
+              "name": "Мясо свежее"
+            },
+            {
+              "code": "NT",
+              "color": "#6366F1",
+              "name": "Орешки солёные"
+            },
+            {
+              "code": "OIL",
+              "color": "#6366F1",
+              "name": "Масло растительное"
+            },
+            {
+              "code": "PC",
+              "color": "#6366F1",
+              "name": "Корм для кошек"
+            },
+            {
+              "code": "PD",
+              "color": "#6366F1",
+              "name": "Корм для собак"
+            },
+            {
+              "code": "PF",
+              "color": "#6366F1",
+              "name": "Корм для животных"
+            },
+            {
+              "code": "PI",
+              "color": "#6366F1",
+              "name": "Пицца и Пельмени"
+            },
+            {
+              "code": "PL",
+              "color": "#6366F1",
+              "name": "Птица"
+            },
+            {
+              "code": "POP",
+              "color": "#6366F1",
+              "name": "Попкорн"
+            },
+            {
+              "code": "PS",
+              "color": "#6366F1",
+              "name": "Макароны"
+            },
+            {
+              "code": "PT",
+              "color": "#6366F1",
+              "name": "Пирожные и Торты"
+            },
+            {
+              "code": "SA",
+              "color": "#6366F1",
+              "name": "Крепкий Алкоголь"
+            },
+            {
+              "code": "SC",
+              "color": "#6366F1",
+              "name": "Соусы и Кетчупы"
+            },
+            {
+              "code": "SF",
+              "color": "#6366F1",
+              "name": "Морепродукты"
+            },
+            {
+              "code": "SG",
+              "color": "#6366F1",
+              "name": "Колбасы и Сосиски"
+            },
+            {
+              "code": "SGS",
+              "color": "#6366F1",
+              "name": "Сахар и Соль"
+            },
+            {
+              "code": "SH",
+              "color": "#6366F1",
+              "name": "Шампуни"
+            },
+            {
+              "code": "SM",
+              "color": "#6366F1",
+              "name": "Копчёности"
+            },
+            {
+              "code": "SN",
+              "color": "#6366F1",
+              "name": "Снеки"
+            },
+            {
+              "code": "SO",
+              "color": "#6366F1",
+              "name": "Мыло"
+            },
+            {
+              "code": "SP",
+              "color": "#6366F1",
+              "name": "Специи и Приправы"
+            },
+            {
+              "code": "SUK",
+              "color": "#6366F1",
+              "name": "Сухарики"
+            },
+            {
+              "code": "TE",
+              "color": "#6366F1",
+              "name": "Чай"
+            },
+            {
+              "code": "TP",
+              "color": "#6366F1",
+              "name": "Зубная паста"
+            },
+            {
+              "code": "VG",
+              "color": "#6366F1",
+              "name": "Овощи"
+            },
+            {
+              "code": "WC",
+              "color": "#6366F1",
+              "name": "Вода и Колы"
+            },
+            {
+              "code": "WE",
+              "color": "#6366F1",
+              "name": "Энергетики"
+            },
+            {
+              "code": "WF",
+              "color": "#6366F1",
+              "name": "Вафли"
+            },
+            {
+              "code": "WI",
+              "color": "#6366F1",
+              "name": "Изотоники и Витамины"
+            },
+            {
+              "code": "WJ",
+              "color": "#6366F1",
+              "name": "Соки и Нектары"
+            },
+            {
+              "code": "WT",
+              "color": "#6366F1",
+              "name": "Чай/Кофе холодные"
+            },
+            {
+              "code": "XX",
+              "color": "#6366F1",
+              "name": "Другое"
+            },
+            {
+              "code": "YG",
+              "color": "#6366F1",
+              "name": "Йогурты"
+            },
+            {
+              "code": "ZP",
+              "color": "#6366F1",
+              "name": "Зефир и Пастила"
+            }
+          ]
+        }
+      },
+      "stores_index": {
+        "gippo-momo-01a056ac": {
+          "address": "Партизанский проспект. 150а",
+          "city": "Минск",
+          "latitude": 53.8599337,
+          "longitude": 27.673879,
+          "name": "Гиппо МОМО",
+          "radiusMeters": 100
+        }
+      }
+    }
+  },
+  "users": {
+    "Q3REAx4G4iNqWz4JNV6uw5K1Tci2": {
+      "name": "Omurbek",
+      "role": "Мерчандайзер",
+      "store_keys": [
+        "gippo-momo-01a0544a"
+      ]
+    },
+    "dNHP7LSvSAXARrYzKgJJRkgNMK13": {
+      "name": "User",
+      "role": "Мерчандайзер",
+      "store_keys": [
+        "gippo-momo-01a056ac"
+      ]
+    }
+  }
+}

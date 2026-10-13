@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PLNA Нататкі</string>
+    <string name="app_tagline">Спіс пакупак і маршрут па зале</string>
+    <string name="store_label">Крама: %1$s</string>
+    <string name="change_store">Змяніць краму</string>
+    <string name="choose_store_title">Абярыце краму</string>
+    <string name="choose_store_hint">Калі GPS або інтэрнэт недаступныя — абярыце ўручную</string>
+
+    <string name="nav_home">Галоўная</string>
+    <string name="nav_lists">Спісы</string>
+    <string name="nav_map">Карта</string>
+    <string name="nav_profile">Профіль</string>
+
+    <string name="home_welcome">Адкрыйце «Спісы» або «Карта» ўнізе, каб працягнуць.</string>
+    <string name="home_guest_status">Госць · увайдзіце ў профілі</string>
+    <string name="home_user_status">Вы ўвайшлі</string>
+
+    <string name="about_card_title">Пра праграму</string>
+    <string name="about_card_subtitle">Хто мы і навошта PLNA</string>
+    <string name="about_title">Пра нас</string>
+    <string name="about_headline">PLNA Нататкі</string>
+    <string name="about_body">Праграма для спіса пакупак і маршруту па зале крамы.\n\nСтварыце нататку, дадайце тавары з вагой ці аб’ёмам, а ў краме адкрыйце карту — PLNA пакажа шлях да стэлажоў.</string>
+    <string name="about_how_title">Як карыстацца</string>
+    <string name="about_version">Версія 1.0 · PLNA Native Core</string>
+
+    <string name="lists_title">Спісы пакупак</string>
+    <string name="list_detail_title">Нататка</string>
+    <string name="note_name_hint">Назва нататкі</string>
+    <string name="list_add_hint">Ніжэй знайдзіце тавар і пазначце вагу ці аб’ём</string>
+    <string name="list_empty_products">Тавараў пакуль няма</string>
+    <string name="list_products_section">Тавары ў нататцы (%1$d)</string>
+    <string name="list_no_text">Няма тэксту</string>
+    <string name="search_inline_hint">Пошук тавару…</string>
+    <string name="shelf_format">%1$s, паліца %2$d</string>
+    <string name="show_on_map">Паказаць на карце</string>
+    <string name="save">Захаваць</string>
+    <string name="delete">Выдаліць</string>
+    <string name="add">Дадаць</string>
+    <string name="search">Пошук</string>
+    <string name="back">Назад</string>
+    <string name="quantity_title">Вага ці аб’ём</string>
+    <string name="quantity_subtitle">Абярыце фасоўку для «%1$s»</string>
+    <string name="quantity_custom_hint">Свой варыянт, напр. 2.5кг</string>
+    <string name="quantity_confirm">Дадаць у нататку</string>
+    <string name="quantity_required">Пазначце вагу ці аб’ём</string>
+
+    <string name="map_title">Карта крамы</string>
+    <string name="map_hint">Адкрыйце нататку і націсніце «Паказаць на карце»</string>
+    <string name="core_version_fallback">PLNA Native Core</string>
+
+    <string name="profile_title">Профіль</string>
+    <string name="theme_title">Тэма</string>
+    <string name="theme_dark">Цёмная</string>
+    <string name="theme_light">Светлая</string>
+    <string name="theme_system">Як у сістэме</string>
+    <string name="language_title">Мова</string>
+    <string name="no_stores_yet">Крамы яшчэ не загружаны.</string>
+
+    <string name="auth_title">Уваход</string>
+    <string name="auth_subtitle">Увядзіце нумар тэлефона або спецкод крамы. Пароль не патрэбны.</string>
+    <string name="auth_field_hint">Тэлефон або код</string>
+    <string name="auth_hint_examples">Прыклады: +375291112233 або код PLNA</string>
+    <string name="auth_continue">Працягнуць</string>
+    <string name="auth_no_password">Без пароля · адзін крок</string>
+    <string name="auth_open">Увайсці / Рэгістрацыя</string>
+    <string name="auth_logout">Выйсці</string>
+    <string name="auth_error">Увядзіце тэлефон (≥9 лічбаў) або код (PLNA, GIPPO…)</string>
+    <string name="auth_success">Гатова, вы ўвайшлі</string>
+    <string name="auth_guest_label">Не зарэгістраваны</string>
+
+    <string name="analytics_title">Аналітыка за месяц</string>
+    <string name="analytics_body">Спісаў: %1$d\nТавараў у нататках: %2$d\nАктыўная крама: %3$s</string>
+    <string name="guest_name">Госць</string>
+</resources>

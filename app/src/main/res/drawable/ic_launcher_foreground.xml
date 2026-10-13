@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Масштаб 0.8: всё содержимое внутри безопасной зоны adaptive icon (круг r=33). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:pivotX="54"
+        android:pivotY="54"
+        android:scaleX="0.8"
+        android:scaleY="0.8">
+        <path
+            android:fillAlpha="0.7"
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M28,84m-1.9,0a1.9,1.9 0,1 1,3.8 0a1.9,1.9 0,1 1,-3.8 0M34.5,83m-1.9,0a1.9,1.9 0,1 1,3.8 0a1.9,1.9 0,1 1,-3.8 0M41,82m-1.9,0a1.9,1.9 0,1 1,3.8 0a1.9,1.9 0,1 1,-3.8 0" />
+        <path
+            android:fillAlpha="0.35"
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M45,80.5a9,2.6 0,1 0,18 0a9,2.6 0,1 0,-18 0z" />
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M54,24C65,24 74,33 74,44C74,58 54,78 54,78C54,78 34,58 34,44C34,33 43,24 54,24Z" />
+        <path
+            android:pathData="M46,44L51.5,49.5L62,39"
+            android:strokeWidth="4.6"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round">
+            <aapt:attr name="android:strokeColor">
+                <gradient
+                    android:endX="64"
+                    android:endY="52"
+                    android:startX="44"
+                    android:startY="38"
+                    android:type="linear">
+                    <item android:color="#FF7C5CF6" android:offset="0" />
+                    <item android:color="#FF3AA8F0" android:offset="1" />
+                </gradient>
+            </aapt:attr>
+        </path>
+    </group>
+</vector>

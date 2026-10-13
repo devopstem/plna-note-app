@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PLNA Notes</string>
+    <string name="app_tagline">Shopping list and in-store route</string>
+    <string name="store_label">Store: %1$s</string>
+    <string name="change_store">Change store</string>
+    <string name="choose_store_title">Choose a store</string>
+    <string name="choose_store_hint">If GPS or internet is unavailable — pick manually</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_lists">Lists</string>
+    <string name="nav_map">Map</string>
+    <string name="nav_profile">Profile</string>
+
+    <string name="home_welcome">Open Lists or Map below to continue.</string>
+    <string name="home_guest_status">Guest · sign in from Profile</string>
+    <string name="home_user_status">Signed in</string>
+
+    <string name="about_card_title">About the app</string>
+    <string name="about_card_subtitle">Who we are and why PLNA Notes</string>
+    <string name="about_title">About</string>
+    <string name="about_headline">PLNA Notes</string>
+    <string name="about_body">An app for shopping lists and routes through the store floor.\n\nCreate a note, add products with weight or volume, then open the map in-store — PLNA guides you to the shelves.</string>
+    <string name="about_how_title">How to use</string>
+    <string name="about_version">Version 1.0 · PLNA Native Core</string>
+
+    <string name="lists_title">Shopping lists</string>
+    <string name="list_detail_title">Note</string>
+    <string name="note_name_hint">Note title</string>
+    <string name="list_add_hint">Search a product below and set weight or volume</string>
+    <string name="list_empty_products">No products yet</string>
+    <string name="list_products_section">Products in note (%1$d)</string>
+    <string name="list_no_text">No text</string>
+    <string name="search_inline_hint">Search product…</string>
+    <string name="shelf_format">%1$s, shelf %2$d</string>
+    <string name="show_on_map">Show on map</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="add">Add</string>
+    <string name="search">Search</string>
+    <string name="back">Back</string>
+    <string name="quantity_title">Weight or volume</string>
+    <string name="quantity_subtitle">Pick package for “%1$s”</string>
+    <string name="quantity_custom_hint">Custom, e.g. 2.5kg</string>
+    <string name="quantity_confirm">Add to note</string>
+    <string name="quantity_required">Enter weight or volume</string>
+
+    <string name="map_title">Store map</string>
+    <string name="map_hint">Open a note and tap “Show on map”</string>
+    <string name="core_version_fallback">PLNA Native Core</string>
+
+    <string name="profile_title">Profile</string>
+    <string name="theme_title">Theme</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_system">System</string>
+    <string name="language_title">Language</string>
+    <string name="no_stores_yet">Stores are not loaded yet.</string>
+
+    <string name="auth_title">Sign in</string>
+    <string name="auth_subtitle">Enter a phone number or store invite code. No password — other people’s lists stay private.</string>
+    <string name="auth_field_hint">Phone or code</string>
+    <string name="auth_hint_examples">Examples: +375291112233 or code PLNA</string>
+    <string name="auth_continue">Continue</string>
+    <string name="auth_no_password">No password · one step</string>
+    <string name="auth_open">Sign in / Register</string>
+    <string name="auth_logout">Sign out</string>
+    <string name="auth_error">Enter a phone (≥9 digits) or code (PLNA, GIPPO…)</string>
+    <string name="auth_success">Signed in</string>
+    <string name="auth_guest_label">Not registered</string>
+
+    <string name="analytics_title">Monthly analytics</string>
+    <string name="analytics_body">Lists: %1$d\nItems in notes: %2$d\nActive store: %3$s</string>
+    <string name="guest_name">Guest</string>
+</resources>
