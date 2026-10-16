@@ -92,7 +92,7 @@ class ListDetailActivity : AppCompatActivity(), QuantityBottomSheet.Listener {
                 val q = s?.toString().orEmpty()
                 searchJob?.cancel()
                 searchJob = lifecycleScope.launch {
-                    val results = offline.searchProducts(q).map { offline.productToCatalog(it) }
+                    val results = offline.searchCatalog(q)
                     searchAdapter.submit(results)
                     binding.searchResults.visibility =
                         if (results.isEmpty()) View.GONE else View.VISIBLE

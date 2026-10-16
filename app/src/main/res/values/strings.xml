@@ -17,12 +17,16 @@
     <string name="home_user_status">Вы вошли</string>
 
     <string name="about_card_title">О приложении</string>
-    <string name="about_card_subtitle">Кто мы и зачем PLNA Заметки</string>
+    <string name="about_card_subtitle">Простыми словами: зачем это приложение</string>
     <string name="about_title">О нас</string>
     <string name="about_headline">PLNA Заметки</string>
-    <string name="about_body">Приложение для списка покупок и маршрута по залу магазина.\n\nСоздайте заметку, добавьте товары с весом или объёмом, а в магазине откройте карту — PLNA подскажет путь к стеллажам.</string>
-    <string name="about_how_title">Как пользоваться</string>
-    <string name="about_version">Версия 1.0 · PLNA Native Core</string>
+    <string name="about_body">Знакомая ситуация: вы пришли в магазин с длинным списком, а потом ходите кругами и забываете половину.
+
+PLNA Заметки помогает иначе. Дома или по дороге вы собираете заметку — что купить и сколько (литр, килограмм, штуки). В магазине открываете карту зала: приложение показывает, где лежит товар и как к нему пройти.
+
+Это не «сложная IT-система». Это простой помощник для обычных покупок — чтобы сэкономить время и нервы.</string>
+    <string name="about_how_title">Как пользоваться — за 4 шага</string>
+    <string name="about_version">MVP 0.1 · Smart Map from PLNA</string>
 
     <string name="lists_title">Списки покупок</string>
     <string name="list_detail_title">Заметка</string>
@@ -46,7 +50,7 @@
     <string name="quantity_required">Укажите вес или объём</string>
 
     <string name="map_title">Карта магазина</string>
-    <string name="map_hint">Откройте заметку и нажмите «Показать на карте»</string>
+    <string name="map_hint">Увеличьте, поверните карту — кнопки справа внизу или жестами.</string>
     <string name="core_version_fallback">PLNA Native Core</string>
 
     <string name="profile_title">Профиль</string>
@@ -73,4 +77,40 @@
     <string name="analytics_body">Списков: %1$d\nТоваров в заметках: %2$d\nАктивный магазин: %3$s</string>
     <string name="guest_name">Гость</string>
     <string name="copyright" translatable="false">© 2026 Smart Map from PLNA</string>
+
+    <string name="map_view_2d">2D</string>
+    <string name="map_view_3d">3D</string>
+    <string name="demo_products_title">Демо-товары · нажмите для маршрута</string>
+    <string name="demo_product_meta">%1$s · полка %2$d</string>
+    <string name="demo_store_label">демо-зал</string>
+    <string name="rack_face_subtitle">%1$s · %2$s · полка %3$d · ряд %4$d</string>
+    <string name="rack_face_hint">Лицо стеллажа 1.5×1.8 м (глубина ~0.65 м). Позже те же поля придут из Firebase.</string>
+    <string name="about_lead">Список покупок, который ведёт вас по магазину</string>
+    <string name="about_who_title">Кому это полезно</string>
+    <string name="about_who_body">• тем, кто ходит в большой гипермаркет и теряется в рядах;\n• семьям — заметку можно собрать заранее;\n• гостям города — есть русский, английский и белорусский языки.</string>
+    <string name="about_step_1">1. Откройте «Списки» и создайте заметку</string>
+    <string name="about_step_2">2. Найдите товар и укажите вес или объём (например, «кола 1,5 л»)</string>
+    <string name="about_step_3">3. В магазине нажмите «Показать на карте»</string>
+    <string name="about_step_4">4. Идите по маршруту — на карте видно стеллаж и полку</string>
+    <string name="about_closing">Карту можно повернуть и увеличить пальцами или маленькими кнопками сбоку. Маршрут строится по вашей заметке из раздела «Списки».</string>
+    <string name="map_hint_with_route">Маршрут по заметке. Щипок — масштаб, два пальца — поворот. Двойной тап — сброс.</string>
+    <string name="map_need_note_title">Сначала нужна заметка</string>
+    <string name="map_need_note_body">Добавьте товары в «Списки». Без списка карта не знает, куда вести.</string>
+    <string name="map_go_lists">Перейти к спискам</string>
+    <string name="map_zoom_in">Увеличить</string>
+    <string name="map_zoom_out">Уменьшить</string>
+    <string name="map_rotate_left">Повернуть влево</string>
+    <string name="map_rotate_right">Повернуть вправо</string>
+    <string name="map_reset_view">Сбросить вид</string>
+    <string name="map_hint_no_notes">Пока нет заметок с товарами. Создайте список — и карта проложит маршрут.</string>
+    <string name="map_hint_pick_note">Выберите заметку, чтобы построить маршрут по залу.</string>
+    <string name="map_pick_note_title">Какую заметку показать на карте?</string>
+    <string name="map_note_option">%1$s · осталось %2$d</string>
+    <string name="map_pick_cancel">Позже</string>
+    <string name="map_change_note">Сменить</string>
+    <string name="map_active_note">Заметка: %1$s</string>
+    <string name="map_note_not_selected">Заметка не выбрана</string>
+    <string name="map_anchor_label">Я здесь:</string>
+    <string name="map_anchor_entrance">Вход</string>
+    <string name="map_anchor_cash">Кассы</string>
 </resources>

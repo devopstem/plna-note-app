@@ -17,12 +17,16 @@
     <string name="home_user_status">Signed in</string>
 
     <string name="about_card_title">About the app</string>
-    <string name="about_card_subtitle">Who we are and why PLNA Notes</string>
+    <string name="about_card_subtitle">In plain words: what this app is for</string>
     <string name="about_title">About</string>
     <string name="about_headline">PLNA Notes</string>
-    <string name="about_body">An app for shopping lists and routes through the store floor.\n\nCreate a note, add products with weight or volume, then open the map in-store — PLNA guides you to the shelves.</string>
-    <string name="about_how_title">How to use</string>
-    <string name="about_version">Version 1.0 · PLNA Native Core</string>
+    <string name="about_body">You know the feeling: a long list, endless aisles, and half the items forgotten.
+
+PLNA Notes works differently. At home or on the way, you build a note — what to buy and how much (liters, kilos, pieces). In the store you open the floor map: the app shows where each item is and how to get there.
+
+No tech jargon needed. Just a simple helper for everyday shopping — to save time and stress.</string>
+    <string name="about_how_title">How to use it — 4 steps</string>
+    <string name="about_version">MVP 0.1 · Smart Map from PLNA</string>
 
     <string name="lists_title">Shopping lists</string>
     <string name="list_detail_title">Note</string>
@@ -46,7 +50,7 @@
     <string name="quantity_required">Enter weight or volume</string>
 
     <string name="map_title">Store map</string>
-    <string name="map_hint">Open a note and tap “Show on map”</string>
+    <string name="map_hint">Zoom and rotate — side buttons or gestures.</string>
     <string name="core_version_fallback">PLNA Native Core</string>
 
     <string name="profile_title">Profile</string>
@@ -72,4 +76,40 @@
     <string name="analytics_title">Monthly analytics</string>
     <string name="analytics_body">Lists: %1$d\nItems in notes: %2$d\nActive store: %3$s</string>
     <string name="guest_name">Guest</string>
+
+    <string name="map_view_2d">2D</string>
+    <string name="map_view_3d">3D</string>
+    <string name="demo_products_title">Demo products · tap for route</string>
+    <string name="demo_product_meta">%1$s · shelf %2$d</string>
+    <string name="demo_store_label">demo floor</string>
+    <string name="rack_face_subtitle">%1$s · %2$s · shelf %3$d · bay %4$d</string>
+    <string name="rack_face_hint">Rack face 1.5×1.8 m (depth ~0.65 m). Same fields will come from Firebase later.</string>
+    <string name="about_lead">A shopping list that guides you through the store</string>
+    <string name="about_who_title">Who it’s for</string>
+    <string name="about_who_body">• people who get lost in big hypermarkets;\n• families who plan the list ahead;\n• visitors — Russian, English and Belarusian are supported.</string>
+    <string name="about_step_1">1. Open Lists and create a note</string>
+    <string name="about_step_2">2. Find a product and set weight or volume (e.g. “cola 1.5 L”)</string>
+    <string name="about_step_3">3. In the store tap “Show on map”</string>
+    <string name="about_step_4">4. Follow the route — you’ll see the rack and shelf</string>
+    <string name="about_closing">You can pinch to zoom and twist with two fingers, or use the small side buttons. The route comes from your note in Lists.</string>
+    <string name="map_hint_with_route">Route from your note. Pinch to zoom, two fingers to rotate. Double-tap to reset.</string>
+    <string name="map_need_note_title">You need a note first</string>
+    <string name="map_need_note_body">Add products in Lists. Without a list the map doesn’t know where to guide you.</string>
+    <string name="map_go_lists">Go to lists</string>
+    <string name="map_zoom_in">Zoom in</string>
+    <string name="map_zoom_out">Zoom out</string>
+    <string name="map_rotate_left">Rotate left</string>
+    <string name="map_rotate_right">Rotate right</string>
+    <string name="map_reset_view">Reset view</string>
+    <string name="map_hint_no_notes">No notes with products yet. Create a list — then the map can build a route.</string>
+    <string name="map_hint_pick_note">Pick a note to build a route through the store.</string>
+    <string name="map_pick_note_title">Which note to show on the map?</string>
+    <string name="map_note_option">%1$s · %2$d left</string>
+    <string name="map_pick_cancel">Later</string>
+    <string name="map_change_note">Change</string>
+    <string name="map_active_note">Note: %1$s</string>
+    <string name="map_note_not_selected">No note selected</string>
+    <string name="map_anchor_label">I\'m at:</string>
+    <string name="map_anchor_entrance">Entrance</string>
+    <string name="map_anchor_cash">Checkouts</string>
 </resources>

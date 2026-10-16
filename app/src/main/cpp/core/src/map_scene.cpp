@@ -303,11 +303,12 @@ void MapScene::rebuildDrawList() const {
         const int count = static_cast<int>(route_.size() / 2);
         cachedDraw_.push_back(static_cast<float>(count));
         cachedDraw_.insert(cachedDraw_.end(), route_.begin(), route_.end());
-        cachedDraw_.push_back(0.39f);
-        cachedDraw_.push_back(0.40f);
+        // тонкий маршрут — стрелки/стиль рисует Android StoreMapView
+        cachedDraw_.push_back(0.15f);
+        cachedDraw_.push_back(0.35f);
         cachedDraw_.push_back(0.95f);
         cachedDraw_.push_back(1.f);
-        cachedDraw_.push_back(4.f);
+        cachedDraw_.push_back(2.f);
     }
 
     cachedRevision_ = revision_;

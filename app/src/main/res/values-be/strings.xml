@@ -17,12 +17,16 @@
     <string name="home_user_status">Вы ўвайшлі</string>
 
     <string name="about_card_title">Пра праграму</string>
-    <string name="about_card_subtitle">Хто мы і навошта PLNA</string>
+    <string name="about_card_subtitle">Простымі словамі: навошта гэта праграма</string>
     <string name="about_title">Пра нас</string>
     <string name="about_headline">PLNA Нататкі</string>
-    <string name="about_body">Праграма для спіса пакупак і маршруту па зале крамы.\n\nСтварыце нататку, дадайце тавары з вагой ці аб’ёмам, а ў краме адкрыйце карту — PLNA пакажа шлях да стэлажоў.</string>
-    <string name="about_how_title">Як карыстацца</string>
-    <string name="about_version">Версія 1.0 · PLNA Native Core</string>
+    <string name="about_body">Знаёма: доўгі спіс, блукаеце па залах і забываеце палову.
+
+PLNA Нататкі працуе інакш. Дома ці па дарозе вы збіраеце нататку — што купіць і колькі (літры, кілаграмы, штукі). У краме адкрываеце карту залы: праграма паказвае, дзе тавар і як да яго дайсці.
+
+Без складаных тэрмінаў. Просты памочнік для звычайных пакупак — каб зэканоміць час і нервы.</string>
+    <string name="about_how_title">Як карыстацца — 4 крокі</string>
+    <string name="about_version">MVP 0.1 · Smart Map from PLNA</string>
 
     <string name="lists_title">Спісы пакупак</string>
     <string name="list_detail_title">Нататка</string>
@@ -46,7 +50,7 @@
     <string name="quantity_required">Пазначце вагу ці аб’ём</string>
 
     <string name="map_title">Карта крамы</string>
-    <string name="map_hint">Адкрыйце нататку і націсніце «Паказаць на карце»</string>
+    <string name="map_hint">Павялічце, павярніце карту — кнопкі справа ці жэстамі.</string>
     <string name="core_version_fallback">PLNA Native Core</string>
 
     <string name="profile_title">Профіль</string>
@@ -72,4 +76,40 @@
     <string name="analytics_title">Аналітыка за месяц</string>
     <string name="analytics_body">Спісаў: %1$d\nТавараў у нататках: %2$d\nАктыўная крама: %3$s</string>
     <string name="guest_name">Госць</string>
+
+    <string name="map_view_2d">2D</string>
+    <string name="map_view_3d">3D</string>
+    <string name="demo_products_title">Дэма-тавары · націсніце для маршруту</string>
+    <string name="demo_product_meta">%1$s · паліца %2$d</string>
+    <string name="demo_store_label">дэма-зала</string>
+    <string name="rack_face_subtitle">%1$s · %2$s · паліца %3$d · шэраг %4$d</string>
+    <string name="rack_face_hint">Твар стэлажа 1.5×1.8 м (глыбіня ~0.65 м). Пазней тыя ж палі прыйдуць з Firebase.</string>
+    <string name="about_lead">Спіс пакупак, які вядзе вас па краме</string>
+    <string name="about_who_title">Каму гэта карысна</string>
+    <string name="about_who_body">• тым, хто губляецца ў вялікіх гіпермаркетах;\n• сям’ям — нататку можна сабраць загадзя;\n• госцям — ёсць руская, англійская і беларуская мовы.</string>
+    <string name="about_step_1">1. Адкрыйце «Спісы» і стварыце нататку</string>
+    <string name="about_step_2">2. Знайдзіце тавар і пазначце вагу ці аб’ём (напрыклад, «кола 1,5 л»)</string>
+    <string name="about_step_3">3. У краме націсніце «Паказаць на карце»</string>
+    <string name="about_step_4">4. Ідзіце па маршруце — відаць стэлаж і паліцу</string>
+    <string name="about_closing">Карту можна павярнуць і павялічыць пальцамі або маленькімі кнопкамі збоку. Маршрут будуецца па вашай нататцы з раздзела «Спісы».</string>
+    <string name="map_hint_with_route">Маршрут па нататцы. Шчыпок — маштаб, два пальцы — паварот. Двайны тап — скід.</string>
+    <string name="map_need_note_title">Спачатку патрэбна нататка</string>
+    <string name="map_need_note_body">Дадайце тавары ў «Спісах». Без спісу карта не ведае, куды весці.</string>
+    <string name="map_go_lists">Перайсці да спісаў</string>
+    <string name="map_zoom_in">Павялічыць</string>
+    <string name="map_zoom_out">Паменшыць</string>
+    <string name="map_rotate_left">Павярнуць улева</string>
+    <string name="map_rotate_right">Павярнуць управа</string>
+    <string name="map_reset_view">Скінуць выгляд</string>
+    <string name="map_hint_no_notes">Пакуль няма нататак з таварамі. Стварыце спіс — і карта пракладзе маршрут.</string>
+    <string name="map_hint_pick_note">Абярыце нататку, каб пабудаваць маршрут па зале.</string>
+    <string name="map_pick_note_title">Якую нататку паказаць на карце?</string>
+    <string name="map_note_option">%1$s · засталося %2$d</string>
+    <string name="map_pick_cancel">Пазней</string>
+    <string name="map_change_note">Змяніць</string>
+    <string name="map_active_note">Нататка: %1$s</string>
+    <string name="map_note_not_selected">Нататка не выбрана</string>
+    <string name="map_anchor_label">Я тут:</string>
+    <string name="map_anchor_entrance">Уваход</string>
+    <string name="map_anchor_cash">Касы</string>
 </resources>

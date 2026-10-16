@@ -1,47 +1,313 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/map_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/plna_bg"
     android:orientation="vertical"
-    android:paddingHorizontal="20dp"
-    android:paddingTop="8dp"
-    android:paddingBottom="20dp">
+    android:paddingHorizontal="12dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="8dp">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/map_title"
-        android:textAppearance="@style/Plna.Title" />
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-    <TextView
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/view_mode_toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_view_2d"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:minWidth="0dp"
+                android:paddingHorizontal="12dp"
+                android:text="@string/map_view_2d"
+                android:textSize="11sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_view_3d"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:minWidth="0dp"
+                android:paddingHorizontal="12dp"
+                android:text="@string/map_view_3d"
+                android:textSize="11sp" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/map_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxWidth="180dp"
+            android:maxLines="1"
+            android:textColor="@color/plna_text_secondary"
+            android:textSize="11sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/map_empty_banner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        android:text="@string/map_hint"
-        android:textColor="@color/plna_text_secondary"
-        android:textSize="14sp" />
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/plna_surface"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/plna_stroke"
+        app:strokeWidth="1dp">
 
-    <TextView
-        android:id="@+id/core_version"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="2dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/map_need_note_title"
+                android:textColor="@color/plna_text"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/map_need_note_body"
+                android:textColor="@color/plna_text_secondary"
+                android:textSize="12sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_go_lists"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="30dp"
+                android:text="@string/map_go_lists"
+                android:textColor="@color/plna_accent"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Заметка + якорь «я здесь» в одной карточке -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/map_route_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:textColor="@color/plna_accent"
-        android:textSize="13sp" />
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/plna_surface"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/plna_stroke"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="8dp">
+
+            <LinearLayout
+                android:id="@+id/map_note_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/active_note_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/plna_text"
+                    android:textSize="12sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_change_note"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:paddingHorizontal="6dp"
+                    android:text="@string/map_change_note"
+                    android:textColor="@color/plna_accent"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/map_anchor_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="@string/map_anchor_label"
+                    android:textColor="@color/plna_text_secondary"
+                    android:textSize="11sp" />
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/anchor_toggle"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_map_segment"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_anchor_entrance"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:minWidth="0dp"
+                        android:padding="0dp"
+                        android:text="@string/map_anchor_entrance"
+                        android:textSize="12sp"
+                        app:cornerRadius="9dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_anchor_cash"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:minWidth="0dp"
+                        android:padding="0dp"
+                        android:text="@string/map_anchor_cash"
+                        android:textSize="12sp"
+                        app:cornerRadius="9dp" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- скрыт, но id оставлен — MapFragment пишет версию ядра -->
+    <TextView
+        android:id="@+id/core_version"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:layout_weight="1"
         android:background="@drawable/bg_map_panel"
-        android:padding="8dp">
+        android:padding="0dp">
 
         <by.smartplanogram.plnanote.ui.map.StoreMapView
             android:id="@+id/store_map_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btn_zoom_in"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:background="@drawable/bg_map_fab"
+                android:contentDescription="@string/map_zoom_in"
+                android:padding="4dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_zoom_in"
+                app:tint="@color/plna_text" />
+
+            <ImageButton
+                android:id="@+id/btn_zoom_out"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/bg_map_fab"
+                android:contentDescription="@string/map_zoom_out"
+                android:padding="4dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_zoom_out"
+                app:tint="@color/plna_text" />
+
+            <ImageButton
+                android:id="@+id/btn_rotate_left"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/bg_map_fab"
+                android:contentDescription="@string/map_rotate_left"
+                android:padding="4dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_rotate_left"
+                app:tint="@color/plna_text" />
+
+            <ImageButton
+                android:id="@+id/btn_rotate_right"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/bg_map_fab"
+                android:contentDescription="@string/map_rotate_right"
+                android:padding="4dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_rotate_right"
+                app:tint="@color/plna_text" />
+
+            <ImageButton
+                android:id="@+id/btn_fit_map"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/bg_map_fab"
+                android:contentDescription="@string/map_reset_view"
+                android:padding="4dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_fit_map"
+                app:tint="@color/plna_accent" />
+        </LinearLayout>
     </FrameLayout>
 </LinearLayout>

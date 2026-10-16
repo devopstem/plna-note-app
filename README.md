@@ -1,28 +1,36 @@
 # PLNA Заметки (Smart Map)
 
-Список покупок и маршрут по залу магазина. Часть экосистемы **PLNA** (общий C++ map-engine + общая модель данных).
+**Версия: MVP 0.1** (`0.1.0-mvp`) · © 2026 Smart Map from PLNA
 
-**© 2026 Smart Map from PLNA**
+Список покупок и маршрут по залу. Часть экосистемы **PLNA** (C++ map-engine + общая модель магазина).
 
 ![Logo](branding/plna-smart-map-logo.png)
 
-## Зачем
+## Что умеет MVP 0.1
 
-Покупатель собирает заметку с товарами (вес/объём), в магазине открывает карту и идёт по маршруту к стеллажам. Каталог и план зала кэшируются в Room — после sync работает офлайн.
+| Возможность | Как работает |
+|-------------|--------------|
+| Заметки с товарами | Списки, количество, «на карте» |
+| План зала офлайн | Room + JSON плана; интернет для карты не обязателен |
+| Маршрут | От якоря **Вход / Кассы** к ближайшему некупленному товару |
+| Стеллаж | Подсветка цели + bottom sheet «лицо» полки |
+| Ориентация | С/В/Ю/З на плане + мини-компас |
+| Языки | ru / en / be |
+| Вход | Телефон или код (без пароля) |
 
-Подробнее: [docs/PRODUCT.md](docs/PRODUCT.md)
+**Не умеет (и не обещаем в 0.1):** живая точка «я» по залу (GPS внутри здания бесполезен; шаги/маяки — следующие уровни). Подробности: [docs/CHANGELOG.md](docs/CHANGELOG.md).
 
 ## Стек
 
 | Слой | Технология |
 |------|------------|
 | UI | Android, Kotlin, ViewBinding, Material |
-| Офлайн БД | Room (SQLite) |
+| Офлайн | Room (SQLite) |
 | Sync | Firebase RTDB + `assets/rtdb_export.json` |
-| Карта | C++23 `plna_core` через JNI |
-| Настройки | SharedPreferences (`UserSettings`) |
+| Карта | C++23 `plna_core` (JNI) |
+| Настройки | SharedPreferences |
 
-Архитектура: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) · ядро: [app/src/main/cpp/docs/](app/src/main/cpp/docs/)
+Архитектура: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) · продукт: [docs/PRODUCT.md](docs/PRODUCT.md) · ядро: [app/src/main/cpp/docs/](app/src/main/cpp/docs/)
 
 ## Быстрый старт
 
@@ -36,13 +44,23 @@
 ## Структура
 
 ```
-app/                 Android-приложение + NDK
+app/                 Android + NDK
 app/src/main/cpp/    plna_core (C++23) + JNI
-branding/            SVG/PNG логотип Smart Map
-docs/                Продукт, архитектура, сборка, GitHub-чеклист
+branding/            логотип Smart Map
+docs/                продукт, архитектура, сборка, changelog
 ```
 
-## Статус
+## Версии
 
-Прототип / внутренний MVP. Package: `by.smartplanogram.plnanote`.  
-Публикация — см. [docs/GITHUB.md](docs/GITHUB.md) (рекомендуется private, пока не убраны секреты).
+| Версия | Статус |
+|--------|--------|
+| **0.1.0-mvp** | текущий MVP: карта, якорь, стеллаж, компас |
+| 0.2+ | PDR / уточнение «я» (план) |
+| 1.0 | публичный релиз (когда стабильны данные сетей и UX) |
+
+История изменений: [docs/CHANGELOG.md](docs/CHANGELOG.md)
+
+## Статус репозитория
+
+Внутренний MVP. Package: `by.smartplanogram.plnanote`.  
+Публикация: [docs/GITHUB.md](docs/GITHUB.md) (лучше private, пока не убраны секреты).

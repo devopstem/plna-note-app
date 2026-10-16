@@ -57,21 +57,47 @@ class OfflineRepository private constructor(context: Context) {
         return db.products().search(storeId, query.trim())
     }
 
+    /**
+     * Поиск для UI: Room (Firebase/assets) + демо.
+     * Room с тем же id побеждает — потом без боли подключаем живые данные.
+     */
+    suspend fun searchCatalog(query: String): List<CatalogProduct> {
+        val q = query.trim()
+        if (q.isEmpty()) return emptyList()
+        DemoCatalog.ensureLoaded(app)
+        val byId = LinkedHashMap<String, CatalogProduct>()
+        DemoCatalog.search(app, q).forEach { byId[it.id] = it }
+        searchProducts(q).map { productToCatalog(it) }.forEach { byId[it.id] = it }
+        return byId.values.toList()
+    }
+
+    fun demoProducts(): List<CatalogProduct> = DemoCatalog.all(app)
+
     suspend fun mapJsonForSelectedStore(): String? {
         val storeId = selectedStoreId()
         if (storeId.isBlank()) return null
         return db.storeMaps().byStore(storeId)?.mapJson
     }
 
-    fun productToCatalog(p: ProductEntity): CatalogProduct = CatalogProduct(
-        id = p.id,
-        name = p.name,
-        rackId = p.rackId,
-        shelf = p.shelf,
-        x = p.x,
-        y = p.y,
-        unitHints = buildHints(p)
-    )
+    fun productToCatalog(p: ProductEntity): CatalogProduct {
+        val face = DemoCatalog.defaultFace(app)
+        return CatalogProduct(
+            id = p.id,
+            name = p.name,
+            rackId = p.rackId,
+            shelf = p.shelf,
+            x = p.x,
+            y = p.y,
+            unitHints = buildHints(p),
+            rackName = p.rackId,
+            shelfCount = 5,
+            bay = ((p.shelf - 1) % 3) + 1,
+            rackLengthM = face.lengthMeters,
+            rackHeightM = face.heightMeters,
+            rackDepthM = face.depthMeters,
+            isDemo = false
+        )
+    }
 
     private fun buildHints(p: ProductEntity): List<String> {
         val base = mutableListOf<String>()
