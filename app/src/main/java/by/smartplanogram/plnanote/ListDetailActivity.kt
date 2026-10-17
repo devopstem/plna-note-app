@@ -2,19 +2,24 @@ package by.smartplanogram.plnanote
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Paint
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import by.smartplanogram.plnanote.data.CatalogProduct
+import by.smartplanogram.plnanote.data.ItemOutcome
 import by.smartplanogram.plnanote.data.OfflineRepository
+import by.smartplanogram.plnanote.data.PurchaseHistoryRepository
 import by.smartplanogram.plnanote.data.ShoppingItem
 import by.smartplanogram.plnanote.data.ShoppingListRepository
 import by.smartplanogram.plnanote.databinding.ActivityListDetailBinding
@@ -24,6 +29,7 @@ import by.smartplanogram.plnanote.ui.applyTopContentInset
 import by.smartplanogram.plnanote.ui.map.MapFragment
 import by.smartplanogram.plnanote.ui.search.QuantityBottomSheet
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class ListDetailActivity : AppCompatActivity(), QuantityBottomSheet.Listener {
@@ -49,10 +55,15 @@ class ListDetailActivity : AppCompatActivity(), QuantityBottomSheet.Listener {
             return
         }
 
-        itemsAdapter = ItemsAdapter(onToggle = { item ->
-            repo.toggleItem(listId, item.id)
-            refresh()
-        })
+        itemsAdapter = ItemsAdapter(
+            onSetOutcome = { item, outcome -> applyOutcome(item, outcome) },
+            onLongReopen = { item ->
+                if (item.isDone()) {
+                    applyOutcome(item, ItemOutcome.OPEN)
+                    Toast.makeText(this, R.string.item_reopened, Toast.LENGTH_SHORT).show()
+                }
+            }
+        )
         binding.itemsRecycler.layoutManager = LinearLayoutManager(this)
         binding.itemsRecycler.adapter = itemsAdapter
 
@@ -89,10 +100,16 @@ class ListDetailActivity : AppCompatActivity(), QuantityBottomSheet.Listener {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) = Unit
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) = Unit
             override fun afterTextChanged(s: Editable?) {
-                val q = s?.toString().orEmpty()
+                val q = s?.toString()?.trim().orEmpty()
                 searchJob?.cancel()
+                if (q.isEmpty()) {
+                    searchAdapter.submit(emptyList())
+                    binding.searchResults.visibility = View.GONE
+                    return
+                }
                 searchJob = lifecycleScope.launch {
-                    val results = offline.searchCatalog(q)
+                    delay(220) // debounce — меньше лагов при наборе
+                    val results = offline.searchCatalog(q).take(30)
                     searchAdapter.submit(results)
                     binding.searchResults.visibility =
                         if (results.isEmpty()) View.GONE else View.VISIBLE
@@ -106,8 +123,22 @@ class ListDetailActivity : AppCompatActivity(), QuantityBottomSheet.Listener {
         }
     }
 
+    private fun applyOutcome(item: ShoppingItem, outcome: ItemOutcome) {
+        val updated = repo.setOutcome(listId, item.id, outcome) ?: return
+        if (outcome == ItemOutcome.BOUGHT) {
+            lifecycleScope.launch {
+                runCatching {
+                    val storeId = offline.selectedStoreId()
+                    PurchaseHistoryRepository.get(this@ListDetailActivity)
+                        .recordChecked(updated, listId, storeId)
+                }
+            }
+        }
+        refresh()
+    }
+
     override fun onPause() {
-        saveTitle() // системная «Назад» / сворачивание не должны терять название
+        saveTitle()
         super.onPause()
     }
 
@@ -137,17 +168,20 @@ class ListDetailActivity : AppCompatActivity(), QuantityBottomSheet.Listener {
         ) {
             binding.listNameInput.setText(list.title)
         }
-        itemsAdapter.submit(list.items)
+        val ordered = list.items.sortedBy { it.isDone() }
+        itemsAdapter.submit(ordered)
+        val left = list.items.count { !it.isDone() }
         binding.productsSectionTitle.text = if (list.items.isEmpty()) {
             getString(R.string.list_empty_products)
         } else {
-            getString(R.string.list_products_section, list.items.size)
+            getString(R.string.list_products_progress, left, list.items.size)
         }
         binding.btnShowOnMap.visibility = if (list.items.isEmpty()) View.GONE else View.VISIBLE
     }
 
     private class ItemsAdapter(
-        private val onToggle: (ShoppingItem) -> Unit
+        private val onSetOutcome: (ShoppingItem, ItemOutcome) -> Unit,
+        private val onLongReopen: (ShoppingItem) -> Unit
     ) : RecyclerView.Adapter<ItemsAdapter.VH>() {
         private val items = mutableListOf<ShoppingItem>()
 
@@ -170,15 +204,47 @@ class ListDetailActivity : AppCompatActivity(), QuantityBottomSheet.Listener {
         inner class VH(private val binding: ItemListProductBinding) :
             RecyclerView.ViewHolder(binding.root) {
             fun bind(item: ShoppingItem) {
+                val ctx = binding.root.context
                 binding.itemName.text = item.displayName()
-                binding.itemLocation.text = binding.root.context.getString(
-                    R.string.shelf_format,
-                    item.rackId,
-                    item.shelf
-                )
+                val loc = ctx.getString(R.string.shelf_format, item.rackId, item.shelf)
+                binding.itemLocation.text = when (item.outcome) {
+                    ItemOutcome.BOUGHT -> ctx.getString(R.string.item_status_bought, loc)
+                    ItemOutcome.SKIPPED -> ctx.getString(R.string.item_status_skipped, loc)
+                    ItemOutcome.MISSING -> ctx.getString(R.string.item_status_missing, loc)
+                    ItemOutcome.OPEN -> loc
+                }
+                applyDoneStyle(binding.itemName, item.isDone(), accent = false)
+                applyDoneStyle(binding.itemLocation, item.isDone(), accent = true)
+
+                // Не OnCheckedChangeListener: он легко даёт двойной toggle и «залипание»
                 binding.itemCheck.setOnCheckedChangeListener(null)
-                binding.itemCheck.isChecked = item.checked
-                binding.itemCheck.setOnCheckedChangeListener { _, _ -> onToggle(item) }
+                binding.itemCheck.isChecked = item.outcome == ItemOutcome.BOUGHT
+                binding.itemCheck.setOnClickListener {
+                    val wantBought = binding.itemCheck.isChecked
+                    onSetOutcome(
+                        item,
+                        if (wantBought) ItemOutcome.BOUGHT else ItemOutcome.OPEN
+                    )
+                }
+                binding.root.setOnLongClickListener {
+                    onLongReopen(item)
+                    true
+                }
+            }
+
+            private fun applyDoneStyle(view: TextView, done: Boolean, accent: Boolean) {
+                if (done) {
+                    view.paintFlags = view.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+                    view.setTextColor(ContextCompat.getColor(view.context, R.color.plna_text_muted))
+                } else {
+                    view.paintFlags = view.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
+                    view.setTextColor(
+                        ContextCompat.getColor(
+                            view.context,
+                            if (accent) R.color.plna_accent else R.color.plna_text
+                        )
+                    )
+                }
             }
         }
     }

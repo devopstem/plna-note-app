@@ -72,7 +72,7 @@
         android:layout_height="52dp"
         android:layout_marginTop="24dp"
         android:text="@string/auth_continue"
-        app:backgroundTint="@color/plna_purple"
+        app:backgroundTint="@color/plna_accent"
         app:cornerRadius="14dp" />
 
     <TextView

@@ -58,17 +58,13 @@ class OfflineRepository private constructor(context: Context) {
     }
 
     /**
-     * Поиск для UI: Room (Firebase/assets) + демо.
-     * Room с тем же id побеждает — потом без боли подключаем живые данные.
+     * Поиск для UI: только каталог магазина из Room (assets / Firebase).
+     * Демо-SKU в выдачу не подмешиваем — иначе на показе всплывают чужие товары.
      */
     suspend fun searchCatalog(query: String): List<CatalogProduct> {
         val q = query.trim()
         if (q.isEmpty()) return emptyList()
-        DemoCatalog.ensureLoaded(app)
-        val byId = LinkedHashMap<String, CatalogProduct>()
-        DemoCatalog.search(app, q).forEach { byId[it.id] = it }
-        searchProducts(q).map { productToCatalog(it) }.forEach { byId[it.id] = it }
-        return byId.values.toList()
+        return searchProducts(q).map { productToCatalog(it) }
     }
 
     fun demoProducts(): List<CatalogProduct> = DemoCatalog.all(app)

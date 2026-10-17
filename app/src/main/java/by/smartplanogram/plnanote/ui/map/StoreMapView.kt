@@ -51,6 +51,11 @@ class StoreMapView @JvmOverloads constructor(
     private var startX = Float.NaN
     private var startY = Float.NaN
     private var startLabel: String = ""
+    private var meX = Float.NaN
+    private var meY = Float.NaN
+    private var meHeadingDeg = 0f
+    private var relocateMode = false
+    private var onRelocate: ((Float, Float) -> Unit)? = null
     private var mapBearingDeg = 0f
     private var pulse = 0.55f
     private var pulseAnim: ValueAnimator? = null
@@ -173,6 +178,12 @@ class StoreMapView @JvmOverloads constructor(
                 resetView()
                 return true
             }
+
+            override fun onLongPress(e: MotionEvent) {
+                if (!relocateMode) return
+                val map = screenToMap(e.x, e.y) ?: return
+                onRelocate?.invoke(map.first, map.second)
+            }
         }
     )
 
@@ -210,18 +221,10 @@ class StoreMapView @JvmOverloads constructor(
         highlightRackW = rackW.coerceAtLeast(0.4f)
         highlightRackD = rackD.coerceAtLeast(0.3f)
         highlightLabel = label
+        // без пульсирующего «свечения» — мешает читать UI поверх карты
         pulseAnim?.cancel()
-        pulseAnim = ValueAnimator.ofFloat(0.7f, 1f).apply {
-            duration = 900
-            repeatMode = ValueAnimator.REVERSE
-            repeatCount = ValueAnimator.INFINITE
-            interpolator = AccelerateDecelerateInterpolator()
-            addUpdateListener {
-                pulse = it.animatedValue as Float
-                invalidate()
-            }
-            start()
-        }
+        pulseAnim = null
+        pulse = 1f
         invalidate()
     }
 
@@ -247,6 +250,49 @@ class StoreMapView @JvmOverloads constructor(
         startY = Float.NaN
         startLabel = ""
         invalidate()
+    }
+
+    /** Живая точка «я» (PDR). headingDeg: 0 = +Y (север карты). */
+    fun setMe(x: Float, y: Float, headingDeg: Float = 0f) {
+        meX = x
+        meY = y
+        meHeadingDeg = headingDeg
+        invalidate()
+    }
+
+    fun clearMe() {
+        meX = Float.NaN
+        meY = Float.NaN
+        invalidate()
+    }
+
+    fun setRelocateMode(enabled: Boolean, listener: ((Float, Float) -> Unit)? = null) {
+        relocateMode = enabled
+        onRelocate = if (enabled) listener else null
+        invalidate()
+    }
+
+    /** Экран → метры зала (с учётом pan/zoom/rotate). */
+    fun screenToMap(screenX: Float, screenY: Float): Pair<Float, Float>? {
+        if (width == 0 || height == 0 || baseScale <= 0f) return null
+        val cx = width / 2f
+        val cy = height / 2f
+        // обратный порядок: un-pan, un-rotate around center, un-scale around center
+        var x = screenX - userPanX
+        var y = screenY - userPanY
+        val rad = Math.toRadians((-userRotation).toDouble())
+        val cosR = cos(rad).toFloat()
+        val sinR = sin(rad).toFloat()
+        val dx = x - cx
+        val dy = y - cy
+        x = cx + dx * cosR - dy * sinR
+        y = cy + dx * sinR + dy * cosR
+        x = cx + (x - cx) / userScale
+        y = cy + (y - cy) / userScale
+        val mapX = (x - baseOffsetX) / baseScale
+        val mapY = floorH - (y - baseOffsetY) / baseScale
+        if (mapX !in -1f..(floorW + 1f) || mapY !in -1f..(floorH + 1f)) return null
+        return mapX to mapY
     }
 
     fun zoomIn() = zoomBy(1.2f, width / 2f, height / 2f)
@@ -456,13 +502,17 @@ class StoreMapView @JvmOverloads constructor(
 
         routePts?.let { drawRoute(canvas, s, it) }
 
-        if (!startX.isNaN() && !startY.isNaN()) {
+        if (!startX.isNaN() && !startY.isNaN() && meX.isNaN()) {
             drawStartDot(canvas, sx(startX), sy(startY))
         }
 
         if (!highlightX.isNaN() && !highlightY.isNaN()) {
             drawTargetRack(canvas, s)
             drawPin(canvas, sx(highlightX), sy(highlightY), s)
+        }
+
+        if (!meX.isNaN() && !meY.isNaN()) {
+            drawMe(canvas, sx(meX), sy(meY), meHeadingDeg)
         }
 
         // Стороны света по краям зала (вращаются вместе с картой)
@@ -484,10 +534,10 @@ class StoreMapView @JvmOverloads constructor(
         val bottom = toY(highlightY - hd)
         tmpRect.set(left, top, right, bottom)
         val rr = 5f * density
-        targetGlow.alpha = (140 + pulse * 100).toInt().coerceIn(120, 255)
-        targetGlow.strokeWidth = (2.2f + pulse) * density
+        targetGlow.alpha = 200
+        targetGlow.strokeWidth = 2.5f * density
         canvas.drawRoundRect(tmpRect, rr, rr, targetGlow)
-        fillPaint.color = argb(0.18f + pulse * 0.08f, 0.1f, 0.55f, 0.6f)
+        fillPaint.color = argb(0.14f, 0.1f, 0.48f, 0.52f)
         canvas.drawRoundRect(tmpRect, rr, rr, fillPaint)
         if (highlightLabel.isNotBlank()) {
             val ty = top - 4f * density
@@ -735,8 +785,8 @@ class StoreMapView @JvmOverloads constructor(
     }
 
     private fun drawPin(canvas: Canvas, cx: Float, cy: Float, scale: Float) {
-        val r = (4.5f + pulse * 1.5f) * density
-        pinPaint.alpha = (180 + pulse * 60).toInt().coerceIn(120, 255)
+        val r = 5.5f * density
+        pinPaint.alpha = 220
         // капля
         tmpPath.reset()
         tmpPath.addCircle(cx, cy - r * 0.35f, r, Path.Direction.CW)
@@ -758,6 +808,35 @@ class StoreMapView @JvmOverloads constructor(
             compassNorthPaint.textSize = 9f * resources.displayMetrics.scaledDensity
             canvas.drawText(startLabel, cx, cy - r - 3f * density, compassNorthPaint)
             compassNorthPaint.textSize = 11f * resources.displayMetrics.scaledDensity
+        }
+    }
+
+    /** Синяя стрелка «я»: круг + клинышек по направлению хода. */
+    private fun drawMe(canvas: Canvas, cx: Float, cy: Float, headingDeg: Float) {
+        val r = 7f * density
+        fillPaint.color = 0xAA1D4ED8.toInt()
+        canvas.drawCircle(cx, cy, r + 3f * density, fillPaint)
+        fillPaint.color = 0xFFFFFFFF.toInt()
+        canvas.drawCircle(cx, cy, r, fillPaint)
+        fillPaint.color = 0xFF2563EB.toInt()
+        canvas.drawCircle(cx, cy, r * 0.4f, fillPaint)
+
+        // стрелка: в экранных координатах +Y карты → вверх экрана уже учтён в sy;
+        // heading 0 (север/+Y) → вверх, т.е. отрицательный screen Y
+        canvas.save()
+        canvas.rotate(-headingDeg, cx, cy)
+        tmpPath.reset()
+        tmpPath.moveTo(cx, cy - r - 6f * density)
+        tmpPath.lineTo(cx - 5f * density, cy - 1f * density)
+        tmpPath.lineTo(cx + 5f * density, cy - 1f * density)
+        tmpPath.close()
+        canvas.drawPath(tmpPath, arrowPaint)
+        canvas.restore()
+
+        if (relocateMode) {
+            strokePaint.color = 0xFF1D4ED8.toInt()
+            strokePaint.strokeWidth = 1.5f * density
+            canvas.drawCircle(cx, cy, r + 8f * density, strokePaint)
         }
     }
 

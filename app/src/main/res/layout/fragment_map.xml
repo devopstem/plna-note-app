@@ -33,7 +33,9 @@
                 android:minWidth="0dp"
                 android:paddingHorizontal="12dp"
                 android:text="@string/map_view_2d"
-                android:textSize="11sp" />
+                android:textColor="@color/plna_text"
+                android:textSize="11sp"
+                app:strokeColor="@color/plna_stroke" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_view_3d"
@@ -45,7 +47,9 @@
                 android:minWidth="0dp"
                 android:paddingHorizontal="12dp"
                 android:text="@string/map_view_3d"
-                android:textSize="11sp" />
+                android:textColor="@color/plna_text"
+                android:textSize="11sp"
+                app:strokeColor="@color/plna_stroke" />
         </com.google.android.material.button.MaterialButtonToggleGroup>
 
         <View
@@ -192,7 +196,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_anchor_entrance"
-                        style="@style/Widget.Material3.Button.TonalButton"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -201,12 +205,15 @@
                         android:minWidth="0dp"
                         android:padding="0dp"
                         android:text="@string/map_anchor_entrance"
+                        android:textColor="@color/plna_text"
                         android:textSize="12sp"
-                        app:cornerRadius="9dp" />
+                        app:backgroundTint="@color/plna_surface"
+                        app:cornerRadius="9dp"
+                        app:strokeColor="@color/plna_stroke" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_anchor_cash"
-                        style="@style/Widget.Material3.Button.TonalButton"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -215,9 +222,166 @@
                         android:minWidth="0dp"
                         android:padding="0dp"
                         android:text="@string/map_anchor_cash"
+                        android:textColor="@color/plna_text"
                         android:textSize="12sp"
-                        app:cornerRadius="9dp" />
+                        app:backgroundTint="@color/plna_surface"
+                        app:cornerRadius="9dp"
+                        app:strokeColor="@color/plna_stroke" />
                 </com.google.android.material.button.MaterialButtonToggleGroup>
+            </LinearLayout>
+
+            <!-- PDR: шаги телефона без маяков -->
+            <LinearLayout
+                android:id="@+id/map_pdr_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switch_pdr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/map_pdr_switch"
+                    android:textColor="@color/plna_text"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/pdr_status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:text="@string/map_pdr_hint"
+                    android:textColor="@color/plna_text_muted"
+                    android:textSize="11sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_pdr_relocate"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:paddingHorizontal="6dp"
+                    android:text="@string/map_pdr_relocate"
+                    android:textColor="@color/plna_accent"
+                    android:textSize="11sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- Текущая цель + итог у стеллажа -->
+            <LinearLayout
+                android:id="@+id/map_target_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/map_target_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/plna_text"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <ProgressBar
+                    android:id="@+id/map_progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="6dp"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressTint="@color/plna_accent" />
+
+                <TextView
+                    android:id="@+id/map_progress_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/plna_text_muted"
+                    android:textSize="11sp" />
+
+                <!-- Сначала карта/маршрут; полка — только по запросу у стеллажа -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_show_shelf"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="8dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/map_show_shelf"
+                    android:textColor="@color/plna_text"
+                    android:textSize="12sp"
+                    app:cornerRadius="10dp"
+                    app:strokeColor="@color/plna_stroke" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_mark_bought"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="6dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/map_mark_bought"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:backgroundTint="@color/plna_accent"
+                    app:cornerRadius="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_mark_skip"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="34dp"
+                        android:layout_weight="1"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:minWidth="0dp"
+                        android:paddingHorizontal="4dp"
+                        android:text="@string/map_mark_skip"
+                        android:textColor="@color/plna_text"
+                        android:textSize="11sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/plna_stroke" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_mark_missing"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="34dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:minWidth="0dp"
+                        android:paddingHorizontal="4dp"
+                        android:text="@string/map_mark_missing"
+                        android:textColor="@color/plna_text"
+                        android:textSize="11sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/plna_stroke" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/map_undo_hint"
+                    android:textColor="@color/plna_text_muted"
+                    android:textSize="10sp" />
             </LinearLayout>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

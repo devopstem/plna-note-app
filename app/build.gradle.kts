@@ -14,8 +14,8 @@ android {
         applicationId = "by.smartplanogram.plnanote"
         minSdk = 24
         targetSdk = 37
-        versionCode = 1
-        versionName = "0.1.0-mvp"
+        versionCode = 4
+        versionName = "0.2.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -31,10 +31,17 @@ android {
     }
 
     buildTypes {
+        debug {
+            isDebuggable = true
+        }
         release {
-            optimization {
-                enable = false
-            }
+            isDebuggable = false
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {

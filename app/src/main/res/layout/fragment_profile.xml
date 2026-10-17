@@ -75,7 +75,7 @@
             android:layout_height="52dp"
             android:layout_marginTop="14dp"
             android:text="@string/auth_open"
-            app:backgroundTint="@color/plna_purple"
+            app:backgroundTint="@color/plna_accent"
             app:cornerRadius="14dp" />
 
         <LinearLayout
@@ -84,14 +84,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:background="@drawable/bg_card"
+            android:clickable="true"
+            android:focusable="true"
             android:orientation="vertical"
-            android:padding="16dp"
-            android:visibility="gone">
+            android:padding="16dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/analytics_title"
+                android:text="@string/insights_title"
                 android:textColor="@color/plna_text"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -103,6 +104,14 @@
                 android:layout_marginTop="8dp"
                 android:textColor="@color/plna_text_secondary"
                 android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/insights_open_hint"
+                android:textColor="@color/plna_accent"
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout

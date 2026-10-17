@@ -1,45 +1,57 @@
 # PLNA Заметки (Smart Map)
 
-**Версия: MVP 0.1** (`0.1.0-mvp`) · © 2026 Smart Map from PLNA
+**Версия: 0.2.0** · © 2026 Smart Map from PLNA  
+Package: `by.smartplanogram.plnanote`
 
-Список покупок и маршрут по залу. Часть экосистемы **PLNA** (C++ map-engine + общая модель магазина).
+Список покупок и маршрут по залу магазина. Часть экосистемы **PLNA**: UI на Kotlin, чертёж и маршрут — в C++23 `plna_core`.
 
 ![Logo](branding/plna-smart-map-logo.png)
 
-## Что умеет MVP 0.1
+## Что умеет 0.2
 
 | Возможность | Как работает |
 |-------------|--------------|
-| Заметки с товарами | Списки, количество, «на карте» |
-| План зала офлайн | Room + JSON плана; интернет для карты не обязателен |
-| Маршрут | От якоря **Вход / Кассы** к ближайшему некупленному товару |
-| Стеллаж | Подсветка цели + bottom sheet «лицо» полки |
-| Ориентация | С/В/Ю/З на плане + мини-компас |
+| Главная | Hero, магазин, быстрые плитки, сводка |
+| Заметки | Списки, количество, поиск по каталогу магазина |
+| План зала офлайн | Room + JSON плана; интернет не обязателен |
+| Маршрут | От якоря **Вход / Кассы** (или от точки «я») к товару |
+| «Иду» (PDR) | Шаги телефона + компас → приблизительная позиция |
+| Стеллаж | Подсветка + «лицо» полки |
+| Мои покупки | Локальная аналитика на устройстве |
 | Языки | ru / en / be |
-| Вход | Телефон или код (без пароля) |
-
-**Не умеет (и не обещаем в 0.1):** живая точка «я» по залу (GPS внутри здания бесполезен; шаги/маяки — следующие уровни). Подробности: [docs/CHANGELOG.md](docs/CHANGELOG.md).
+| Демо-доступ | Локальный профиль по телефону (без облака) |
 
 ## Стек
 
 | Слой | Технология |
 |------|------------|
-| UI | Android, Kotlin, ViewBinding, Material |
+| UI | Android, Kotlin, ViewBinding, Material 3 |
 | Офлайн | Room (SQLite) |
 | Sync | Firebase RTDB + `assets/rtdb_export.json` |
 | Карта | C++23 `plna_core` (JNI) |
+| Позиция «я» | Kotlin PDR (датчики) |
 | Настройки | SharedPreferences |
 
-Архитектура: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) · продукт: [docs/PRODUCT.md](docs/PRODUCT.md) · ядро: [app/src/main/cpp/docs/](app/src/main/cpp/docs/)
+## Документация
+
+| Документ | О чём |
+|----------|--------|
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Чертёж системы, потоки данных |
+| [docs/WHY_CPP.md](docs/WHY_CPP.md) | Почему карта на C++, а не только Kotlin |
+| [app/src/main/cpp/docs/](app/src/main/cpp/docs/) | Native core, C API, модель плана |
+| [docs/PRODUCT.md](docs/PRODUCT.md) | Продуктовый взгляд |
+| [docs/BUILD.md](docs/BUILD.md) | Сборка |
+| [docs/CHANGELOG.md](docs/CHANGELOG.md) | История версий |
+| [docs/GITHUB.md](docs/GITHUB.md) | Публикация репозитория |
 
 ## Быстрый старт
 
 1. Откройте проект в Android Studio.
-2. Положите `app/google-services.json` (см. example-файл).
-3. `./gradlew :app:assembleDebug`
-4. Установите `app/build/outputs/apk/debug/app-debug.apk`
+2. Положите `app/google-services.json` (см. `app/google-services.json.example`).
+3. `./gradlew :app:assembleDebug` (для показа лучше `assembleRelease`).
+4. APK: `app/build/outputs/apk/...`
 
-Полная инструкция: [docs/BUILD.md](docs/BUILD.md)
+Подробнее: [docs/BUILD.md](docs/BUILD.md)
 
 ## Структура
 
@@ -54,13 +66,6 @@ docs/                продукт, архитектура, сборка, chang
 
 | Версия | Статус |
 |--------|--------|
-| **0.1.0-mvp** | текущий MVP: карта, якорь, стеллаж, компас |
-| 0.2+ | PDR / уточнение «я» (план) |
-| 1.0 | публичный релиз (когда стабильны данные сетей и UX) |
-
-История изменений: [docs/CHANGELOG.md](docs/CHANGELOG.md)
-
-## Статус репозитория
-
-Внутренний MVP. Package: `by.smartplanogram.plnanote`.  
-Публикация: [docs/GITHUB.md](docs/GITHUB.md) (лучше private, пока не убраны секреты).
+| **0.2.0** | текущая: Home, PDR, Insights, прод-hardening |
+| 0.1.x | якорь, стеллаж, компас, офлайн-каталог |
+| 1.0 | публичный релиз (облачный аккаунт, стабильные сети) |

@@ -15,6 +15,27 @@
     <string name="home_welcome">Адкрыйце «Спісы» або «Карта» ўнізе, каб працягнуць.</string>
     <string name="home_guest_status">Госць · увайдзіце ў профілі</string>
     <string name="home_user_status">Вы ўвайшлі</string>
+    <string name="home_greet_morning">Добрай раніцы</string>
+    <string name="home_greet_day">Добры дзень</string>
+    <string name="home_greet_evening">Добры вечар</string>
+    <string name="home_greet_night">Дабранач</string>
+    <string name="home_brand">PLNA · Smart Map</string>
+    <string name="home_hero_title">Пакупкі без колаў па зале</string>
+    <string name="home_hero_body">Сабярыце нататку дома — у краме адкрыйце карту і ідзіце да стэлажа.</string>
+    <string name="home_cta_list">Сабраць спіс</string>
+    <string name="home_store_label">Актыўная крама</string>
+    <string name="home_store_change">Змяніць</string>
+    <string name="home_store_none">Крама не выбрана</string>
+    <string name="home_section_actions">Хуткі старт</string>
+    <string name="home_section_summary">Зараз</string>
+    <string name="home_tile_insights">Пакупкі</string>
+    <string name="home_tile_map_meta">Маршрут</string>
+    <string name="home_tile_lists_meta">%1$d спісаў · %2$d пазіцый</string>
+    <string name="home_tile_insights_meta">%1$d у гісторыі</string>
+    <string name="home_tile_insights_empty">Пакуль пуста</string>
+    <string name="home_summary_empty">Стварыце першую нататку — і карта пракладзе шлях па зале.</string>
+    <string name="home_summary_done">Спісаў: %1$d. Усё адзначана — можна пачаць новы.</string>
+    <string name="home_summary_active">Спісаў: %1$d · адкрыта пазіцый: %2$d\nКрама: %3$s</string>
 
     <string name="about_card_title">Пра праграму</string>
     <string name="about_card_subtitle">Простымі словамі: навошта гэта праграма</string>
@@ -26,7 +47,7 @@ PLNA Нататкі працуе інакш. Дома ці па дарозе в�
 
 Без складаных тэрмінаў. Просты памочнік для звычайных пакупак — каб зэканоміць час і нервы.</string>
     <string name="about_how_title">Як карыстацца — 4 крокі</string>
-    <string name="about_version">MVP 0.1 · Smart Map from PLNA</string>
+    <string name="about_version">Версія 0.2.0 · Smart Map from PLNA</string>
 
     <string name="lists_title">Спісы пакупак</string>
     <string name="list_detail_title">Нататка</string>
@@ -61,17 +82,17 @@ PLNA Нататкі працуе інакш. Дома ці па дарозе в�
     <string name="language_title">Мова</string>
     <string name="no_stores_yet">Крамы яшчэ не загружаны.</string>
 
-    <string name="auth_title">Уваход</string>
-    <string name="auth_subtitle">Увядзіце нумар тэлефона або спецкод крамы. Пароль не патрэбны.</string>
-    <string name="auth_field_hint">Тэлефон або код</string>
-    <string name="auth_hint_examples">Прыклады: +375291112233 або код PLNA</string>
+    <string name="auth_title">Дэма-доступ</string>
+    <string name="auth_subtitle">Увядзіце тэлефон — імя застанецца на гэтай прыладзе. Воблачнага акаўнта пакуль няма: спісы не сінхранізуюцца паміж тэлефонамі.</string>
+    <string name="auth_field_hint">Нумар тэлефона</string>
+    <string name="auth_hint_examples">Фармат: +375 … (не менш за 9 лічбаў)</string>
     <string name="auth_continue">Працягнуць</string>
-    <string name="auth_no_password">Без пароля · адзін крок</string>
-    <string name="auth_open">Увайсці / Рэгістрацыя</string>
+    <string name="auth_no_password">Профіль толькі на гэтым тэлефоне</string>
+    <string name="auth_open">Увайсці</string>
     <string name="auth_logout">Выйсці</string>
-    <string name="auth_error">Увядзіце тэлефон (≥9 лічбаў) або код (PLNA, GIPPO…)</string>
-    <string name="auth_success">Гатова, вы ўвайшлі</string>
-    <string name="auth_guest_label">Не зарэгістраваны</string>
+    <string name="auth_error">Увядзіце нумар тэлефона (≥9 лічбаў)</string>
+    <string name="auth_success">Гатова, профіль захаваны</string>
+    <string name="auth_guest_label">Госць</string>
 
     <string name="analytics_title">Аналітыка за месяц</string>
     <string name="analytics_body">Спісаў: %1$d\nТавараў у нататках: %2$d\nАктыўная крама: %3$s</string>
@@ -81,7 +102,7 @@ PLNA Нататкі працуе інакш. Дома ці па дарозе в�
     <string name="map_view_3d">3D</string>
     <string name="demo_products_title">Дэма-тавары · націсніце для маршруту</string>
     <string name="demo_product_meta">%1$s · паліца %2$d</string>
-    <string name="demo_store_label">дэма-зала</string>
+    <string name="demo_store_label">Крама</string>
     <string name="rack_face_subtitle">%1$s · %2$s · паліца %3$d · шэраг %4$d</string>
     <string name="rack_face_hint">Твар стэлажа 1.5×1.8 м (глыбіня ~0.65 м). Пазней тыя ж палі прыйдуць з Firebase.</string>
     <string name="about_lead">Спіс пакупак, які вядзе вас па краме</string>
@@ -112,4 +133,55 @@ PLNA Нататкі працуе інакш. Дома ці па дарозе в�
     <string name="map_anchor_label">Я тут:</string>
     <string name="map_anchor_entrance">Уваход</string>
     <string name="map_anchor_cash">Касы</string>
+    <string name="map_active_note_progress">%1$s · засталося %2$d з %3$d</string>
+    <string name="map_note_done">%1$s · усё адзначана</string>
+    <string name="map_target_label">Зараз: %1$s · %2$s · палка %3$d</string>
+    <string name="map_pdr_switch">Іду</string>
+    <string name="map_pdr_hint">Кропка на карце рухаецца разам з вамі</string>
+    <string name="map_pdr_active">Крокаў: %1$d</string>
+    <string name="map_pdr_no_sensors">На тэлефоне няма датчыкаў руху. Карыстайцеся якарам Уваход / Касы.</string>
+    <string name="map_pdr_mode_accel">Рэжым: акселерометр</string>
+    <string name="map_pdr_mode_hw">Рэжым: крокамер</string>
+    <string name="map_pdr_need_permission">Патрэбны дазвол на актыўнасць (крокі)</string>
+    <string name="map_pdr_relocate">Я тут</string>
+    <string name="map_pdr_relocate_hint">Доўгі тап па карце — дзе вы зараз</string>
+    <string name="map_pdr_relocated">Пазіцыя абноўлена</string>
+    <string name="lists_empty_title">Пакуль няма спісаў</string>
+    <string name="lists_empty_body">Стварыце нататку — дадайце тавары, а на карце адкрыецца маршрут па зале.</string>
+    <string name="lists_empty_cta">Стварыць спіс</string>
+    <string name="map_show_shelf">Паказаць паліцу</string>
+    <string name="map_mark_bought">Узяў</string>
+    <string name="map_mark_skip">Не бяру</string>
+    <string name="map_mark_missing">Няма</string>
+    <string name="map_progress_label">Зроблена %1$d з %2$d · засталося %3$d</string>
+    <string name="map_undo_hint">Доўгі тап па назве мэты — вярнуць апошні тавар</string>
+    <string name="map_undo_empty">Няма чаго вяртаць</string>
+    <string name="item_reopened">Зноў у спісе</string>
+    <string name="item_reopened_named">«%1$s» зноў адкрыты</string>
+    <string name="list_products_progress">Тавары · засталося %1$d з %2$d</string>
+    <string name="item_status_bought">Узяў · %1$s</string>
+    <string name="item_status_skipped">Не бяру · %1$s</string>
+    <string name="item_status_missing">Не знайшоў · %1$s</string>
+
+    <string name="insights_title">Мае пакупкі</string>
+    <string name="insights_privacy">Гісторыя толькі на гэтым тэлефоне. У воблака не ідзе.</string>
+    <string name="insights_summary">Адзначана «ўзяў»: %1$d · акно %2$d дз.</string>
+    <string name="insights_empty">Пакуль пуста. Адзначай тавары ў спісе — з\'явяцца частата і падказкі.</string>
+    <string name="insights_suggestions">Падказкі</string>
+    <string name="insights_top">Найчасцей</string>
+    <string name="insights_add">У спіс</string>
+    <string name="insights_clear">Ачысціць гісторыю</string>
+    <string name="insights_clear_title">Ачысціць гісторыю пакупак?</string>
+    <string name="insights_clear_body">Падказкі і статыстыка скінуцца. Спісы не чапаем.</string>
+    <string name="insights_habitual_body">Звычайна бяреш у такі дзень · ужо %1$d разоў у гісторыі</string>
+    <string name="insights_overdue_body">Не браў %1$d дз. · звычайна раз у ~%2$d дз.</string>
+    <string name="insights_top_meta">%1$d разоў · апошні %2$d дз. таму · інтэрвал %3$s</string>
+    <string name="insights_days">дз.</string>
+    <string name="insights_already_in_list">Ужо ёсць у спісе</string>
+    <string name="insights_added">«%1$s» → %2$s</string>
+    <string name="insights_open_hint">Адкрыць падрабязнасці →</string>
+    <string name="insights_profile_body">Пакупак у гісторыі: %1$d\nСпісаў: %2$d · пазіцый: %3$d</string>
+    <string name="insights_profile_empty">Адзначай «ўзяў» у спісе — тут з\'явяцца звычкі і падказкі.</string>
+    <string name="insights_banner_habitual">Звычайна бяреш у такі дзень. Дадаць?</string>
+    <string name="insights_banner_overdue">Даўно не браў (%1$d дз.). Дадаць?</string>
 </resources>

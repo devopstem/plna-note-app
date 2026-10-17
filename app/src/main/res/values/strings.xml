@@ -15,6 +15,27 @@
     <string name="home_welcome">Откройте «Списки» или «Карта» внизу, чтобы продолжить.</string>
     <string name="home_guest_status">Гость · войдите в профиле</string>
     <string name="home_user_status">Вы вошли</string>
+    <string name="home_greet_morning">Доброе утро</string>
+    <string name="home_greet_day">Добрый день</string>
+    <string name="home_greet_evening">Добрый вечер</string>
+    <string name="home_greet_night">Доброй ночи</string>
+    <string name="home_brand">PLNA · Smart Map</string>
+    <string name="home_hero_title">Покупки без кругов по залу</string>
+    <string name="home_hero_body">Соберите заметку дома — в магазине откройте карту и идите к стеллажу.</string>
+    <string name="home_cta_list">Собрать список</string>
+    <string name="home_store_label">Активный магазин</string>
+    <string name="home_store_change">Сменить</string>
+    <string name="home_store_none">Магазин не выбран</string>
+    <string name="home_section_actions">Быстрый старт</string>
+    <string name="home_section_summary">Сейчас</string>
+    <string name="home_tile_insights">Покупки</string>
+    <string name="home_tile_map_meta">Маршрут</string>
+    <string name="home_tile_lists_meta">%1$d списков · %2$d позиций</string>
+    <string name="home_tile_insights_meta">%1$d в истории</string>
+    <string name="home_tile_insights_empty">Пока пусто</string>
+    <string name="home_summary_empty">Создайте первую заметку — и карта проложит путь по залу.</string>
+    <string name="home_summary_done">Списков: %1$d. Все позиции отмечены — можно начать новый.</string>
+    <string name="home_summary_active">Списков: %1$d · открыто позиций: %2$d\nМагазин: %3$s</string>
 
     <string name="about_card_title">О приложении</string>
     <string name="about_card_subtitle">Простыми словами: зачем это приложение</string>
@@ -26,7 +47,7 @@ PLNA Заметки помогает иначе. Дома или по дорог
 
 Это не «сложная IT-система». Это простой помощник для обычных покупок — чтобы сэкономить время и нервы.</string>
     <string name="about_how_title">Как пользоваться — за 4 шага</string>
-    <string name="about_version">MVP 0.1 · Smart Map from PLNA</string>
+    <string name="about_version">Версия 0.2.0 · Smart Map from PLNA</string>
 
     <string name="lists_title">Списки покупок</string>
     <string name="list_detail_title">Заметка</string>
@@ -61,17 +82,17 @@ PLNA Заметки помогает иначе. Дома или по дорог
     <string name="language_title">Язык</string>
     <string name="no_stores_yet">Магазины ещё не загружены.</string>
 
-    <string name="auth_title">Вход</string>
-    <string name="auth_subtitle">Введите номер телефона или спецкод магазина. Пароль не нужен — чужие списки всё равно недоступны.</string>
-    <string name="auth_field_hint">Телефон или код</string>
-    <string name="auth_hint_examples">Примеры: +375291112233 или код PLNA</string>
+    <string name="auth_title">Демо-доступ</string>
+    <string name="auth_subtitle">Укажите телефон — имя сохранится на этом устройстве. Облачного аккаунта пока нет: списки не синхронизируются между телефонами.</string>
+    <string name="auth_field_hint">Номер телефона</string>
+    <string name="auth_hint_examples">Формат: +375 … (не меньше 9 цифр)</string>
     <string name="auth_continue">Продолжить</string>
-    <string name="auth_no_password">Без пароля · один шаг</string>
-    <string name="auth_open">Войти / Регистрация</string>
+    <string name="auth_no_password">Профиль только на этом телефоне</string>
+    <string name="auth_open">Войти</string>
     <string name="auth_logout">Выйти</string>
-    <string name="auth_error">Введите телефон (≥9 цифр) или код (PLNA, GIPPO…)</string>
-    <string name="auth_success">Готово, вы вошли</string>
-    <string name="auth_guest_label">Не зарегистрирован</string>
+    <string name="auth_error">Введите номер телефона (≥9 цифр)</string>
+    <string name="auth_success">Готово, профиль сохранён</string>
+    <string name="auth_guest_label">Гость</string>
 
     <string name="analytics_title">Аналитика за месяц</string>
     <string name="analytics_body">Списков: %1$d\nТоваров в заметках: %2$d\nАктивный магазин: %3$s</string>
@@ -82,7 +103,7 @@ PLNA Заметки помогает иначе. Дома или по дорог
     <string name="map_view_3d">3D</string>
     <string name="demo_products_title">Демо-товары · нажмите для маршрута</string>
     <string name="demo_product_meta">%1$s · полка %2$d</string>
-    <string name="demo_store_label">демо-зал</string>
+    <string name="demo_store_label">Магазин</string>
     <string name="rack_face_subtitle">%1$s · %2$s · полка %3$d · ряд %4$d</string>
     <string name="rack_face_hint">Лицо стеллажа 1.5×1.8 м (глубина ~0.65 м). Позже те же поля придут из Firebase.</string>
     <string name="about_lead">Список покупок, который ведёт вас по магазину</string>
@@ -113,4 +134,56 @@ PLNA Заметки помогает иначе. Дома или по дорог
     <string name="map_anchor_label">Я здесь:</string>
     <string name="map_anchor_entrance">Вход</string>
     <string name="map_anchor_cash">Кассы</string>
+    <string name="map_active_note_progress">%1$s · осталось %2$d из %3$d</string>
+    <string name="map_note_done">%1$s · всё отмечено</string>
+    <string name="map_target_label">Сейчас: %1$s · %2$s · полка %3$d</string>
+    <string name="map_pdr_switch">Иду</string>
+    <string name="map_pdr_hint">Точка на карте двигается вместе с вами</string>
+    <string name="map_pdr_active">Шагов: %1$d</string>
+    <string name="map_pdr_no_sensors">На телефоне нет датчиков движения. Позиция «я» недоступна — пользуйтесь якорем Вход / Кассы.</string>
+    <string name="map_pdr_mode_accel">Режим: акселерометр</string>
+    <string name="map_pdr_mode_hw">Режим: шагомер</string>
+    <string name="map_pdr_need_permission">Нужно разрешение на активность (шаги)</string>
+    <string name="map_pdr_relocate">Я здесь</string>
+    <string name="map_pdr_relocate_hint">Долгий тап по карте — где вы сейчас</string>
+    <string name="map_pdr_relocated">Позиция обновлена</string>
+    <string name="lists_empty_title">Пока нет списков</string>
+    <string name="lists_empty_body">Создайте заметку — добавьте товары, а на карте откроется маршрут по залу.</string>
+    <string name="lists_empty_cta">Создать список</string>
+    <string name="map_show_shelf">Показать полку</string>
+    <string name="map_mark_bought">Взял</string>
+    <string name="map_mark_skip">Не беру</string>
+    <string name="map_mark_missing">Нет</string>
+    <string name="map_progress_label">Сделано %1$d из %2$d · осталось %3$d</string>
+    <string name="map_undo_hint">Долгий тап по названию цели — вернуть последний товар</string>
+    <string name="map_undo_empty">Нечего возвращать</string>
+    <string name="item_reopened">Снова в списке</string>
+    <string name="item_reopened_named">«%1$s» снова открыт</string>
+    <string name="list_products_progress">Товары · осталось %1$d из %2$d</string>
+    <string name="item_status_bought">Взял · %1$s</string>
+    <string name="item_status_skipped">Не беру · %1$s</string>
+    <string name="item_status_missing">Не нашёл · %1$s</string>
+
+    <!-- Персональная аналитика (локально) -->
+    <string name="insights_title">Мои покупки</string>
+    <string name="insights_privacy">История только на этом телефоне. В облако не уходит.</string>
+    <string name="insights_summary">Отмечено «взял»: %1$d · окно %2$d дн.</string>
+    <string name="insights_empty">Пока пусто. Отмечай товары галочкой в списке — появится частота и подсказки.</string>
+    <string name="insights_suggestions">Подсказки</string>
+    <string name="insights_top">Чаще всего</string>
+    <string name="insights_add">В список</string>
+    <string name="insights_clear">Очистить историю</string>
+    <string name="insights_clear_title">Очистить историю покупок?</string>
+    <string name="insights_clear_body">Подсказки и статистика сбросятся. Списки не тронем.</string>
+    <string name="insights_habitual_body">Обычно берёшь в такой день · уже %1$d раз в истории</string>
+    <string name="insights_overdue_body">Не брал %1$d дн. · обычно раз в ~%2$d дн.</string>
+    <string name="insights_top_meta">%1$d раз · последний %2$d дн. назад · интервал %3$s</string>
+    <string name="insights_days">дн.</string>
+    <string name="insights_already_in_list">Уже есть в списке</string>
+    <string name="insights_added">«%1$s» → %2$s</string>
+    <string name="insights_open_hint">Открыть подробности →</string>
+    <string name="insights_profile_body">Покупок в истории: %1$d\nСписков: %2$d · позиций: %3$d</string>
+    <string name="insights_profile_empty">Отмечай «взял» в списке — здесь появятся привычки и подсказки.</string>
+    <string name="insights_banner_habitual">Обычно берёшь в такой день. Добавить?</string>
+    <string name="insights_banner_overdue">Давно не брал (%1$d дн.). Добавить?</string>
 </resources>

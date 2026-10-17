@@ -41,9 +41,7 @@ class UserSettings private constructor(context: Context) {
         prefs.edit().putString(KEY_DISPLAY_NAME, name.trim()).apply()
     }
 
-    /**
-     * Вход по телефону или спецкоду. Пароль не нужен.
-     */
+    /** Локальный демо-профиль по номеру телефона (без облака). */
     fun login(raw: String): Boolean {
         val cleaned = raw.trim()
         if (!isValidLogin(cleaned)) return false
@@ -89,14 +87,8 @@ class UserSettings private constructor(context: Context) {
         private const val KEY_LOGIN_ID = "login_id"
         private const val KEY_DISPLAY_NAME = "display_name"
 
-        /** Демо-коды + любой телефон ≥ 9 цифр. */
-        private val INVITE_CODES = setOf("PLNA", "GIPPO", "1234", "NOTE")
-
         fun isValidLogin(raw: String): Boolean {
-            val v = raw.trim()
-            if (v.length < 4) return false
-            if (INVITE_CODES.any { it.equals(v, ignoreCase = true) }) return true
-            val digits = v.filter { it.isDigit() }
+            val digits = raw.trim().filter { it.isDigit() }
             return digits.length >= 9
         }
 

@@ -103,12 +103,12 @@
         android:textColor="@color/plna_text_muted"
         android:textSize="13sp" />
 
+    <!-- Фиксированная высота: wrap_content на длинном поиске съедал весь экран -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/search_results"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_marginTop="4dp"
-        android:nestedScrollingEnabled="false"
         android:paddingHorizontal="12dp"
         android:visibility="gone" />
 

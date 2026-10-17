@@ -59,3 +59,21 @@ interface AppPrefsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(prefs: AppPrefsEntity)
 }
+
+@Dao
+interface PurchaseEventDao {
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(event: PurchaseEventEntity): Long
+
+    @Query("SELECT * FROM purchase_events WHERE purchasedAt >= :since ORDER BY purchasedAt DESC")
+    suspend fun since(since: Long): List<PurchaseEventEntity>
+
+    @Query("SELECT * FROM purchase_events ORDER BY purchasedAt DESC LIMIT :limit")
+    suspend fun recent(limit: Int = 200): List<PurchaseEventEntity>
+
+    @Query("SELECT COUNT(*) FROM purchase_events")
+    suspend fun count(): Int
+
+    @Query("DELETE FROM purchase_events")
+    suspend fun clearAll()
+}

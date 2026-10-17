@@ -10,9 +10,10 @@ import androidx.room.RoomDatabase
         ProductEntity::class,
         StoreEntity::class,
         StoreMapCacheEntity::class,
-        AppPrefsEntity::class
+        AppPrefsEntity::class,
+        PurchaseEventEntity::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -20,6 +21,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun stores(): StoreDao
     abstract fun storeMaps(): StoreMapDao
     abstract fun prefs(): AppPrefsDao
+    abstract fun purchaseEvents(): PurchaseEventDao
 
     companion object {
         @Volatile private var instance: AppDatabase? = null

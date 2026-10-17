@@ -75,13 +75,34 @@ class ShoppingListRepository private constructor(context: Context) {
         return list
     }
 
-    fun toggleItem(listId: String, itemId: String) {
-        val list = lists[listId] ?: return
+    /**
+     * Галочка в списке: OPEN ↔ BOUGHT.
+     * skipped/missing при включении галочки → BOUGHT.
+     */
+    fun toggleItem(listId: String, itemId: String): ShoppingItem? {
+        val list = lists[listId] ?: return null
         val idx = list.items.indexOfFirst { it.id == itemId }
-        if (idx < 0) return
+        if (idx < 0) return null
         val item = list.items[idx]
-        list.items[idx] = item.copy(checked = !item.checked)
+        val resolved = when (item.outcome) {
+            ItemOutcome.OPEN -> ItemOutcome.BOUGHT
+            ItemOutcome.BOUGHT -> ItemOutcome.OPEN
+            ItemOutcome.SKIPPED, ItemOutcome.MISSING -> ItemOutcome.BOUGHT
+        }
+        val updated = item.withOutcome(resolved)
+        list.items[idx] = updated
         update(list)
+        return updated
+    }
+
+    fun setOutcome(listId: String, itemId: String, outcome: ItemOutcome): ShoppingItem? {
+        val list = lists[listId] ?: return null
+        val idx = list.items.indexOfFirst { it.id == itemId }
+        if (idx < 0) return null
+        val updated = list.items[idx].withOutcome(outcome)
+        list.items[idx] = updated
+        update(list)
+        return updated
     }
 
     private fun persistAndNotify() {
@@ -103,7 +124,8 @@ class ShoppingListRepository private constructor(context: Context) {
                         .put("x", item.x.toDouble())
                         .put("y", item.y.toDouble())
                         .put("quantityLabel", item.quantityLabel)
-                        .put("checked", item.checked)
+                        .put("checked", item.isDone())
+                        .put("outcome", item.outcome.raw())
                 )
             }
             obj.put("items", items)
@@ -116,34 +138,43 @@ class ShoppingListRepository private constructor(context: Context) {
     private fun load() {
         val raw = prefs.getString(KEY, null) ?: return
         lists.clear()
-        val arr = JSONArray(raw)
-        for (i in 0 until arr.length()) {
-            val obj = arr.getJSONObject(i)
-            val itemsArr = obj.optJSONArray("items") ?: JSONArray()
-            val items = mutableListOf<ShoppingItem>()
-            for (j in 0 until itemsArr.length()) {
-                val it = itemsArr.getJSONObject(j)
-                items.add(
-                    ShoppingItem(
-                        id = it.getString("id"),
-                        name = it.getString("name"),
-                        rackId = it.optString("rackId"),
-                        shelf = it.optInt("shelf", 1),
-                        x = it.optDouble("x", 0.0).toFloat(),
-                        y = it.optDouble("y", 0.0).toFloat(),
-                        quantityLabel = it.optString("quantityLabel", ""),
-                        checked = it.optBoolean("checked", false)
+        runCatching {
+            val arr = JSONArray(raw)
+            for (i in 0 until arr.length()) {
+                val obj = arr.getJSONObject(i)
+                val itemsArr = obj.optJSONArray("items") ?: JSONArray()
+                val items = mutableListOf<ShoppingItem>()
+                for (j in 0 until itemsArr.length()) {
+                    val it = itemsArr.getJSONObject(j)
+                    val checked = it.optBoolean("checked", false)
+                    val outcomeRaw = it.optString("outcome").ifBlank { null }
+                    val outcome = ItemOutcome.fromRaw(outcomeRaw, checked)
+                    val id = it.optString("id").ifBlank { UUID.randomUUID().toString() }
+                    val name = it.optString("name").ifBlank { "?" }
+                    items.add(
+                        ShoppingItem(
+                            id = id,
+                            name = name,
+                            rackId = it.optString("rackId"),
+                            shelf = it.optInt("shelf", 1),
+                            x = it.optDouble("x", 0.0).toFloat(),
+                            y = it.optDouble("y", 0.0).toFloat(),
+                            quantityLabel = it.optString("quantityLabel", ""),
+                            checked = outcome.isDone(),
+                            outcome = outcome
+                        )
                     )
+                }
+                val listId = obj.optString("id").ifBlank { UUID.randomUUID().toString() }
+                val list = ShoppingList(
+                    id = listId,
+                    title = obj.optString("title").ifBlank { "Заметка" },
+                    createdAt = obj.optLong("createdAt"),
+                    updatedAt = obj.optLong("updatedAt"),
+                    items = items
                 )
+                lists[list.id] = list
             }
-            val list = ShoppingList(
-                id = obj.getString("id"),
-                title = obj.getString("title"),
-                createdAt = obj.optLong("createdAt"),
-                updatedAt = obj.optLong("updatedAt"),
-                items = items
-            )
-            lists[list.id] = list
         }
     }
 

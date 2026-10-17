@@ -9,8 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import by.smartplanogram.plnanote.AboutActivity
 import by.smartplanogram.plnanote.AuthActivity
+import by.smartplanogram.plnanote.InsightsActivity
 import by.smartplanogram.plnanote.R
 import by.smartplanogram.plnanote.data.OfflineRepository
+import by.smartplanogram.plnanote.data.PurchaseHistoryRepository
 import by.smartplanogram.plnanote.data.ShoppingListRepository
 import by.smartplanogram.plnanote.data.UserSettings
 import by.smartplanogram.plnanote.databinding.FragmentProfileBinding
@@ -53,6 +55,9 @@ class ProfileFragment : Fragment() {
         binding.aboutRow.setOnClickListener {
             startActivity(Intent(requireContext(), AboutActivity::class.java))
         }
+        binding.analyticsCard.setOnClickListener {
+            startActivity(InsightsActivity.intent(requireContext()))
+        }
         binding.themeRow.setOnClickListener { pickTheme() }
         binding.languageRow.setOnClickListener { pickLanguage() }
         refresh()
@@ -86,24 +91,23 @@ class ProfileFragment : Fragment() {
         }
 
         viewLifecycleOwner.lifecycleScope.launch {
-            val store = offline.selectedStore()
+            val store = runCatching { offline.selectedStore() }.getOrNull()
+            if (_binding == null) return@launch
             binding.activeStore.text = getString(
                 R.string.store_label,
                 store?.name ?: "—"
             )
 
-            if (settings.isLoggedIn()) {
-                binding.analyticsCard.visibility = View.VISIBLE
-                val lists = ShoppingListRepository.get(requireContext()).all()
-                val items = lists.sumOf { it.items.size }
-                binding.analyticsBody.text = getString(
-                    R.string.analytics_body,
-                    lists.size,
-                    items,
-                    store?.name ?: "—"
-                )
+            val purchases = runCatching {
+                PurchaseHistoryRepository.get(requireContext()).eventCount()
+            }.getOrDefault(0)
+            if (_binding == null) return@launch
+            val lists = ShoppingListRepository.get(requireContext()).all()
+            val items = lists.sumOf { it.items.size }
+            binding.analyticsBody.text = if (purchases > 0) {
+                getString(R.string.insights_profile_body, purchases, lists.size, items)
             } else {
-                binding.analyticsCard.visibility = View.GONE
+                getString(R.string.insights_profile_empty)
             }
         }
     }

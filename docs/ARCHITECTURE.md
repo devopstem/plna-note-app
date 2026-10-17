@@ -1,77 +1,160 @@
-# Архитектура приложения (Android)
+# Архитектура PLNA Заметки (Smart Map)
 
-Package / applicationId: `by.smartplanogram.plnanote`  
-JNI map bridge: `by.smartplanogram.plnanote.nativebridge`
+**Версия приложения:** 0.2.0 · package `by.smartplanogram.plnanote`
 
-## Слои
+Документ для показа системы «как устроена»: UI → данные → нативное ядро карты.
+
+Связанные материалы:
+
+- [Почему C++, а не только Kotlin](WHY_CPP.md)
+- [Native core (C++)](../app/src/main/cpp/docs/ARCHITECTURE.md)
+- [C API](../app/src/main/cpp/docs/C_API.md)
+- [Модель данных карты](../app/src/main/cpp/docs/DATA_MODEL.md)
+- [Продукт](PRODUCT.md) · [Сборка](BUILD.md) · [Changelog](CHANGELOG.md)
+
+---
+
+## 1. Общая картина
 
 ```
-┌─────────────────────────────────────────────┐
-│ UI (Fragments / Activities, ViewBinding)    │
-│ Home · Lists · ListDetail · Map · Profile   │
-└──────────────────┬──────────────────────────┘
-                   │
-┌──────────────────▼──────────────────────────┐
-│ Kotlin data                                 │
-│ UserSettings (SharedPreferences)            │
-│ ShoppingListRepository (JSON в prefs)       │
-│ OfflineRepository → Room SQLite             │
-│ RtdbSyncEngine (assets → Room → Firebase)   │
-└──────────────────┬──────────────────────────┘
-                   │ JNI
-┌──────────────────▼──────────────────────────┐
-│ plna_core (C++23)                           │
-│ MapScene · route · buildDrawList            │
-│ см. app/src/main/cpp/docs/                  │
-└─────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────┐
+│                        Android UI (Kotlin)                       │
+│  Splash → Main (Home · Lists · Map · Profile)                    │
+│  ListDetail · Insights · Auth · About                            │
+│  StoreMapView рисует float[] draw-list (не считает геометрию)    │
+└───────────────────────────────┬──────────────────────────────────┘
+                                │
+         ┌──────────────────────┼──────────────────────┐
+         ▼                      ▼                      ▼
+┌─────────────────┐   ┌──────────────────┐   ┌─────────────────────┐
+│ UserSettings    │   │ ShoppingList /   │   │ OfflineRepository   │
+│ SharedPrefs     │   │ PurchaseHistory  │   │ Room SQLite         │
+│ тема, язык,     │   │ prefs / Room     │   │ магазины, товары,   │
+│ локальный вход  │   │ заметки, «взял»  │   │ JSON плана зала     │
+└─────────────────┘   └──────────────────┘   └──────────┬──────────┘
+                                                       │
+                              RtdbSyncEngine           │
+                     assets/rtdb_export.json ──────────┤
+                     Firebase RTDB (best-effort) ──────┘
+                                                       │
+                                                       │ JNI
+                                                       ▼
+┌──────────────────────────────────────────────────────────────────┐
+│                     plna_core (C++23)                            │
+│  MapScene · маршрут · buildDrawList · метры зала                 │
+│  Один алгоритм → Android сейчас; iOS / desktop — тот же core     │
+└──────────────────────────────────────────────────────────────────┘
 ```
 
-## Данные: что откуда
+**PDR (шаги «я» на карте)** живёт в Kotlin (`ui/map/pdr/`): датчики телефона → метры → `StoreMapView.setMe`. Маршрут по-прежнему считает C++ от текущей точки.
 
-Из Firebase RTDB / `assets/rtdb_export.json` берём **только нужное для навигации**:
+---
 
-| Поле | Назначение |
-|------|------------|
-| `name` | Название товара |
-| `rackId` | Стеллаж / зона |
-| `shelf` | Полка |
-| `x`, `y` | Координаты на плане (метры) |
-| `store_maps` JSON | Чертёж зала для C++ (кэш в Room) |
+## 2. Поток «купил → дошёл до полки»
 
-UI **не** ходит в Firebase напрямую при каждом поиске. Источник правды на телефоне — **Room** (`plna_offline.db`).
+```
+  Дома / по дороге                 В магазине
+ ─────────────────                ─────────────
+ 1. Главная / Списки               4. Карта: якорь Вход или Кассы
+ 2. Поиск товара (Room)            5. C++: calculateRoute(from → item)
+ 3. Количество → заметка           6. Draw-list → план + линия маршрута
+                                   7. (опц.) «Иду» — PDR двигает «я»
+                                   8. «Показать полку» / «Взял»
+                                   9. Insights пишет локальную историю
+```
 
-### Порядок sync
+```mermaid
+sequenceDiagram
+  participant U as Пользователь
+  participant UI as Kotlin UI
+  participant Room as Room / prefs
+  participant Core as plna_core C++
+  participant Sens as Датчики (PDR)
 
-1. Прочитать `assets/rtdb_export.json` → записать магазины, товары, карту в Room (всегда работает офлайн).
-2. Попытаться обновить дерево из Firebase RTDB (если проект/правила доступны).
-3. Поиск товаров: `LIKE` по Room для выбранного `storeId`.
+  U->>UI: Добавить товар в заметку
+  UI->>Room: searchCatalog / сохранить список
+  U->>UI: Открыть карту
+  UI->>Room: mapJson + товары заметки
+  UI->>Core: loadStoreMapJson + calculateRoute
+  Core-->>UI: draw list (float[])
+  UI->>UI: StoreMapView рисует
+  opt Режим «Иду»
+    Sens-->>UI: шаг + heading
+    UI->>Core: calculateRoute(me → target)
+  end
+  U->>UI: «Взял»
+  UI->>Room: purchase_events + item done
+```
 
-## Настройки пользователя
+---
 
-`UserSettings` (SharedPreferences) — синхронно, без Room:
+## 3. Слои ответственности
 
-- тема: dark / light / system → `AppCompatDelegate`
-- язык: ru / en / be → `AppCompatDelegate.setApplicationLocales`
-- вход: login id, флаг logged_in
+| Слой | Язык | Делает | Не делает |
+|------|------|--------|-----------|
+| UI | Kotlin | Экраны, жесты, Material 3, локализация | Геометрию зала, A* по проходам |
+| Data | Kotlin | Room, sync, списки, аналитика покупок | Рендер карты |
+| PDR | Kotlin | Шаги / акселерометр / компас → (x,y) | Планограмму |
+| Core | C++23 | Сцена в метрах, маршрут, draw opcodes | UI, Firebase, prefs |
 
-Выбор магазина и кэш каталога — в Room (`AppPrefsEntity.selectedStoreId`).
+### Почему карта в C++
 
-## Карта
+Кратко: **один движок на несколько платформ**, стабильный realtime-рендер, общая модель с экосистемой PLNA. Подробно — [WHY_CPP.md](WHY_CPP.md).
 
-1. `OfflineRepository.mapJsonForSelectedStore()` или fallback `store_map_sample.json`.
-2. `NativeMapEngine.nativeLoadStoreMapJson(json)`.
-3. При маршруте: `calculateRoute(fromX, fromY, item.x, item.y)`.
-4. `nativeBuildDrawList()` → `StoreMapView` рисует opcodes (Floor, Box2D, Line, …).
+---
 
-Подробнее про opcodes и C API: [cpp/docs/ARCHITECTURE.md](../app/src/main/cpp/docs/ARCHITECTURE.md).
+## 4. Данные: откуда берётся магазин
 
-## Модули Kotlin (кратко)
+```
+┌────────────────────┐     sync once / refresh      ┌──────────────┐
+│ rtdb_export.json   │ ───────────────────────────► │ Room         │
+│ (assets, офлайн)   │                              │ stores       │
+└────────────────────┘                              │ products     │
+┌────────────────────┐     best-effort               │ store_maps   │
+│ Firebase RTDB      │ ───────────────────────────► │ app_prefs    │
+└────────────────────┘                              └──────┬───────┘
+                                                           │
+                     UI search / map JSON ◄────────────────┘
+```
 
-| Пакет / класс | Роль |
+В UI-поиск попадают **только** товары выбранного магазина из Room.  
+Демо-каталог (`demo_catalog.json`) **не** подмешивается в поиск (лицо стеллажа может брать размеры по умолчанию).
+
+Поля товара для навигации: `name`, `rackId`, `shelf`, `x`, `y` (+ кэш `store_maps` JSON для C++).
+
+---
+
+## 5. Контракт JNI ↔ Canvas
+
+1. `NativeMapEngine.nativeLoadStoreMapJson(json)` — разобрать зал.
+2. `calculateRoute(fromX, fromY, toX, toY)` — путь в метрах.
+3. `nativeBuildDrawList()` → `float[]`: поток `opcode + args`.
+4. `StoreMapView` интерпретирует opcodes (`Floor`, `Box2D`, `Line`, …) и рисует.
+
+Host **не пересчитывает** метры стеллажей — только камера (zoom / rotate / fit) и оверлеи («я», старт, подсветка).
+
+---
+
+## 6. Модули Kotlin (ориентир)
+
+| Класс / пакет | Роль |
 |---------------|------|
-| `PlnaApp` | Тема + язык при старте, фоновый `ensureSynced()` |
+| `PlnaApp` | Тема, язык, фоновый `ensureSynced()` |
 | `OfflineRepository` | Room API для UI |
-| `RtdbSyncEngine` | Парсинг RTDB/assets → entities |
-| `ShoppingListRepository` | Локальные заметки пользователя |
-| `QuantityBottomSheet` | Выбор веса/объёма при добавлении товара |
-| `StorePicker` | Ручной выбор магазина |
+| `RtdbSyncEngine` | JSON → entities |
+| `ShoppingListRepository` | Заметки пользователя |
+| `PurchaseHistoryRepository` | Локальная аналитика «Мои покупки» |
+| `NativeMapEngine` | JNI к `plna_core` |
+| `ui.map.pdr.*` | PDR без маяков |
+| `StorePicker` | Выбор магазина / снимка карты |
+
+---
+
+## 7. Безопасность релиза (0.2)
+
+- `usesCleartextTraffic=false` + `network_security_config`
+- Release: R8 minify + shrinkResources + `proguard-rules.pro`
+- Backup rules: исключение служебных prefs
+- Auth честно помечен как **демо-доступ** (локальный профиль, без облака)
+
+Секреты (`google-services.json`, `local.properties`) — вне git; см. [GITHUB.md](GITHUB.md).

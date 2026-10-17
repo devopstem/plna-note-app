@@ -48,3 +48,23 @@ data class AppPrefsEntity(
     val languageCode: String = "ru", // ru | en | be
     val lastSyncAt: Long = 0L
 )
+
+/**
+ * Локальная история «взял» — основа персональной аналитики.
+ * Без облака: только на устройстве.
+ */
+@Entity(tableName = "purchase_events")
+data class PurchaseEventEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    /** Нормализованное имя для группировки (lowercase trim). */
+    val productKey: String,
+    val name: String,
+    val rackId: String = "",
+    val shelf: Int = 1,
+    val x: Float = 0f,
+    val y: Float = 0f,
+    val quantityLabel: String = "",
+    val listId: String = "",
+    val storeId: String = "",
+    val purchasedAt: Long = System.currentTimeMillis()
+)

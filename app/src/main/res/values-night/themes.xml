@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.NoteMap" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.NoteMap" parent="Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/plna_accent</item>
-        <item name="colorPrimaryVariant">@color/plna_purple_deep</item>
-        <item name="colorOnPrimary">@color/plna_bg</item>
-        <item name="colorSecondary">@color/plna_purple</item>
-        <item name="colorSecondaryVariant">@color/plna_purple_deep</item>
-        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnPrimary">@color/plna_text</item>
+        <item name="colorPrimaryContainer">@color/plna_accent_soft</item>
+        <item name="colorOnPrimaryContainer">@color/white</item>
+        <item name="colorSecondary">@color/plna_accent_soft</item>
+        <item name="colorOnSecondary">@color/plna_text</item>
+        <item name="colorSurface">@color/plna_surface</item>
+        <item name="colorOnSurface">@color/plna_text</item>
+        <item name="colorOnSurfaceVariant">@color/plna_text_secondary</item>
+        <item name="colorOutline">@color/plna_stroke</item>
         <item name="android:statusBarColor">@color/plna_bg</item>
         <item name="android:navigationBarColor">@color/plna_bg</item>
         <item name="android:windowBackground">@color/plna_bg</item>
         <item name="android:colorBackground">@color/plna_bg</item>
-        <item name="colorSurface">@color/plna_surface</item>
-        <item name="colorOnSurface">@color/plna_text</item>
         <item name="colorError">@color/plna_danger</item>
         <item name="android:windowLightStatusBar">false</item>
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:fontFamily">sans-serif</item>
     </style>
 </resources>

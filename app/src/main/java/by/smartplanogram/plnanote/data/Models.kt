@@ -1,5 +1,36 @@
 package by.smartplanogram.plnanote.data
 
+/**
+ * Итог по позиции в зале (не GPS — явное решение покупателя).
+ * — open: ещё идём
+ * — bought: взял в корзину → история покупок
+ * — skipped: нашёл, но не беру (несвежее и т.п.) — без истории
+ * — missing: нет на полке / ошибка карты — без истории, сигнал для планограммы
+ */
+enum class ItemOutcome {
+    OPEN,
+    BOUGHT,
+    SKIPPED,
+    MISSING;
+
+    companion object {
+        fun fromRaw(raw: String?, checkedFallback: Boolean): ItemOutcome {
+            when (raw?.lowercase()) {
+                "bought" -> return BOUGHT
+                "skipped" -> return SKIPPED
+                "missing" -> return MISSING
+                "open" -> return OPEN
+            }
+            return if (checkedFallback) BOUGHT else OPEN
+        }
+    }
+
+    fun raw(): String = name.lowercase()
+
+    /** Закрыта ли позиция для маршрута «следующий товар». */
+    fun isDone(): Boolean = this != OPEN
+}
+
 data class ShoppingItem(
     val id: String,
     val name: String,
@@ -8,10 +39,19 @@ data class ShoppingItem(
     val x: Float,
     val y: Float,
     val quantityLabel: String = "",
-    val checked: Boolean = false
+    /** @deprecated используй outcome; оставлен для совместимости UI-галочки */
+    val checked: Boolean = false,
+    val outcome: ItemOutcome = if (checked) ItemOutcome.BOUGHT else ItemOutcome.OPEN
 ) {
     fun displayName(): String =
         if (quantityLabel.isBlank()) name else "$name · $quantityLabel"
+
+    fun isDone(): Boolean = outcome.isDone() || checked
+
+    fun withOutcome(next: ItemOutcome): ShoppingItem = copy(
+        outcome = next,
+        checked = next.isDone()
+    )
 }
 
 data class ShoppingList(
@@ -23,7 +63,15 @@ data class ShoppingList(
 ) {
     fun preview(): String {
         if (items.isEmpty()) return ""
-        return items.joinToString(separator = "\n") { "☐ ${it.displayName()}" }
+        return items.joinToString(separator = "\n") { item ->
+            val mark = when (item.outcome) {
+                ItemOutcome.BOUGHT -> "☑"
+                ItemOutcome.SKIPPED -> "⊘"
+                ItemOutcome.MISSING -> "?"
+                ItemOutcome.OPEN -> "☐"
+            }
+            "$mark ${item.displayName()}"
+        }
     }
 }
 

@@ -1,25 +1,38 @@
 package by.smartplanogram.plnanote.ui.map
 
+import android.Manifest
 import android.content.Context
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.os.VibrationEffect
+import android.os.Vibrator
+import android.os.VibratorManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import by.smartplanogram.plnanote.MainActivity
 import by.smartplanogram.plnanote.R
 import by.smartplanogram.plnanote.data.CatalogProduct
 import by.smartplanogram.plnanote.data.DemoCatalog
+import by.smartplanogram.plnanote.data.ItemOutcome
 import by.smartplanogram.plnanote.data.OfflineRepository
+import by.smartplanogram.plnanote.data.PurchaseHistoryRepository
 import by.smartplanogram.plnanote.data.ShoppingItem
 import by.smartplanogram.plnanote.data.ShoppingList
 import by.smartplanogram.plnanote.data.ShoppingListRepository
 import by.smartplanogram.plnanote.databinding.FragmentMapBinding
 import by.smartplanogram.plnanote.nativebridge.NativeMapEngine
 import by.smartplanogram.plnanote.ui.applyTopContentInset
+import by.smartplanogram.plnanote.ui.map.pdr.FloorConstraint
+import by.smartplanogram.plnanote.ui.map.pdr.PdrTracker
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.launch
 import org.json.JSONObject
@@ -34,6 +47,7 @@ class MapFragment : Fragment() {
     private var activeListId: String? = null
     private var pickerShownThisVisit = false
     private var lastFaceSheetItemId: String? = null
+    private var lastClosedItemId: String? = null
     private var activeRouteItem: ShoppingItem? = null
     private val racks = mutableListOf<RackFootprint>()
     private val mainHandler = Handler(Looper.getMainLooper())
@@ -41,6 +55,30 @@ class MapFragment : Fragment() {
     private var entranceAnchor = Anchor(15f, 24.5f)
     private var cashAnchor = Anchor(15f, 1f)
     private var selectedAnchor = AnchorKind.ENTRANCE
+
+    private val floorConstraint = FloorConstraint(30f, 25f)
+    private var pdr: PdrTracker? = null
+    private var pdrWanted = false
+    private var relocateArmed = false
+
+    private val activityPermission = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { granted ->
+        ensurePdr()
+        if (granted) {
+            pdr?.forceAccelSteps = false
+            startPdrInternal()
+            return@registerForActivityResult
+        }
+        // без разрешения — шаги через акселерометр
+        if (pdr?.hasSensors() == true) {
+            pdr?.forceAccelSteps = true
+            startPdrInternal()
+        } else {
+            binding.switchPdr.isChecked = false
+            Toast.makeText(requireContext(), R.string.map_pdr_need_permission, Toast.LENGTH_LONG).show()
+        }
+    }
 
     private data class RackFootprint(
         val id: String,
@@ -93,9 +131,16 @@ class MapFragment : Fragment() {
             }
             saveAnchor(selectedAnchor)
             applyStartMarker()
-            activeRouteItem?.let { rebuildRoute(it) }
+            // сменили якорь — точка «я» стартует оттуда
+            pdr?.resetTo(currentStart().x, currentStart().y)
+            activeRouteItem?.let { focusItem(it) }
             refreshDrawList()
         }
+
+        binding.switchPdr.setOnCheckedChangeListener { _, checked ->
+            if (checked) enablePdr() else disablePdr()
+        }
+        binding.btnPdrRelocate.setOnClickListener { armRelocate() }
 
         binding.btnZoomIn.setOnClickListener { binding.storeMapView.zoomIn() }
         binding.btnZoomOut.setOnClickListener { binding.storeMapView.zoomOut() }
@@ -106,23 +151,23 @@ class MapFragment : Fragment() {
             (activity as? MainActivity)?.openTab(R.id.nav_lists)
         }
         binding.btnChangeNote.setOnClickListener { showNotePicker(force = true) }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        loadMap()
+        binding.btnMarkBought.setOnClickListener { markCurrent(ItemOutcome.BOUGHT) }
+        binding.btnMarkSkip.setOnClickListener { markCurrent(ItemOutcome.SKIPPED) }
+        binding.btnMarkMissing.setOnClickListener { markCurrent(ItemOutcome.MISSING) }
+        binding.btnShowShelf.setOnClickListener { openShelfFace() }
+        binding.mapTargetLabel.setOnLongClickListener {
+            undoLastClosed()
+            true
+        }
+        binding.mapProgressLabel.setOnLongClickListener {
+            undoLastClosed()
+            true
+        }
     }
 
     private fun loadMap() {
         viewLifecycleOwner.lifecycleScope.launch {
             val offline = OfflineRepository.get(requireContext())
-            val store = offline.selectedStore()
-            binding.coreVersion.text = runCatching {
-                "${NativeMapEngine.getCoreVersion()} · ${store?.name ?: getString(R.string.demo_store_label)}"
-            }.getOrDefault(
-                "${getString(R.string.core_version_fallback)} · ${getString(R.string.demo_store_label)}"
-            )
-
             val json = offline.mapJsonForSelectedStore()
                 ?: requireContext().assets.open("store_map_sample.json")
                     .bufferedReader().use { it.readText() }
@@ -136,6 +181,12 @@ class MapFragment : Fragment() {
 
             resolveNoteAndRoute()
             applyStartMarker()
+            pdr?.mapBearingDeg = mapBearing
+            if (pdrWanted && pdr?.enabled != true) {
+                startPdrInternal()
+            } else if (pdr?.enabled == true) {
+                binding.storeMapView.setMe(pdr!!.x, pdr!!.y, pdr!!.mapHeadingDeg)
+            }
             refreshDrawList()
         }
     }
@@ -167,6 +218,11 @@ class MapFragment : Fragment() {
                         shelves = o.optInt("shelfCount", 4)
                     )
                 }
+            }
+            floorConstraint.setFloor(floorW, floorH)
+            floorConstraint.setObstacles(emptyList())
+            racks.forEach { r ->
+                floorConstraint.addRackCentered(r.x, r.y, r.w, r.d)
             }
 
             val entrances = mutableListOf<Anchor>()
@@ -238,6 +294,101 @@ class MapFragment : Fragment() {
         binding.storeMapView.setStart(start.x, start.y, label)
     }
 
+    private fun routeFrom(): Anchor {
+        val tracker = pdr
+        if (tracker != null && tracker.enabled) {
+            return Anchor(tracker.x, tracker.y)
+        }
+        return currentStart()
+    }
+
+    private fun enablePdr() {
+        pdrWanted = true
+        ensurePdr()
+        val tracker = pdr
+        if (tracker != null &&
+            tracker.needsActivityRecognition() &&
+            Build.VERSION.SDK_INT >= 29
+        ) {
+            val ok = ContextCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.ACTIVITY_RECOGNITION
+            ) == PackageManager.PERMISSION_GRANTED
+            if (!ok) {
+                activityPermission.launch(Manifest.permission.ACTIVITY_RECOGNITION)
+                return
+            }
+        }
+        startPdrInternal()
+    }
+
+    private fun startPdrInternal() {
+        if (_binding == null) return
+        ensurePdr()
+        val tracker = pdr ?: return
+        if (!tracker.hasSensors()) {
+            binding.switchPdr.isChecked = false
+            binding.pdrStatus.setText(R.string.map_pdr_no_sensors)
+            Toast.makeText(requireContext(), R.string.map_pdr_no_sensors, Toast.LENGTH_LONG).show()
+            return
+        }
+        tracker.mapBearingDeg = mapBearing
+        val wasOff = !tracker.enabled
+        if (wasOff) {
+            tracker.resetTo(currentStart().x, currentStart().y)
+        }
+        tracker.start()
+        binding.btnPdrRelocate.visibility = View.VISIBLE
+        binding.storeMapView.setMe(tracker.x, tracker.y, tracker.mapHeadingDeg)
+        binding.pdrStatus.text = getString(R.string.map_pdr_active, tracker.stepCount)
+        if (wasOff) {
+            activeRouteItem?.let { focusItem(it) }
+            refreshDrawList()
+        }
+    }
+
+    private fun disablePdr() {
+        pdrWanted = false
+        relocateArmed = false
+        pdr?.stop()
+        binding.storeMapView.clearMe()
+        binding.storeMapView.setRelocateMode(false)
+        binding.btnPdrRelocate.visibility = View.GONE
+        binding.pdrStatus.setText(R.string.map_pdr_hint)
+        applyStartMarker()
+        activeRouteItem?.let { focusItem(it) }
+    }
+
+    private fun ensurePdr() {
+        if (pdr != null) return
+        pdr = PdrTracker(requireContext(), floorConstraint) { x, y, heading, steps ->
+            if (_binding == null) return@PdrTracker
+            binding.storeMapView.setMe(x, y, heading)
+            binding.pdrStatus.text = getString(R.string.map_pdr_active, steps)
+            // лёгкий пересчёт маршрута от живой точки (не на каждый шаг — раз в 3 шага)
+            if (steps % 3 == 0) {
+                activeRouteItem?.let { item ->
+                    NativeMapEngine.calculateRoute(x, y, item.x, item.y)
+                    refreshDrawList()
+                }
+            }
+        }
+    }
+
+    private fun armRelocate() {
+        if (pdr?.enabled != true) return
+        relocateArmed = true
+        binding.pdrStatus.setText(R.string.map_pdr_relocate_hint)
+        binding.storeMapView.setRelocateMode(true) { mx, my ->
+            pdr?.setPosition(mx, my)
+            relocateArmed = false
+            binding.storeMapView.setRelocateMode(false)
+            Toast.makeText(requireContext(), R.string.map_pdr_relocated, Toast.LENGTH_SHORT).show()
+            activeRouteItem?.let { focusItem(it) }
+            refreshDrawList()
+        }
+    }
+
     private fun nearestRack(x: Float, y: Float): RackFootprint? {
         return racks.minByOrNull { hypot2(it.x - x, it.y - y) }
     }
@@ -253,10 +404,11 @@ class MapFragment : Fragment() {
      */
     private fun resolveNoteAndRoute() {
         val repo = ShoppingListRepository.get(requireContext())
-        val usable = repo.all().filter { it.items.any { item -> !item.checked } }
+        val usable = repo.all().filter { it.items.any { item -> !item.isDone() } }
 
         binding.mapEmptyBanner.visibility = View.GONE
         binding.mapRouteBar.visibility = View.GONE
+        binding.mapTargetBar.visibility = View.GONE
 
         if (usable.isEmpty()) {
             activeListId = null
@@ -291,21 +443,136 @@ class MapFragment : Fragment() {
         binding.mapEmptyBanner.visibility = View.GONE
         binding.mapHint.visibility = View.GONE
         binding.mapRouteBar.visibility = View.VISIBLE
-        binding.activeNoteLabel.text = getString(R.string.map_active_note, list.title)
+        updateProgress(list)
+        val left = list.items.count { !it.isDone() }
+        binding.activeNoteLabel.text = getString(
+            R.string.map_active_note_progress,
+            list.title,
+            left,
+            list.items.size
+        )
 
-        val first = list.items.firstOrNull { !it.checked }
+        val first = list.items.firstOrNull { !it.isDone() }
         if (first != null) {
             focusItem(first)
         } else {
             activeRouteItem = null
+            binding.mapTargetBar.visibility = View.GONE
             binding.storeMapView.clearHighlight()
         }
         refreshDrawList()
     }
 
-    private fun focusItem(item: ShoppingItem) {
+    private fun markCurrent(outcome: ItemOutcome) {
+        val item = activeRouteItem ?: return
+        val listId = activeListId ?: return
+        dismissShelfFace()
+        val repo = ShoppingListRepository.get(requireContext())
+        val updated = repo.setOutcome(listId, item.id, outcome) ?: return
+        lastClosedItemId = item.id
+        if (outcome == ItemOutcome.BOUGHT) {
+            lightTick()
+            viewLifecycleOwner.lifecycleScope.launch {
+                runCatching {
+                    val storeId = OfflineRepository.get(requireContext()).selectedStoreId()
+                    PurchaseHistoryRepository.get(requireContext())
+                        .recordChecked(updated, listId, storeId)
+                }
+            }
+        }
+        val list = repo.get(listId) ?: return
+        updateProgress(list)
+        val next = list.items.firstOrNull { !it.isDone() }
+        if (next != null) {
+            // только карта и маршрут — полку не открываем (пока не нажмут «Показать полку»)
+            focusItem(item = next, routeFromX = item.x, routeFromY = item.y)
+            binding.activeNoteLabel.text = getString(
+                R.string.map_active_note_progress,
+                list.title,
+                list.items.count { !it.isDone() },
+                list.items.size
+            )
+            refreshDrawList()
+        } else {
+            activeRouteItem = null
+            binding.mapTargetBar.visibility = View.GONE
+            binding.storeMapView.clearHighlight()
+            binding.activeNoteLabel.text = getString(R.string.map_note_done, list.title)
+            refreshDrawList()
+        }
+    }
+
+    /** Долгий тап: вернуть последний закрытый товар в открытые. */
+    private fun undoLastClosed() {
+        val listId = activeListId ?: return
+        val repo = ShoppingListRepository.get(requireContext())
+        val list = repo.get(listId) ?: return
+        val undoId = lastClosedItemId
+        val lastClosed = list.items.firstOrNull { it.id == undoId && it.isDone() }
+            ?: list.items.lastOrNull { it.isDone() }
+            ?: run {
+                Toast.makeText(requireContext(), R.string.map_undo_empty, Toast.LENGTH_SHORT).show()
+                return
+            }
+        repo.setOutcome(listId, lastClosed.id, ItemOutcome.OPEN)
+        lastClosedItemId = null
+        val refreshed = repo.get(listId) ?: return
+        updateProgress(refreshed)
+        binding.activeNoteLabel.text = getString(
+            R.string.map_active_note_progress,
+            refreshed.title,
+            refreshed.items.count { !it.isDone() },
+            refreshed.items.size
+        )
+        focusItem(lastClosed)
+        refreshDrawList()
+        Toast.makeText(
+            requireContext(),
+            getString(R.string.item_reopened_named, lastClosed.name),
+            Toast.LENGTH_SHORT
+        ).show()
+    }
+
+    private fun updateProgress(list: ShoppingList) {
+        val total = list.items.size.coerceAtLeast(1)
+        val done = list.items.count { it.isDone() }
+        val left = total - done
+        binding.mapProgress.max = total
+        binding.mapProgress.progress = done
+        binding.mapProgressLabel.text = getString(R.string.map_progress_label, done, total, left)
+    }
+
+    private fun lightTick() {
+        runCatching {
+            val vibrator = if (Build.VERSION.SDK_INT >= 31) {
+                val mgr = requireContext().getSystemService(VibratorManager::class.java)
+                mgr?.defaultVibrator
+            } else {
+                @Suppress("DEPRECATION")
+                requireContext().getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
+            } ?: return
+            if (Build.VERSION.SDK_INT >= 26) {
+                vibrator.vibrate(VibrationEffect.createOneShot(28, VibrationEffect.DEFAULT_AMPLITUDE))
+            } else {
+                @Suppress("DEPRECATION")
+                vibrator.vibrate(28)
+            }
+        }
+    }
+
+    private fun focusItem(
+        item: ShoppingItem,
+        routeFromX: Float? = null,
+        routeFromY: Float? = null
+    ) {
         activeRouteItem = item
-        rebuildRoute(item)
+        lastFaceSheetItemId = null
+        mainHandler.removeCallbacksAndMessages(null)
+        val origin = routeFrom()
+        val fromX = routeFromX ?: origin.x
+        val fromY = routeFromY ?: origin.y
+        NativeMapEngine.calculateRoute(fromX, fromY, item.x, item.y)
+
         val rack = nearestRack(item.x, item.y)
             ?: racks.firstOrNull { it.id == item.rackId }
         val label = rack?.id?.ifBlank { item.rackId } ?: item.rackId
@@ -316,40 +583,56 @@ class MapFragment : Fragment() {
             rackD = rack?.d ?: 0.7f,
             label = label
         )
-        // лицо стеллажа — один раз на товар, чтобы не всплывало при каждом resume
-        if (lastFaceSheetItemId == item.id) return
-        lastFaceSheetItemId = item.id
-        mainHandler.postDelayed({
-            if (!isAdded) return@postDelayed
-            val catalog = DemoCatalog.all(requireContext())
-            val demo = catalog.firstOrNull { it.rackId == item.rackId && it.name == item.name }
-                ?: catalog.firstOrNull { it.rackId == item.rackId }
-            val product = demo ?: CatalogProduct(
-                id = item.id,
-                name = item.name,
-                rackId = item.rackId,
-                shelf = item.shelf,
-                x = item.x,
-                y = item.y,
-                rackName = rack?.name ?: item.rackId,
-                shelfCount = rack?.shelves ?: 5,
-                bay = 2,
-                isDemo = false
-            )
-            RackFaceBottomSheet.newInstance(product)
-                .show(parentFragmentManager, RackFaceBottomSheet.TAG)
-        }, 420)
+        binding.mapTargetBar.visibility = View.VISIBLE
+        binding.mapTargetLabel.text = getString(
+            R.string.map_target_label,
+            item.displayName(),
+            item.rackId,
+            item.shelf
+        )
     }
 
-    private fun rebuildRoute(item: ShoppingItem) {
-        val start = currentStart()
-        NativeMapEngine.calculateRoute(start.x, start.y, item.x, item.y)
+    /** Полка по запросу — когда уже у стеллажа и не видно товар. */
+    private fun openShelfFace() {
+        val item = activeRouteItem ?: return
+        if (lastFaceSheetItemId == item.id) {
+            // уже открыт — не дублируем
+            val existing = parentFragmentManager.findFragmentByTag(RackFaceBottomSheet.TAG)
+            if (existing != null) return
+        }
+        lastFaceSheetItemId = item.id
+        val rack = nearestRack(item.x, item.y)
+            ?: racks.firstOrNull { it.id == item.rackId }
+        val catalog = DemoCatalog.all(requireContext())
+        val demo = catalog.firstOrNull { it.rackId == item.rackId && it.name == item.name }
+            ?: catalog.firstOrNull { it.rackId == item.rackId }
+        val product = demo ?: CatalogProduct(
+            id = item.id,
+            name = item.name,
+            rackId = item.rackId,
+            shelf = item.shelf,
+            x = item.x,
+            y = item.y,
+            rackName = rack?.name ?: item.rackId,
+            shelfCount = rack?.shelves ?: 5,
+            bay = 2,
+            isDemo = false
+        )
+        RackFaceBottomSheet.newInstance(product)
+            .show(parentFragmentManager, RackFaceBottomSheet.TAG)
+    }
+
+    private fun dismissShelfFace() {
+        mainHandler.removeCallbacksAndMessages(null)
+        lastFaceSheetItemId = null
+        (parentFragmentManager.findFragmentByTag(RackFaceBottomSheet.TAG) as? RackFaceBottomSheet)
+            ?.dismissAllowingStateLoss()
     }
 
     private fun showNotePicker(force: Boolean) {
         val usable = ShoppingListRepository.get(requireContext())
             .all()
-            .filter { it.items.any { item -> !item.checked } }
+            .filter { it.items.any { item -> !item.isDone() } }
         if (usable.isEmpty()) {
             binding.mapEmptyBanner.visibility = View.VISIBLE
             return
@@ -360,7 +643,7 @@ class MapFragment : Fragment() {
         }
 
         val labels = usable.map { list ->
-            val left = list.items.count { !it.checked }
+            val left = list.items.count { !it.isDone() }
             getString(R.string.map_note_option, list.title, left)
         }.toTypedArray()
 
@@ -395,8 +678,29 @@ class MapFragment : Fragment() {
         prefs().edit().putString(KEY_ANCHOR, kind.name).apply()
     }
 
+    override fun onPause() {
+        pdr?.stop()
+        super.onPause()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        loadMap()
+        if (pdrWanted && racks.isNotEmpty()) {
+            ensurePdr()
+            val needsPerm = pdr?.needsActivityRecognition() == true && Build.VERSION.SDK_INT >= 29
+            val granted = !needsPerm || ContextCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.ACTIVITY_RECOGNITION
+            ) == PackageManager.PERMISSION_GRANTED
+            if (granted) startPdrInternal()
+        }
+    }
+
     override fun onDestroyView() {
         mainHandler.removeCallbacksAndMessages(null)
+        pdr?.stop()
+        pdr = null
         _binding = null
         super.onDestroyView()
     }

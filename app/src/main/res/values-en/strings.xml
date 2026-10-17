@@ -15,6 +15,27 @@
     <string name="home_welcome">Open Lists or Map below to continue.</string>
     <string name="home_guest_status">Guest · sign in from Profile</string>
     <string name="home_user_status">Signed in</string>
+    <string name="home_greet_morning">Good morning</string>
+    <string name="home_greet_day">Good afternoon</string>
+    <string name="home_greet_evening">Good evening</string>
+    <string name="home_greet_night">Good night</string>
+    <string name="home_brand">PLNA · Smart Map</string>
+    <string name="home_hero_title">Shop without walking in circles</string>
+    <string name="home_hero_body">Build a note at home — open the floor map in store and walk to the rack.</string>
+    <string name="home_cta_list">Build a list</string>
+    <string name="home_store_label">Active store</string>
+    <string name="home_store_change">Change</string>
+    <string name="home_store_none">No store selected</string>
+    <string name="home_section_actions">Quick start</string>
+    <string name="home_section_summary">Now</string>
+    <string name="home_tile_insights">Purchases</string>
+    <string name="home_tile_map_meta">Route</string>
+    <string name="home_tile_lists_meta">%1$d lists · %2$d items</string>
+    <string name="home_tile_insights_meta">%1$d in history</string>
+    <string name="home_tile_insights_empty">Empty yet</string>
+    <string name="home_summary_empty">Create your first note — the map will guide you through the store.</string>
+    <string name="home_summary_done">Lists: %1$d. Everything checked — start a new one.</string>
+    <string name="home_summary_active">Lists: %1$d · open items: %2$d\nStore: %3$s</string>
 
     <string name="about_card_title">About the app</string>
     <string name="about_card_subtitle">In plain words: what this app is for</string>
@@ -26,7 +47,7 @@ PLNA Notes works differently. At home or on the way, you build a note — what t
 
 No tech jargon needed. Just a simple helper for everyday shopping — to save time and stress.</string>
     <string name="about_how_title">How to use it — 4 steps</string>
-    <string name="about_version">MVP 0.1 · Smart Map from PLNA</string>
+    <string name="about_version">Version 0.2.0 · Smart Map from PLNA</string>
 
     <string name="lists_title">Shopping lists</string>
     <string name="list_detail_title">Note</string>
@@ -61,17 +82,17 @@ No tech jargon needed. Just a simple helper for everyday shopping — to save ti
     <string name="language_title">Language</string>
     <string name="no_stores_yet">Stores are not loaded yet.</string>
 
-    <string name="auth_title">Sign in</string>
-    <string name="auth_subtitle">Enter a phone number or store invite code. No password — other people’s lists stay private.</string>
-    <string name="auth_field_hint">Phone or code</string>
-    <string name="auth_hint_examples">Examples: +375291112233 or code PLNA</string>
+    <string name="auth_title">Demo access</string>
+    <string name="auth_subtitle">Enter a phone number — it is stored on this device only. There is no cloud account yet; lists do not sync across phones.</string>
+    <string name="auth_field_hint">Phone number</string>
+    <string name="auth_hint_examples">Format: +375 … (at least 9 digits)</string>
     <string name="auth_continue">Continue</string>
-    <string name="auth_no_password">No password · one step</string>
-    <string name="auth_open">Sign in / Register</string>
+    <string name="auth_no_password">Profile stays on this phone</string>
+    <string name="auth_open">Sign in</string>
     <string name="auth_logout">Sign out</string>
-    <string name="auth_error">Enter a phone (≥9 digits) or code (PLNA, GIPPO…)</string>
-    <string name="auth_success">Signed in</string>
-    <string name="auth_guest_label">Not registered</string>
+    <string name="auth_error">Enter a phone number (≥9 digits)</string>
+    <string name="auth_success">Profile saved</string>
+    <string name="auth_guest_label">Guest</string>
 
     <string name="analytics_title">Monthly analytics</string>
     <string name="analytics_body">Lists: %1$d\nItems in notes: %2$d\nActive store: %3$s</string>
@@ -81,7 +102,7 @@ No tech jargon needed. Just a simple helper for everyday shopping — to save ti
     <string name="map_view_3d">3D</string>
     <string name="demo_products_title">Demo products · tap for route</string>
     <string name="demo_product_meta">%1$s · shelf %2$d</string>
-    <string name="demo_store_label">demo floor</string>
+    <string name="demo_store_label">Store</string>
     <string name="rack_face_subtitle">%1$s · %2$s · shelf %3$d · bay %4$d</string>
     <string name="rack_face_hint">Rack face 1.5×1.8 m (depth ~0.65 m). Same fields will come from Firebase later.</string>
     <string name="about_lead">A shopping list that guides you through the store</string>
@@ -112,4 +133,55 @@ No tech jargon needed. Just a simple helper for everyday shopping — to save ti
     <string name="map_anchor_label">I\'m at:</string>
     <string name="map_anchor_entrance">Entrance</string>
     <string name="map_anchor_cash">Checkouts</string>
+    <string name="map_active_note_progress">%1$s · %2$d of %3$d left</string>
+    <string name="map_note_done">%1$s · all done</string>
+    <string name="map_target_label">Now: %1$s · %2$s · shelf %3$d</string>
+    <string name="map_pdr_switch">Walking</string>
+    <string name="map_pdr_hint">Your marker moves as you walk</string>
+    <string name="map_pdr_active">Steps: %1$d</string>
+    <string name="map_pdr_no_sensors">No motion sensors on this phone. Use Entrance / Checkout anchors instead.</string>
+    <string name="map_pdr_mode_accel">Mode: accelerometer</string>
+    <string name="map_pdr_mode_hw">Mode: pedometer</string>
+    <string name="map_pdr_need_permission">Activity recognition permission needed for steps</string>
+    <string name="map_pdr_relocate">I\'m here</string>
+    <string name="map_pdr_relocate_hint">Long-press the map where you are</string>
+    <string name="map_pdr_relocated">Position updated</string>
+    <string name="lists_empty_title">No lists yet</string>
+    <string name="lists_empty_body">Create a note, add products, then open the map for an in-store route.</string>
+    <string name="lists_empty_cta">Create list</string>
+    <string name="map_show_shelf">Show shelf</string>
+    <string name="map_mark_bought">Got it</string>
+    <string name="map_mark_skip">Skip</string>
+    <string name="map_mark_missing">Missing</string>
+    <string name="map_progress_label">Done %1$d of %2$d · %3$d left</string>
+    <string name="map_undo_hint">Long-press the target name to undo the last item</string>
+    <string name="map_undo_empty">Nothing to undo</string>
+    <string name="item_reopened">Back on the list</string>
+    <string name="item_reopened_named">“%1$s” is open again</string>
+    <string name="list_products_progress">Products · %1$d of %2$d left</string>
+    <string name="item_status_bought">Got it · %1$s</string>
+    <string name="item_status_skipped">Skipped · %1$s</string>
+    <string name="item_status_missing">Not found · %1$s</string>
+
+    <string name="insights_title">My purchases</string>
+    <string name="insights_privacy">History stays on this phone. Not uploaded to the cloud.</string>
+    <string name="insights_summary">Checked off: %1$d · window %2$d days</string>
+    <string name="insights_empty">Nothing yet. Check items off in a list — frequency and tips will appear.</string>
+    <string name="insights_suggestions">Suggestions</string>
+    <string name="insights_top">Most often</string>
+    <string name="insights_add">Add</string>
+    <string name="insights_clear">Clear history</string>
+    <string name="insights_clear_title">Clear purchase history?</string>
+    <string name="insights_clear_body">Tips and stats reset. Your lists stay.</string>
+    <string name="insights_habitual_body">You usually buy this on such a day · %1$d times in history</string>
+    <string name="insights_overdue_body">Not bought for %1$d days · usually every ~%2$d days</string>
+    <string name="insights_top_meta">%1$dx · last %2$d days ago · interval %3$s</string>
+    <string name="insights_days">d</string>
+    <string name="insights_already_in_list">Already in the list</string>
+    <string name="insights_added">“%1$s” → %2$s</string>
+    <string name="insights_open_hint">Open details →</string>
+    <string name="insights_profile_body">Purchases in history: %1$d\nLists: %2$d · items: %3$d</string>
+    <string name="insights_profile_empty">Check items off in a list — habits and tips will show up here.</string>
+    <string name="insights_banner_habitual">You usually buy this on such a day. Add it?</string>
+    <string name="insights_banner_overdue">Not bought for %1$d days. Add it?</string>
 </resources>

@@ -55,6 +55,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/quantity_confirm"
-        app:backgroundTint="@color/plna_purple"
+        app:backgroundTint="@color/plna_accent"
         app:cornerRadius="12dp" />
 </LinearLayout>

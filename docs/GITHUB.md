@@ -1,44 +1,44 @@
-# Публикация на GitHub — чеклист
+# Публикация на GitHub
 
-## Сейчас публиковать?
+Репозиторий: `https://github.com/devopstem/plna-note-app`  
+Текущая версия в коде: **0.2.0**
 
-**Рекомендация: ещё рано для публичного репозитория.** Сначала — private repo или локальный git.
+## Что не коммитить
 
-| Критерий | Статус |
-|----------|--------|
-| Git-репозиторий инициализирован | Нет (на момент подготовки docs) |
-| README / документация | Да (этот каталог + README) |
-| Секреты вынесены | Нужно: `google-services.json`, `local.properties` |
-| applicationId / package | `by.smartplanogram.plnanote` ✅ |
-| Auth | Демо-коды в клиенте — ок для прототипа, не для продакшена |
-| Firebase rules / production data | Экспорт в assets — проверьте, нет ли лишних PII |
-| Лицензия | Не выбрана |
+Уже в `.gitignore` (проверьте перед push):
 
-## Перед `git push` (обязательно)
+- `local.properties`
+- `app/google-services.json` (в репо только `*.example`)
+- `/build`, `app/build`, `.gradle`, `.cxx`, `cpp-build/`
+- ключи / keystore
 
-1. `git init` (если ещё нет).
-2. Убедиться, что в `.gitignore`:
-   - `local.properties`
-   - `app/google-services.json`
-   - `/build`, `app/build`, `.gradle`, `.cxx`, `cpp-build/`
-3. В репозитории только `google-services.json.example`.
-4. Просмотреть `rtdb_export.json`: это демо-каталог магазина; если там чувствительные данные сети — заменить урезанным sample.
-5. Выбрать **private** репозиторий, пока applicationId и Firebase не приведены в порядок.
-6. Добавить `LICENSE` (MIT / Apache-2.0 / proprietary).
+## Перед публичным (public) релизом
 
-## Когда можно сделать public
+| Критерий | 0.2 |
+|----------|-----|
+| README + архитектура + WHY_CPP | да |
+| Демо-доступ без кодов на экране | да |
+| Демо-каталог не в поиске | да |
+| Cleartext выключен, R8 на release | да |
+| Firebase demo-проект / rules | по желанию владельца |
+| LICENSE | не выбран — укажите proprietary / MIT при public |
 
-- В Firebase Console добавлено Android-приложение с package `by.smartplanogram.plnanote` (и свежий `google-services.json`).
-- Firebase: отдельный demo-проект или чистые rules + sample data.
-- Auth не хардкодит продакшен-коды (или только demo flavor).
-- Release-сборка и краткий «Getting started» проверены с нуля на чистой машине.
+Пока репозиторий может оставаться **private** или public с пометкой «preview 0.2».
 
-## Команды (когда будете готовы)
+## Команды обновления
 
 ```bash
-git init
-git add README.md docs branding app gradle gradlew* build.gradle.kts settings.gradle.kts gradle.properties .gitignore
-# НЕ добавлять: local.properties, google-services.json, cpp-build, .idea (целиком)
-git commit -m "Initial commit: PLNA Smart Map Android + native core"
-gh repo create plna-smart-map --private --source=. --remote=origin --push
+git add -A
+git status   # убедиться, что нет google-services.json
+git commit -m "Release 0.2.0: Home, PDR, demo polish, architecture docs."
+git push -u origin HEAD
+git tag -a v0.2.0 -m "PLNA Note App 0.2.0"
+git push origin v0.2.0
 ```
+
+## Документы для читателя репо
+
+1. [README.md](../README.md) — старт  
+2. [ARCHITECTURE.md](ARCHITECTURE.md) — чертёж  
+3. [WHY_CPP.md](WHY_CPP.md) — зачем native core  
+4. [CHANGELOG.md](CHANGELOG.md) — что в версии  
